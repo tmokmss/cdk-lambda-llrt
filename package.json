@@ -1,5 +1,5 @@
 {
-  "name": "cdk-llrt-function",
+  "name": "cdk-lambda-llrt",
   "repository": {
     "type": "git",
     "url": "https://github.com/mtomooka/cdk-llrt-function.git"

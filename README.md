@@ -6,13 +6,13 @@ This is a CDK construct library that aims to accelerate your experiment on [LLRT
 Install it via npm:
 
 ```sh
-npm install cdk-llrt-function
+npm install cdk-lambda-llrt
 ```
 
 Then you can just specify an entry point for the function.
 
 ```ts
-import { LlrtFunction } from 'cdk-llrt-function';
+import { LlrtFunction } from 'cdk-lambda-llrt';
 
 const handler = new LlrtFunction(this, 'Handler', {
     entry: 'lambda/index.ts',

@@ -5,7 +5,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   cdkVersion: '2.38.0',
   defaultReleaseBranch: 'main',
   jsiiVersion: '~5.3.0',
-  name: 'cdk-llrt-function',
+  name: 'cdk-lambda-llrt',
   projenrcTs: true,
   repositoryUrl: 'https://github.com/mtomooka/cdk-llrt-function.git',
 
