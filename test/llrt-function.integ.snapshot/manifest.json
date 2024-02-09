@@ -1,0 +1,81 @@
+{
+  "version": "20.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "LlrtFunctionIntegTest": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "LlrtFunctionIntegTest.template.json",
+        "validateOnSynth": false
+      },
+      "metadata": {
+        "/LlrtFunctionIntegTest": [
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.a837e09af61ac27846b41f3f4df5a1f1d41f01a09f23f6c2b15ff7dc8bb0b7d3",
+              "id": "a837e09af61ac27846b41f3f4df5a1f1d41f01a09f23f6c2b15ff7dc8bb0b7d3",
+              "packaging": "zip",
+              "sourceHash": "a837e09af61ac27846b41f3f4df5a1f1d41f01a09f23f6c2b15ff7dc8bb0b7d3",
+              "s3BucketParameter": "AssetParametersa837e09af61ac27846b41f3f4df5a1f1d41f01a09f23f6c2b15ff7dc8bb0b7d3S3BucketD7F73B8B",
+              "s3KeyParameter": "AssetParametersa837e09af61ac27846b41f3f4df5a1f1d41f01a09f23f6c2b15ff7dc8bb0b7d3S3VersionKey587061C7",
+              "artifactHashParameter": "AssetParametersa837e09af61ac27846b41f3f4df5a1f1d41f01a09f23f6c2b15ff7dc8bb0b7d3ArtifactHash62344491"
+            }
+          }
+        ],
+        "/LlrtFunctionIntegTest/Handler/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HandlerServiceRoleFCDC14AE"
+          }
+        ],
+        "/LlrtFunctionIntegTest/Handler/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HandlerServiceRoleDefaultPolicyCBD0CC91"
+          }
+        ],
+        "/LlrtFunctionIntegTest/Handler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Handler886CB40B"
+          }
+        ],
+        "/LlrtFunctionIntegTest/AssetParameters/a837e09af61ac27846b41f3f4df5a1f1d41f01a09f23f6c2b15ff7dc8bb0b7d3/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersa837e09af61ac27846b41f3f4df5a1f1d41f01a09f23f6c2b15ff7dc8bb0b7d3S3BucketD7F73B8B"
+          }
+        ],
+        "/LlrtFunctionIntegTest/AssetParameters/a837e09af61ac27846b41f3f4df5a1f1d41f01a09f23f6c2b15ff7dc8bb0b7d3/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersa837e09af61ac27846b41f3f4df5a1f1d41f01a09f23f6c2b15ff7dc8bb0b7d3S3VersionKey587061C7"
+          }
+        ],
+        "/LlrtFunctionIntegTest/AssetParameters/a837e09af61ac27846b41f3f4df5a1f1d41f01a09f23f6c2b15ff7dc8bb0b7d3/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersa837e09af61ac27846b41f3f4df5a1f1d41f01a09f23f6c2b15ff7dc8bb0b7d3ArtifactHash62344491"
+          }
+        ]
+      },
+      "displayName": "LlrtFunctionIntegTest"
+    },
+    "TestDefaultTestDeployAssert12909640": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "TestDefaultTestDeployAssert12909640.template.json",
+        "validateOnSynth": false
+      },
+      "displayName": "Test/DefaultTest/DeployAssert"
+    }
+  }
+}

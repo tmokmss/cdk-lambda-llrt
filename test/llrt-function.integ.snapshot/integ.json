@@ -1,0 +1,12 @@
+{
+  "version": "20.0.0",
+  "testCases": {
+    "Test/DefaultTest": {
+      "stacks": [
+        "LlrtFunctionIntegTest"
+      ],
+      "diffAssets": true,
+      "assertionStack": "TestDefaultTestDeployAssert12909640"
+    }
+  }
+}

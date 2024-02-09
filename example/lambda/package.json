@@ -1,0 +1,15 @@
+{
+  "name": "lambda",
+  "scripts": {
+    "build": "esbuild index.ts --platform=node --target=es2020 --outdir=dist --format=esm --bundle --minify --external:@aws-sdk --external:uuid",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.133",
+    "esbuild": "^0.20.0"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.509.0",
+    "hono": "^3.12.12"
+  }
+}
