@@ -21,6 +21,8 @@ const project = new awscdk.AwsCdkConstructLibrary({
   },
   devDeps: ['@aws-cdk/integ-runner@2.38.0', '@aws-cdk/integ-tests-alpha@2.38.0-alpha.0'],
 });
+
+project.addPackageIgnore('.tmp');
 project.projectBuild.testTask.exec('yarn tsc -p tsconfig.dev.json && yarn integ-runner');
 
 project.synth();

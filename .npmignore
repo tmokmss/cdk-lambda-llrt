@@ -22,5 +22,6 @@ dist
 tsconfig.tsbuildinfo
 /.eslintrc.json
 !.jsii
+.tmp
 /.gitattributes
 /.projenrc.ts
