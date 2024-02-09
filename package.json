@@ -2,7 +2,7 @@
   "name": "cdk-lambda-llrt",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mtomooka/cdk-llrt-function.git"
+    "url": "https://github.com/tmokmss/cdk-lambda-llrt.git"
   },
   "scripts": {
     "build": "npx projen build",

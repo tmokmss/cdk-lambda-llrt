@@ -7,7 +7,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   jsiiVersion: '~5.3.0',
   name: 'cdk-lambda-llrt',
   projenrcTs: true,
-  repositoryUrl: 'https://github.com/mtomooka/cdk-llrt-function.git',
+  repositoryUrl: 'https://github.com/tmokmss/cdk-lambda-llrt.git',
 
   eslintOptions: {
     dirs: [],
