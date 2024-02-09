@@ -2,39 +2,39 @@
 
 ## Constructs <a name="Constructs" id="Constructs"></a>
 
-### LlrtFunction <a name="LlrtFunction" id="cdk-llrt-function.LlrtFunction"></a>
+### LlrtFunction <a name="LlrtFunction" id="cdk-lambda-llrt.LlrtFunction"></a>
 
-#### Initializers <a name="Initializers" id="cdk-llrt-function.LlrtFunction.Initializer"></a>
+#### Initializers <a name="Initializers" id="cdk-lambda-llrt.LlrtFunction.Initializer"></a>
 
 ```typescript
-import { LlrtFunction } from 'cdk-llrt-function'
+import { LlrtFunction } from 'cdk-lambda-llrt'
 
 new LlrtFunction(scope: Construct, id: string, props: LlrtFunctionProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#cdk-llrt-function.LlrtFunction.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#cdk-llrt-function.LlrtFunction.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#cdk-llrt-function.LlrtFunction.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-llrt-function.LlrtFunctionProps">LlrtFunctionProps</a></code> | *No description.* |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-lambda-llrt.LlrtFunctionProps">LlrtFunctionProps</a></code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="cdk-llrt-function.LlrtFunction.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="cdk-lambda-llrt.LlrtFunction.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="cdk-llrt-function.LlrtFunction.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="cdk-lambda-llrt.LlrtFunction.Initializer.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="cdk-llrt-function.LlrtFunction.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="cdk-lambda-llrt.LlrtFunction.Initializer.parameter.props"></a>
 
-- *Type:* <a href="#cdk-llrt-function.LlrtFunctionProps">LlrtFunctionProps</a>
+- *Type:* <a href="#cdk-lambda-llrt.LlrtFunctionProps">LlrtFunctionProps</a>
 
 ---
 
@@ -42,29 +42,29 @@ new LlrtFunction(scope: Construct, id: string, props: LlrtFunctionProps)
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#cdk-llrt-function.LlrtFunction.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#cdk-llrt-function.LlrtFunction.applyRemovalPolicy">applyRemovalPolicy</a></code> | Apply the given removal policy to this resource. |
-| <code><a href="#cdk-llrt-function.LlrtFunction.addEventSource">addEventSource</a></code> | Adds an event source to this function. |
-| <code><a href="#cdk-llrt-function.LlrtFunction.addEventSourceMapping">addEventSourceMapping</a></code> | Adds an event source that maps to this AWS Lambda function. |
-| <code><a href="#cdk-llrt-function.LlrtFunction.addFunctionUrl">addFunctionUrl</a></code> | Adds a url to this lambda function. |
-| <code><a href="#cdk-llrt-function.LlrtFunction.addPermission">addPermission</a></code> | Adds a permission to the Lambda resource policy. |
-| <code><a href="#cdk-llrt-function.LlrtFunction.addToRolePolicy">addToRolePolicy</a></code> | Adds a statement to the IAM role assumed by the instance. |
-| <code><a href="#cdk-llrt-function.LlrtFunction.configureAsyncInvoke">configureAsyncInvoke</a></code> | Configures options for asynchronous invocation. |
-| <code><a href="#cdk-llrt-function.LlrtFunction.considerWarningOnInvokeFunctionPermissions">considerWarningOnInvokeFunctionPermissions</a></code> | A warning will be added to functions under the following conditions: - permissions that include `lambda:InvokeFunction` are added to the unqualified function. |
-| <code><a href="#cdk-llrt-function.LlrtFunction.grantInvoke">grantInvoke</a></code> | Grant the given identity permissions to invoke this Lambda. |
-| <code><a href="#cdk-llrt-function.LlrtFunction.grantInvokeUrl">grantInvokeUrl</a></code> | Grant the given identity permissions to invoke this Lambda Function URL. |
-| <code><a href="#cdk-llrt-function.LlrtFunction.metric">metric</a></code> | Return the given named metric for this Function. |
-| <code><a href="#cdk-llrt-function.LlrtFunction.metricDuration">metricDuration</a></code> | How long execution of this Lambda takes. |
-| <code><a href="#cdk-llrt-function.LlrtFunction.metricErrors">metricErrors</a></code> | How many invocations of this Lambda fail. |
-| <code><a href="#cdk-llrt-function.LlrtFunction.metricInvocations">metricInvocations</a></code> | How often this Lambda is invoked. |
-| <code><a href="#cdk-llrt-function.LlrtFunction.metricThrottles">metricThrottles</a></code> | How often this Lambda is throttled. |
-| <code><a href="#cdk-llrt-function.LlrtFunction.addAlias">addAlias</a></code> | Defines an alias for this function. |
-| <code><a href="#cdk-llrt-function.LlrtFunction.addEnvironment">addEnvironment</a></code> | Adds an environment variable to this Lambda function. |
-| <code><a href="#cdk-llrt-function.LlrtFunction.addLayers">addLayers</a></code> | Adds one or more Lambda Layers to this Lambda function. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.applyRemovalPolicy">applyRemovalPolicy</a></code> | Apply the given removal policy to this resource. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.addEventSource">addEventSource</a></code> | Adds an event source to this function. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.addEventSourceMapping">addEventSourceMapping</a></code> | Adds an event source that maps to this AWS Lambda function. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.addFunctionUrl">addFunctionUrl</a></code> | Adds a url to this lambda function. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.addPermission">addPermission</a></code> | Adds a permission to the Lambda resource policy. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.addToRolePolicy">addToRolePolicy</a></code> | Adds a statement to the IAM role assumed by the instance. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.configureAsyncInvoke">configureAsyncInvoke</a></code> | Configures options for asynchronous invocation. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.considerWarningOnInvokeFunctionPermissions">considerWarningOnInvokeFunctionPermissions</a></code> | A warning will be added to functions under the following conditions: - permissions that include `lambda:InvokeFunction` are added to the unqualified function. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.grantInvoke">grantInvoke</a></code> | Grant the given identity permissions to invoke this Lambda. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.grantInvokeUrl">grantInvokeUrl</a></code> | Grant the given identity permissions to invoke this Lambda Function URL. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.metric">metric</a></code> | Return the given named metric for this Function. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.metricDuration">metricDuration</a></code> | How long execution of this Lambda takes. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.metricErrors">metricErrors</a></code> | How many invocations of this Lambda fail. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.metricInvocations">metricInvocations</a></code> | How often this Lambda is invoked. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.metricThrottles">metricThrottles</a></code> | How often this Lambda is throttled. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.addAlias">addAlias</a></code> | Defines an alias for this function. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.addEnvironment">addEnvironment</a></code> | Adds an environment variable to this Lambda function. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.addLayers">addLayers</a></code> | Adds one or more Lambda Layers to this Lambda function. |
 
 ---
 
-##### `toString` <a name="toString" id="cdk-llrt-function.LlrtFunction.toString"></a>
+##### `toString` <a name="toString" id="cdk-lambda-llrt.LlrtFunction.toString"></a>
 
 ```typescript
 public toString(): string
@@ -72,7 +72,7 @@ public toString(): string
 
 Returns a string representation of this construct.
 
-##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="cdk-llrt-function.LlrtFunction.applyRemovalPolicy"></a>
+##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="cdk-lambda-llrt.LlrtFunction.applyRemovalPolicy"></a>
 
 ```typescript
 public applyRemovalPolicy(policy: RemovalPolicy): void
@@ -88,13 +88,13 @@ to be replaced.
 The resource can be deleted (`RemovalPolicy.DESTROY`), or left in your AWS
 account for data recovery and cleanup later (`RemovalPolicy.RETAIN`).
 
-###### `policy`<sup>Required</sup> <a name="policy" id="cdk-llrt-function.LlrtFunction.applyRemovalPolicy.parameter.policy"></a>
+###### `policy`<sup>Required</sup> <a name="policy" id="cdk-lambda-llrt.LlrtFunction.applyRemovalPolicy.parameter.policy"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicy
 
 ---
 
-##### `addEventSource` <a name="addEventSource" id="cdk-llrt-function.LlrtFunction.addEventSource"></a>
+##### `addEventSource` <a name="addEventSource" id="cdk-lambda-llrt.LlrtFunction.addEventSource"></a>
 
 ```typescript
 public addEventSource(source: IEventSource): void
@@ -110,13 +110,13 @@ import { SqsEventSource } from '@aws-cdk/aws-lambda-event-sources';
 myFunction.addEventSource(new SqsEventSource(myQueue));
 ```
 
-###### `source`<sup>Required</sup> <a name="source" id="cdk-llrt-function.LlrtFunction.addEventSource.parameter.source"></a>
+###### `source`<sup>Required</sup> <a name="source" id="cdk-lambda-llrt.LlrtFunction.addEventSource.parameter.source"></a>
 
 - *Type:* aws-cdk-lib.aws_lambda.IEventSource
 
 ---
 
-##### `addEventSourceMapping` <a name="addEventSourceMapping" id="cdk-llrt-function.LlrtFunction.addEventSourceMapping"></a>
+##### `addEventSourceMapping` <a name="addEventSourceMapping" id="cdk-lambda-llrt.LlrtFunction.addEventSourceMapping"></a>
 
 ```typescript
 public addEventSourceMapping(id: string, options: EventSourceMappingOptions): EventSourceMapping
@@ -124,19 +124,19 @@ public addEventSourceMapping(id: string, options: EventSourceMappingOptions): Ev
 
 Adds an event source that maps to this AWS Lambda function.
 
-###### `id`<sup>Required</sup> <a name="id" id="cdk-llrt-function.LlrtFunction.addEventSourceMapping.parameter.id"></a>
+###### `id`<sup>Required</sup> <a name="id" id="cdk-lambda-llrt.LlrtFunction.addEventSourceMapping.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-###### `options`<sup>Required</sup> <a name="options" id="cdk-llrt-function.LlrtFunction.addEventSourceMapping.parameter.options"></a>
+###### `options`<sup>Required</sup> <a name="options" id="cdk-lambda-llrt.LlrtFunction.addEventSourceMapping.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.aws_lambda.EventSourceMappingOptions
 
 ---
 
-##### `addFunctionUrl` <a name="addFunctionUrl" id="cdk-llrt-function.LlrtFunction.addFunctionUrl"></a>
+##### `addFunctionUrl` <a name="addFunctionUrl" id="cdk-lambda-llrt.LlrtFunction.addFunctionUrl"></a>
 
 ```typescript
 public addFunctionUrl(options?: FunctionUrlOptions): FunctionUrl
@@ -144,13 +144,13 @@ public addFunctionUrl(options?: FunctionUrlOptions): FunctionUrl
 
 Adds a url to this lambda function.
 
-###### `options`<sup>Optional</sup> <a name="options" id="cdk-llrt-function.LlrtFunction.addFunctionUrl.parameter.options"></a>
+###### `options`<sup>Optional</sup> <a name="options" id="cdk-lambda-llrt.LlrtFunction.addFunctionUrl.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.aws_lambda.FunctionUrlOptions
 
 ---
 
-##### `addPermission` <a name="addPermission" id="cdk-llrt-function.LlrtFunction.addPermission"></a>
+##### `addPermission` <a name="addPermission" id="cdk-lambda-llrt.LlrtFunction.addPermission"></a>
 
 ```typescript
 public addPermission(id: string, permission: Permission): void
@@ -160,7 +160,7 @@ Adds a permission to the Lambda resource policy.
 
 > [Permission for details.](Permission for details.)
 
-###### `id`<sup>Required</sup> <a name="id" id="cdk-llrt-function.LlrtFunction.addPermission.parameter.id"></a>
+###### `id`<sup>Required</sup> <a name="id" id="cdk-lambda-llrt.LlrtFunction.addPermission.parameter.id"></a>
 
 - *Type:* string
 
@@ -168,7 +168,7 @@ The id for the permission construct.
 
 ---
 
-###### `permission`<sup>Required</sup> <a name="permission" id="cdk-llrt-function.LlrtFunction.addPermission.parameter.permission"></a>
+###### `permission`<sup>Required</sup> <a name="permission" id="cdk-lambda-llrt.LlrtFunction.addPermission.parameter.permission"></a>
 
 - *Type:* aws-cdk-lib.aws_lambda.Permission
 
@@ -176,7 +176,7 @@ The permission to grant to this Lambda function.
 
 ---
 
-##### `addToRolePolicy` <a name="addToRolePolicy" id="cdk-llrt-function.LlrtFunction.addToRolePolicy"></a>
+##### `addToRolePolicy` <a name="addToRolePolicy" id="cdk-lambda-llrt.LlrtFunction.addToRolePolicy"></a>
 
 ```typescript
 public addToRolePolicy(statement: PolicyStatement): void
@@ -184,13 +184,13 @@ public addToRolePolicy(statement: PolicyStatement): void
 
 Adds a statement to the IAM role assumed by the instance.
 
-###### `statement`<sup>Required</sup> <a name="statement" id="cdk-llrt-function.LlrtFunction.addToRolePolicy.parameter.statement"></a>
+###### `statement`<sup>Required</sup> <a name="statement" id="cdk-lambda-llrt.LlrtFunction.addToRolePolicy.parameter.statement"></a>
 
 - *Type:* aws-cdk-lib.aws_iam.PolicyStatement
 
 ---
 
-##### `configureAsyncInvoke` <a name="configureAsyncInvoke" id="cdk-llrt-function.LlrtFunction.configureAsyncInvoke"></a>
+##### `configureAsyncInvoke` <a name="configureAsyncInvoke" id="cdk-lambda-llrt.LlrtFunction.configureAsyncInvoke"></a>
 
 ```typescript
 public configureAsyncInvoke(options: EventInvokeConfigOptions): void
@@ -198,13 +198,13 @@ public configureAsyncInvoke(options: EventInvokeConfigOptions): void
 
 Configures options for asynchronous invocation.
 
-###### `options`<sup>Required</sup> <a name="options" id="cdk-llrt-function.LlrtFunction.configureAsyncInvoke.parameter.options"></a>
+###### `options`<sup>Required</sup> <a name="options" id="cdk-lambda-llrt.LlrtFunction.configureAsyncInvoke.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.aws_lambda.EventInvokeConfigOptions
 
 ---
 
-##### `considerWarningOnInvokeFunctionPermissions` <a name="considerWarningOnInvokeFunctionPermissions" id="cdk-llrt-function.LlrtFunction.considerWarningOnInvokeFunctionPermissions"></a>
+##### `considerWarningOnInvokeFunctionPermissions` <a name="considerWarningOnInvokeFunctionPermissions" id="cdk-lambda-llrt.LlrtFunction.considerWarningOnInvokeFunctionPermissions"></a>
 
 ```typescript
 public considerWarningOnInvokeFunctionPermissions(scope: Construct, action: string): void
@@ -217,19 +217,19 @@ function.currentVersion is invoked before or after the permission is created.
 This applies only to permissions on Lambda functions, not versions or aliases.
 This function is overridden as a noOp for QualifiedFunctionBase.
 
-###### `scope`<sup>Required</sup> <a name="scope" id="cdk-llrt-function.LlrtFunction.considerWarningOnInvokeFunctionPermissions.parameter.scope"></a>
+###### `scope`<sup>Required</sup> <a name="scope" id="cdk-lambda-llrt.LlrtFunction.considerWarningOnInvokeFunctionPermissions.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-###### `action`<sup>Required</sup> <a name="action" id="cdk-llrt-function.LlrtFunction.considerWarningOnInvokeFunctionPermissions.parameter.action"></a>
+###### `action`<sup>Required</sup> <a name="action" id="cdk-lambda-llrt.LlrtFunction.considerWarningOnInvokeFunctionPermissions.parameter.action"></a>
 
 - *Type:* string
 
 ---
 
-##### `grantInvoke` <a name="grantInvoke" id="cdk-llrt-function.LlrtFunction.grantInvoke"></a>
+##### `grantInvoke` <a name="grantInvoke" id="cdk-lambda-llrt.LlrtFunction.grantInvoke"></a>
 
 ```typescript
 public grantInvoke(grantee: IGrantable): Grant
@@ -237,13 +237,13 @@ public grantInvoke(grantee: IGrantable): Grant
 
 Grant the given identity permissions to invoke this Lambda.
 
-###### `grantee`<sup>Required</sup> <a name="grantee" id="cdk-llrt-function.LlrtFunction.grantInvoke.parameter.grantee"></a>
+###### `grantee`<sup>Required</sup> <a name="grantee" id="cdk-lambda-llrt.LlrtFunction.grantInvoke.parameter.grantee"></a>
 
 - *Type:* aws-cdk-lib.aws_iam.IGrantable
 
 ---
 
-##### `grantInvokeUrl` <a name="grantInvokeUrl" id="cdk-llrt-function.LlrtFunction.grantInvokeUrl"></a>
+##### `grantInvokeUrl` <a name="grantInvokeUrl" id="cdk-lambda-llrt.LlrtFunction.grantInvokeUrl"></a>
 
 ```typescript
 public grantInvokeUrl(grantee: IGrantable): Grant
@@ -251,13 +251,13 @@ public grantInvokeUrl(grantee: IGrantable): Grant
 
 Grant the given identity permissions to invoke this Lambda Function URL.
 
-###### `grantee`<sup>Required</sup> <a name="grantee" id="cdk-llrt-function.LlrtFunction.grantInvokeUrl.parameter.grantee"></a>
+###### `grantee`<sup>Required</sup> <a name="grantee" id="cdk-lambda-llrt.LlrtFunction.grantInvokeUrl.parameter.grantee"></a>
 
 - *Type:* aws-cdk-lib.aws_iam.IGrantable
 
 ---
 
-##### `metric` <a name="metric" id="cdk-llrt-function.LlrtFunction.metric"></a>
+##### `metric` <a name="metric" id="cdk-lambda-llrt.LlrtFunction.metric"></a>
 
 ```typescript
 public metric(metricName: string, props?: MetricOptions): Metric
@@ -265,19 +265,19 @@ public metric(metricName: string, props?: MetricOptions): Metric
 
 Return the given named metric for this Function.
 
-###### `metricName`<sup>Required</sup> <a name="metricName" id="cdk-llrt-function.LlrtFunction.metric.parameter.metricName"></a>
+###### `metricName`<sup>Required</sup> <a name="metricName" id="cdk-lambda-llrt.LlrtFunction.metric.parameter.metricName"></a>
 
 - *Type:* string
 
 ---
 
-###### `props`<sup>Optional</sup> <a name="props" id="cdk-llrt-function.LlrtFunction.metric.parameter.props"></a>
+###### `props`<sup>Optional</sup> <a name="props" id="cdk-lambda-llrt.LlrtFunction.metric.parameter.props"></a>
 
 - *Type:* aws-cdk-lib.aws_cloudwatch.MetricOptions
 
 ---
 
-##### `metricDuration` <a name="metricDuration" id="cdk-llrt-function.LlrtFunction.metricDuration"></a>
+##### `metricDuration` <a name="metricDuration" id="cdk-lambda-llrt.LlrtFunction.metricDuration"></a>
 
 ```typescript
 public metricDuration(props?: MetricOptions): Metric
@@ -287,13 +287,13 @@ How long execution of this Lambda takes.
 
 Average over 5 minutes
 
-###### `props`<sup>Optional</sup> <a name="props" id="cdk-llrt-function.LlrtFunction.metricDuration.parameter.props"></a>
+###### `props`<sup>Optional</sup> <a name="props" id="cdk-lambda-llrt.LlrtFunction.metricDuration.parameter.props"></a>
 
 - *Type:* aws-cdk-lib.aws_cloudwatch.MetricOptions
 
 ---
 
-##### `metricErrors` <a name="metricErrors" id="cdk-llrt-function.LlrtFunction.metricErrors"></a>
+##### `metricErrors` <a name="metricErrors" id="cdk-lambda-llrt.LlrtFunction.metricErrors"></a>
 
 ```typescript
 public metricErrors(props?: MetricOptions): Metric
@@ -303,13 +303,13 @@ How many invocations of this Lambda fail.
 
 Sum over 5 minutes
 
-###### `props`<sup>Optional</sup> <a name="props" id="cdk-llrt-function.LlrtFunction.metricErrors.parameter.props"></a>
+###### `props`<sup>Optional</sup> <a name="props" id="cdk-lambda-llrt.LlrtFunction.metricErrors.parameter.props"></a>
 
 - *Type:* aws-cdk-lib.aws_cloudwatch.MetricOptions
 
 ---
 
-##### `metricInvocations` <a name="metricInvocations" id="cdk-llrt-function.LlrtFunction.metricInvocations"></a>
+##### `metricInvocations` <a name="metricInvocations" id="cdk-lambda-llrt.LlrtFunction.metricInvocations"></a>
 
 ```typescript
 public metricInvocations(props?: MetricOptions): Metric
@@ -319,13 +319,13 @@ How often this Lambda is invoked.
 
 Sum over 5 minutes
 
-###### `props`<sup>Optional</sup> <a name="props" id="cdk-llrt-function.LlrtFunction.metricInvocations.parameter.props"></a>
+###### `props`<sup>Optional</sup> <a name="props" id="cdk-lambda-llrt.LlrtFunction.metricInvocations.parameter.props"></a>
 
 - *Type:* aws-cdk-lib.aws_cloudwatch.MetricOptions
 
 ---
 
-##### `metricThrottles` <a name="metricThrottles" id="cdk-llrt-function.LlrtFunction.metricThrottles"></a>
+##### `metricThrottles` <a name="metricThrottles" id="cdk-lambda-llrt.LlrtFunction.metricThrottles"></a>
 
 ```typescript
 public metricThrottles(props?: MetricOptions): Metric
@@ -335,13 +335,13 @@ How often this Lambda is throttled.
 
 Sum over 5 minutes
 
-###### `props`<sup>Optional</sup> <a name="props" id="cdk-llrt-function.LlrtFunction.metricThrottles.parameter.props"></a>
+###### `props`<sup>Optional</sup> <a name="props" id="cdk-lambda-llrt.LlrtFunction.metricThrottles.parameter.props"></a>
 
 - *Type:* aws-cdk-lib.aws_cloudwatch.MetricOptions
 
 ---
 
-##### `addAlias` <a name="addAlias" id="cdk-llrt-function.LlrtFunction.addAlias"></a>
+##### `addAlias` <a name="addAlias" id="cdk-lambda-llrt.LlrtFunction.addAlias"></a>
 
 ```typescript
 public addAlias(aliasName: string, options?: AliasOptions): Alias
@@ -365,7 +365,7 @@ new lambda.Alias(this, 'AliasLive', {
 });
 ```
 
-###### `aliasName`<sup>Required</sup> <a name="aliasName" id="cdk-llrt-function.LlrtFunction.addAlias.parameter.aliasName"></a>
+###### `aliasName`<sup>Required</sup> <a name="aliasName" id="cdk-lambda-llrt.LlrtFunction.addAlias.parameter.aliasName"></a>
 
 - *Type:* string
 
@@ -373,7 +373,7 @@ The name of the alias.
 
 ---
 
-###### `options`<sup>Optional</sup> <a name="options" id="cdk-llrt-function.LlrtFunction.addAlias.parameter.options"></a>
+###### `options`<sup>Optional</sup> <a name="options" id="cdk-lambda-llrt.LlrtFunction.addAlias.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.aws_lambda.AliasOptions
 
@@ -381,7 +381,7 @@ Alias options.
 
 ---
 
-##### `addEnvironment` <a name="addEnvironment" id="cdk-llrt-function.LlrtFunction.addEnvironment"></a>
+##### `addEnvironment` <a name="addEnvironment" id="cdk-lambda-llrt.LlrtFunction.addEnvironment"></a>
 
 ```typescript
 public addEnvironment(key: string, value: string, options?: EnvironmentOptions): Function
@@ -391,7 +391,7 @@ Adds an environment variable to this Lambda function.
 
 If this is a ref to a Lambda function, this operation results in a no-op.
 
-###### `key`<sup>Required</sup> <a name="key" id="cdk-llrt-function.LlrtFunction.addEnvironment.parameter.key"></a>
+###### `key`<sup>Required</sup> <a name="key" id="cdk-lambda-llrt.LlrtFunction.addEnvironment.parameter.key"></a>
 
 - *Type:* string
 
@@ -399,7 +399,7 @@ The environment variable key.
 
 ---
 
-###### `value`<sup>Required</sup> <a name="value" id="cdk-llrt-function.LlrtFunction.addEnvironment.parameter.value"></a>
+###### `value`<sup>Required</sup> <a name="value" id="cdk-lambda-llrt.LlrtFunction.addEnvironment.parameter.value"></a>
 
 - *Type:* string
 
@@ -407,7 +407,7 @@ The environment variable's value.
 
 ---
 
-###### `options`<sup>Optional</sup> <a name="options" id="cdk-llrt-function.LlrtFunction.addEnvironment.parameter.options"></a>
+###### `options`<sup>Optional</sup> <a name="options" id="cdk-lambda-llrt.LlrtFunction.addEnvironment.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.aws_lambda.EnvironmentOptions
 
@@ -415,7 +415,7 @@ Environment variable options.
 
 ---
 
-##### `addLayers` <a name="addLayers" id="cdk-llrt-function.LlrtFunction.addLayers"></a>
+##### `addLayers` <a name="addLayers" id="cdk-lambda-llrt.LlrtFunction.addLayers"></a>
 
 ```typescript
 public addLayers(layers: ILayerVersion): void
@@ -423,7 +423,7 @@ public addLayers(layers: ILayerVersion): void
 
 Adds one or more Lambda Layers to this Lambda function.
 
-###### `layers`<sup>Required</sup> <a name="layers" id="cdk-llrt-function.LlrtFunction.addLayers.parameter.layers"></a>
+###### `layers`<sup>Required</sup> <a name="layers" id="cdk-lambda-llrt.LlrtFunction.addLayers.parameter.layers"></a>
 
 - *Type:* aws-cdk-lib.aws_lambda.ILayerVersion
 
@@ -435,34 +435,34 @@ the layers to be added.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#cdk-llrt-function.LlrtFunction.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
-| <code><a href="#cdk-llrt-function.LlrtFunction.isOwnedResource">isOwnedResource</a></code> | Returns true if the construct was created by CDK, and false otherwise. |
-| <code><a href="#cdk-llrt-function.LlrtFunction.isResource">isResource</a></code> | Check whether the given construct is a Resource. |
-| <code><a href="#cdk-llrt-function.LlrtFunction.classifyVersionProperty">classifyVersionProperty</a></code> | Record whether specific properties in the `AWS::Lambda::Function` resource should also be associated to the Version resource. |
-| <code><a href="#cdk-llrt-function.LlrtFunction.fromFunctionArn">fromFunctionArn</a></code> | Import a lambda function into the CDK using its ARN. |
-| <code><a href="#cdk-llrt-function.LlrtFunction.fromFunctionAttributes">fromFunctionAttributes</a></code> | Creates a Lambda function object which represents a function not defined within this stack. |
-| <code><a href="#cdk-llrt-function.LlrtFunction.fromFunctionName">fromFunctionName</a></code> | Import a lambda function into the CDK using its name. |
-| <code><a href="#cdk-llrt-function.LlrtFunction.metricAll">metricAll</a></code> | Return the given named metric for this Lambda. |
-| <code><a href="#cdk-llrt-function.LlrtFunction.metricAllConcurrentExecutions">metricAllConcurrentExecutions</a></code> | Metric for the number of concurrent executions across all Lambdas. |
-| <code><a href="#cdk-llrt-function.LlrtFunction.metricAllDuration">metricAllDuration</a></code> | Metric for the Duration executing all Lambdas. |
-| <code><a href="#cdk-llrt-function.LlrtFunction.metricAllErrors">metricAllErrors</a></code> | Metric for the number of Errors executing all Lambdas. |
-| <code><a href="#cdk-llrt-function.LlrtFunction.metricAllInvocations">metricAllInvocations</a></code> | Metric for the number of invocations of all Lambdas. |
-| <code><a href="#cdk-llrt-function.LlrtFunction.metricAllThrottles">metricAllThrottles</a></code> | Metric for the number of throttled invocations of all Lambdas. |
-| <code><a href="#cdk-llrt-function.LlrtFunction.metricAllUnreservedConcurrentExecutions">metricAllUnreservedConcurrentExecutions</a></code> | Metric for the number of unreserved concurrent executions across all Lambdas. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.isOwnedResource">isOwnedResource</a></code> | Returns true if the construct was created by CDK, and false otherwise. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.isResource">isResource</a></code> | Check whether the given construct is a Resource. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.classifyVersionProperty">classifyVersionProperty</a></code> | Record whether specific properties in the `AWS::Lambda::Function` resource should also be associated to the Version resource. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.fromFunctionArn">fromFunctionArn</a></code> | Import a lambda function into the CDK using its ARN. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.fromFunctionAttributes">fromFunctionAttributes</a></code> | Creates a Lambda function object which represents a function not defined within this stack. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.fromFunctionName">fromFunctionName</a></code> | Import a lambda function into the CDK using its name. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.metricAll">metricAll</a></code> | Return the given named metric for this Lambda. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.metricAllConcurrentExecutions">metricAllConcurrentExecutions</a></code> | Metric for the number of concurrent executions across all Lambdas. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.metricAllDuration">metricAllDuration</a></code> | Metric for the Duration executing all Lambdas. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.metricAllErrors">metricAllErrors</a></code> | Metric for the number of Errors executing all Lambdas. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.metricAllInvocations">metricAllInvocations</a></code> | Metric for the number of invocations of all Lambdas. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.metricAllThrottles">metricAllThrottles</a></code> | Metric for the number of throttled invocations of all Lambdas. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.metricAllUnreservedConcurrentExecutions">metricAllUnreservedConcurrentExecutions</a></code> | Metric for the number of unreserved concurrent executions across all Lambdas. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="cdk-llrt-function.LlrtFunction.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="cdk-lambda-llrt.LlrtFunction.isConstruct"></a>
 
 ```typescript
-import { LlrtFunction } from 'cdk-llrt-function'
+import { LlrtFunction } from 'cdk-lambda-llrt'
 
 LlrtFunction.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="cdk-llrt-function.LlrtFunction.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="cdk-lambda-llrt.LlrtFunction.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -470,42 +470,42 @@ Any object.
 
 ---
 
-##### `isOwnedResource` <a name="isOwnedResource" id="cdk-llrt-function.LlrtFunction.isOwnedResource"></a>
+##### `isOwnedResource` <a name="isOwnedResource" id="cdk-lambda-llrt.LlrtFunction.isOwnedResource"></a>
 
 ```typescript
-import { LlrtFunction } from 'cdk-llrt-function'
+import { LlrtFunction } from 'cdk-lambda-llrt'
 
 LlrtFunction.isOwnedResource(construct: IConstruct)
 ```
 
 Returns true if the construct was created by CDK, and false otherwise.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="cdk-llrt-function.LlrtFunction.isOwnedResource.parameter.construct"></a>
+###### `construct`<sup>Required</sup> <a name="construct" id="cdk-lambda-llrt.LlrtFunction.isOwnedResource.parameter.construct"></a>
 
 - *Type:* constructs.IConstruct
 
 ---
 
-##### `isResource` <a name="isResource" id="cdk-llrt-function.LlrtFunction.isResource"></a>
+##### `isResource` <a name="isResource" id="cdk-lambda-llrt.LlrtFunction.isResource"></a>
 
 ```typescript
-import { LlrtFunction } from 'cdk-llrt-function'
+import { LlrtFunction } from 'cdk-lambda-llrt'
 
 LlrtFunction.isResource(construct: IConstruct)
 ```
 
 Check whether the given construct is a Resource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="cdk-llrt-function.LlrtFunction.isResource.parameter.construct"></a>
+###### `construct`<sup>Required</sup> <a name="construct" id="cdk-lambda-llrt.LlrtFunction.isResource.parameter.construct"></a>
 
 - *Type:* constructs.IConstruct
 
 ---
 
-##### `classifyVersionProperty` <a name="classifyVersionProperty" id="cdk-llrt-function.LlrtFunction.classifyVersionProperty"></a>
+##### `classifyVersionProperty` <a name="classifyVersionProperty" id="cdk-lambda-llrt.LlrtFunction.classifyVersionProperty"></a>
 
 ```typescript
-import { LlrtFunction } from 'cdk-llrt-function'
+import { LlrtFunction } from 'cdk-lambda-llrt'
 
 LlrtFunction.classifyVersionProperty(propertyName: string, locked: boolean)
 ```
@@ -514,7 +514,7 @@ Record whether specific properties in the `AWS::Lambda::Function` resource shoul
 
 See 'currentVersion' section in the module README for more details.
 
-###### `propertyName`<sup>Required</sup> <a name="propertyName" id="cdk-llrt-function.LlrtFunction.classifyVersionProperty.parameter.propertyName"></a>
+###### `propertyName`<sup>Required</sup> <a name="propertyName" id="cdk-lambda-llrt.LlrtFunction.classifyVersionProperty.parameter.propertyName"></a>
 
 - *Type:* string
 
@@ -522,7 +522,7 @@ The property to classify.
 
 ---
 
-###### `locked`<sup>Required</sup> <a name="locked" id="cdk-llrt-function.LlrtFunction.classifyVersionProperty.parameter.locked"></a>
+###### `locked`<sup>Required</sup> <a name="locked" id="cdk-lambda-llrt.LlrtFunction.classifyVersionProperty.parameter.locked"></a>
 
 - *Type:* boolean
 
@@ -530,45 +530,45 @@ whether the property should be associated to the version or not.
 
 ---
 
-##### `fromFunctionArn` <a name="fromFunctionArn" id="cdk-llrt-function.LlrtFunction.fromFunctionArn"></a>
+##### `fromFunctionArn` <a name="fromFunctionArn" id="cdk-lambda-llrt.LlrtFunction.fromFunctionArn"></a>
 
 ```typescript
-import { LlrtFunction } from 'cdk-llrt-function'
+import { LlrtFunction } from 'cdk-lambda-llrt'
 
 LlrtFunction.fromFunctionArn(scope: Construct, id: string, functionArn: string)
 ```
 
 Import a lambda function into the CDK using its ARN.
 
-###### `scope`<sup>Required</sup> <a name="scope" id="cdk-llrt-function.LlrtFunction.fromFunctionArn.parameter.scope"></a>
+###### `scope`<sup>Required</sup> <a name="scope" id="cdk-lambda-llrt.LlrtFunction.fromFunctionArn.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-###### `id`<sup>Required</sup> <a name="id" id="cdk-llrt-function.LlrtFunction.fromFunctionArn.parameter.id"></a>
+###### `id`<sup>Required</sup> <a name="id" id="cdk-lambda-llrt.LlrtFunction.fromFunctionArn.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-###### `functionArn`<sup>Required</sup> <a name="functionArn" id="cdk-llrt-function.LlrtFunction.fromFunctionArn.parameter.functionArn"></a>
+###### `functionArn`<sup>Required</sup> <a name="functionArn" id="cdk-lambda-llrt.LlrtFunction.fromFunctionArn.parameter.functionArn"></a>
 
 - *Type:* string
 
 ---
 
-##### `fromFunctionAttributes` <a name="fromFunctionAttributes" id="cdk-llrt-function.LlrtFunction.fromFunctionAttributes"></a>
+##### `fromFunctionAttributes` <a name="fromFunctionAttributes" id="cdk-lambda-llrt.LlrtFunction.fromFunctionAttributes"></a>
 
 ```typescript
-import { LlrtFunction } from 'cdk-llrt-function'
+import { LlrtFunction } from 'cdk-lambda-llrt'
 
 LlrtFunction.fromFunctionAttributes(scope: Construct, id: string, attrs: FunctionAttributes)
 ```
 
 Creates a Lambda function object which represents a function not defined within this stack.
 
-###### `scope`<sup>Required</sup> <a name="scope" id="cdk-llrt-function.LlrtFunction.fromFunctionAttributes.parameter.scope"></a>
+###### `scope`<sup>Required</sup> <a name="scope" id="cdk-lambda-llrt.LlrtFunction.fromFunctionAttributes.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
@@ -576,7 +576,7 @@ The parent construct.
 
 ---
 
-###### `id`<sup>Required</sup> <a name="id" id="cdk-llrt-function.LlrtFunction.fromFunctionAttributes.parameter.id"></a>
+###### `id`<sup>Required</sup> <a name="id" id="cdk-lambda-llrt.LlrtFunction.fromFunctionAttributes.parameter.id"></a>
 
 - *Type:* string
 
@@ -584,7 +584,7 @@ The name of the lambda construct.
 
 ---
 
-###### `attrs`<sup>Required</sup> <a name="attrs" id="cdk-llrt-function.LlrtFunction.fromFunctionAttributes.parameter.attrs"></a>
+###### `attrs`<sup>Required</sup> <a name="attrs" id="cdk-lambda-llrt.LlrtFunction.fromFunctionAttributes.parameter.attrs"></a>
 
 - *Type:* aws-cdk-lib.aws_lambda.FunctionAttributes
 
@@ -592,147 +592,147 @@ the attributes of the function to import.
 
 ---
 
-##### `fromFunctionName` <a name="fromFunctionName" id="cdk-llrt-function.LlrtFunction.fromFunctionName"></a>
+##### `fromFunctionName` <a name="fromFunctionName" id="cdk-lambda-llrt.LlrtFunction.fromFunctionName"></a>
 
 ```typescript
-import { LlrtFunction } from 'cdk-llrt-function'
+import { LlrtFunction } from 'cdk-lambda-llrt'
 
 LlrtFunction.fromFunctionName(scope: Construct, id: string, functionName: string)
 ```
 
 Import a lambda function into the CDK using its name.
 
-###### `scope`<sup>Required</sup> <a name="scope" id="cdk-llrt-function.LlrtFunction.fromFunctionName.parameter.scope"></a>
+###### `scope`<sup>Required</sup> <a name="scope" id="cdk-lambda-llrt.LlrtFunction.fromFunctionName.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-###### `id`<sup>Required</sup> <a name="id" id="cdk-llrt-function.LlrtFunction.fromFunctionName.parameter.id"></a>
+###### `id`<sup>Required</sup> <a name="id" id="cdk-lambda-llrt.LlrtFunction.fromFunctionName.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-###### `functionName`<sup>Required</sup> <a name="functionName" id="cdk-llrt-function.LlrtFunction.fromFunctionName.parameter.functionName"></a>
+###### `functionName`<sup>Required</sup> <a name="functionName" id="cdk-lambda-llrt.LlrtFunction.fromFunctionName.parameter.functionName"></a>
 
 - *Type:* string
 
 ---
 
-##### `metricAll` <a name="metricAll" id="cdk-llrt-function.LlrtFunction.metricAll"></a>
+##### `metricAll` <a name="metricAll" id="cdk-lambda-llrt.LlrtFunction.metricAll"></a>
 
 ```typescript
-import { LlrtFunction } from 'cdk-llrt-function'
+import { LlrtFunction } from 'cdk-lambda-llrt'
 
 LlrtFunction.metricAll(metricName: string, props?: MetricOptions)
 ```
 
 Return the given named metric for this Lambda.
 
-###### `metricName`<sup>Required</sup> <a name="metricName" id="cdk-llrt-function.LlrtFunction.metricAll.parameter.metricName"></a>
+###### `metricName`<sup>Required</sup> <a name="metricName" id="cdk-lambda-llrt.LlrtFunction.metricAll.parameter.metricName"></a>
 
 - *Type:* string
 
 ---
 
-###### `props`<sup>Optional</sup> <a name="props" id="cdk-llrt-function.LlrtFunction.metricAll.parameter.props"></a>
+###### `props`<sup>Optional</sup> <a name="props" id="cdk-lambda-llrt.LlrtFunction.metricAll.parameter.props"></a>
 
 - *Type:* aws-cdk-lib.aws_cloudwatch.MetricOptions
 
 ---
 
-##### `metricAllConcurrentExecutions` <a name="metricAllConcurrentExecutions" id="cdk-llrt-function.LlrtFunction.metricAllConcurrentExecutions"></a>
+##### `metricAllConcurrentExecutions` <a name="metricAllConcurrentExecutions" id="cdk-lambda-llrt.LlrtFunction.metricAllConcurrentExecutions"></a>
 
 ```typescript
-import { LlrtFunction } from 'cdk-llrt-function'
+import { LlrtFunction } from 'cdk-lambda-llrt'
 
 LlrtFunction.metricAllConcurrentExecutions(props?: MetricOptions)
 ```
 
 Metric for the number of concurrent executions across all Lambdas.
 
-###### `props`<sup>Optional</sup> <a name="props" id="cdk-llrt-function.LlrtFunction.metricAllConcurrentExecutions.parameter.props"></a>
+###### `props`<sup>Optional</sup> <a name="props" id="cdk-lambda-llrt.LlrtFunction.metricAllConcurrentExecutions.parameter.props"></a>
 
 - *Type:* aws-cdk-lib.aws_cloudwatch.MetricOptions
 
 ---
 
-##### `metricAllDuration` <a name="metricAllDuration" id="cdk-llrt-function.LlrtFunction.metricAllDuration"></a>
+##### `metricAllDuration` <a name="metricAllDuration" id="cdk-lambda-llrt.LlrtFunction.metricAllDuration"></a>
 
 ```typescript
-import { LlrtFunction } from 'cdk-llrt-function'
+import { LlrtFunction } from 'cdk-lambda-llrt'
 
 LlrtFunction.metricAllDuration(props?: MetricOptions)
 ```
 
 Metric for the Duration executing all Lambdas.
 
-###### `props`<sup>Optional</sup> <a name="props" id="cdk-llrt-function.LlrtFunction.metricAllDuration.parameter.props"></a>
+###### `props`<sup>Optional</sup> <a name="props" id="cdk-lambda-llrt.LlrtFunction.metricAllDuration.parameter.props"></a>
 
 - *Type:* aws-cdk-lib.aws_cloudwatch.MetricOptions
 
 ---
 
-##### `metricAllErrors` <a name="metricAllErrors" id="cdk-llrt-function.LlrtFunction.metricAllErrors"></a>
+##### `metricAllErrors` <a name="metricAllErrors" id="cdk-lambda-llrt.LlrtFunction.metricAllErrors"></a>
 
 ```typescript
-import { LlrtFunction } from 'cdk-llrt-function'
+import { LlrtFunction } from 'cdk-lambda-llrt'
 
 LlrtFunction.metricAllErrors(props?: MetricOptions)
 ```
 
 Metric for the number of Errors executing all Lambdas.
 
-###### `props`<sup>Optional</sup> <a name="props" id="cdk-llrt-function.LlrtFunction.metricAllErrors.parameter.props"></a>
+###### `props`<sup>Optional</sup> <a name="props" id="cdk-lambda-llrt.LlrtFunction.metricAllErrors.parameter.props"></a>
 
 - *Type:* aws-cdk-lib.aws_cloudwatch.MetricOptions
 
 ---
 
-##### `metricAllInvocations` <a name="metricAllInvocations" id="cdk-llrt-function.LlrtFunction.metricAllInvocations"></a>
+##### `metricAllInvocations` <a name="metricAllInvocations" id="cdk-lambda-llrt.LlrtFunction.metricAllInvocations"></a>
 
 ```typescript
-import { LlrtFunction } from 'cdk-llrt-function'
+import { LlrtFunction } from 'cdk-lambda-llrt'
 
 LlrtFunction.metricAllInvocations(props?: MetricOptions)
 ```
 
 Metric for the number of invocations of all Lambdas.
 
-###### `props`<sup>Optional</sup> <a name="props" id="cdk-llrt-function.LlrtFunction.metricAllInvocations.parameter.props"></a>
+###### `props`<sup>Optional</sup> <a name="props" id="cdk-lambda-llrt.LlrtFunction.metricAllInvocations.parameter.props"></a>
 
 - *Type:* aws-cdk-lib.aws_cloudwatch.MetricOptions
 
 ---
 
-##### `metricAllThrottles` <a name="metricAllThrottles" id="cdk-llrt-function.LlrtFunction.metricAllThrottles"></a>
+##### `metricAllThrottles` <a name="metricAllThrottles" id="cdk-lambda-llrt.LlrtFunction.metricAllThrottles"></a>
 
 ```typescript
-import { LlrtFunction } from 'cdk-llrt-function'
+import { LlrtFunction } from 'cdk-lambda-llrt'
 
 LlrtFunction.metricAllThrottles(props?: MetricOptions)
 ```
 
 Metric for the number of throttled invocations of all Lambdas.
 
-###### `props`<sup>Optional</sup> <a name="props" id="cdk-llrt-function.LlrtFunction.metricAllThrottles.parameter.props"></a>
+###### `props`<sup>Optional</sup> <a name="props" id="cdk-lambda-llrt.LlrtFunction.metricAllThrottles.parameter.props"></a>
 
 - *Type:* aws-cdk-lib.aws_cloudwatch.MetricOptions
 
 ---
 
-##### `metricAllUnreservedConcurrentExecutions` <a name="metricAllUnreservedConcurrentExecutions" id="cdk-llrt-function.LlrtFunction.metricAllUnreservedConcurrentExecutions"></a>
+##### `metricAllUnreservedConcurrentExecutions` <a name="metricAllUnreservedConcurrentExecutions" id="cdk-lambda-llrt.LlrtFunction.metricAllUnreservedConcurrentExecutions"></a>
 
 ```typescript
-import { LlrtFunction } from 'cdk-llrt-function'
+import { LlrtFunction } from 'cdk-lambda-llrt'
 
 LlrtFunction.metricAllUnreservedConcurrentExecutions(props?: MetricOptions)
 ```
 
 Metric for the number of unreserved concurrent executions across all Lambdas.
 
-###### `props`<sup>Optional</sup> <a name="props" id="cdk-llrt-function.LlrtFunction.metricAllUnreservedConcurrentExecutions.parameter.props"></a>
+###### `props`<sup>Optional</sup> <a name="props" id="cdk-lambda-llrt.LlrtFunction.metricAllUnreservedConcurrentExecutions.parameter.props"></a>
 
 - *Type:* aws-cdk-lib.aws_cloudwatch.MetricOptions
 
@@ -742,29 +742,29 @@ Metric for the number of unreserved concurrent executions across all Lambdas.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#cdk-llrt-function.LlrtFunction.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#cdk-llrt-function.LlrtFunction.property.env">env</a></code> | <code>aws-cdk-lib.ResourceEnvironment</code> | The environment this resource belongs to. |
-| <code><a href="#cdk-llrt-function.LlrtFunction.property.stack">stack</a></code> | <code>aws-cdk-lib.Stack</code> | The stack in which this resource is defined. |
-| <code><a href="#cdk-llrt-function.LlrtFunction.property.architecture">architecture</a></code> | <code>aws-cdk-lib.aws_lambda.Architecture</code> | The architecture of this Lambda Function (this is an optional attribute and defaults to X86_64). |
-| <code><a href="#cdk-llrt-function.LlrtFunction.property.connections">connections</a></code> | <code>aws-cdk-lib.aws_ec2.Connections</code> | Access the Connections object. |
-| <code><a href="#cdk-llrt-function.LlrtFunction.property.functionArn">functionArn</a></code> | <code>string</code> | ARN of this function. |
-| <code><a href="#cdk-llrt-function.LlrtFunction.property.functionName">functionName</a></code> | <code>string</code> | Name of this function. |
-| <code><a href="#cdk-llrt-function.LlrtFunction.property.grantPrincipal">grantPrincipal</a></code> | <code>aws-cdk-lib.aws_iam.IPrincipal</code> | The principal this Lambda Function is running as. |
-| <code><a href="#cdk-llrt-function.LlrtFunction.property.isBoundToVpc">isBoundToVpc</a></code> | <code>boolean</code> | Whether or not this Lambda function was bound to a VPC. |
-| <code><a href="#cdk-llrt-function.LlrtFunction.property.latestVersion">latestVersion</a></code> | <code>aws-cdk-lib.aws_lambda.IVersion</code> | The `$LATEST` version of this function. |
-| <code><a href="#cdk-llrt-function.LlrtFunction.property.permissionsNode">permissionsNode</a></code> | <code>constructs.Node</code> | The construct node where permissions are attached. |
-| <code><a href="#cdk-llrt-function.LlrtFunction.property.resourceArnsForGrantInvoke">resourceArnsForGrantInvoke</a></code> | <code>string[]</code> | The ARN(s) to put into the resource field of the generated IAM policy for grantInvoke(). |
-| <code><a href="#cdk-llrt-function.LlrtFunction.property.role">role</a></code> | <code>aws-cdk-lib.aws_iam.IRole</code> | Execution role associated with this function. |
-| <code><a href="#cdk-llrt-function.LlrtFunction.property.currentVersion">currentVersion</a></code> | <code>aws-cdk-lib.aws_lambda.Version</code> | Returns a `lambda.Version` which represents the current version of this Lambda function. A new version will be created every time the function's configuration changes. |
-| <code><a href="#cdk-llrt-function.LlrtFunction.property.logGroup">logGroup</a></code> | <code>aws-cdk-lib.aws_logs.ILogGroup</code> | The LogGroup where the Lambda function's logs are made available. |
-| <code><a href="#cdk-llrt-function.LlrtFunction.property.runtime">runtime</a></code> | <code>aws-cdk-lib.aws_lambda.Runtime</code> | The runtime configured for this lambda. |
-| <code><a href="#cdk-llrt-function.LlrtFunction.property.deadLetterQueue">deadLetterQueue</a></code> | <code>aws-cdk-lib.aws_sqs.IQueue</code> | The DLQ (as queue) associated with this Lambda Function (this is an optional attribute). |
-| <code><a href="#cdk-llrt-function.LlrtFunction.property.deadLetterTopic">deadLetterTopic</a></code> | <code>aws-cdk-lib.aws_sns.ITopic</code> | The DLQ (as topic) associated with this Lambda Function (this is an optional attribute). |
-| <code><a href="#cdk-llrt-function.LlrtFunction.property.timeout">timeout</a></code> | <code>aws-cdk-lib.Duration</code> | The timeout configured for this lambda. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.property.env">env</a></code> | <code>aws-cdk-lib.ResourceEnvironment</code> | The environment this resource belongs to. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.property.stack">stack</a></code> | <code>aws-cdk-lib.Stack</code> | The stack in which this resource is defined. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.property.architecture">architecture</a></code> | <code>aws-cdk-lib.aws_lambda.Architecture</code> | The architecture of this Lambda Function (this is an optional attribute and defaults to X86_64). |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.property.connections">connections</a></code> | <code>aws-cdk-lib.aws_ec2.Connections</code> | Access the Connections object. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.property.functionArn">functionArn</a></code> | <code>string</code> | ARN of this function. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.property.functionName">functionName</a></code> | <code>string</code> | Name of this function. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.property.grantPrincipal">grantPrincipal</a></code> | <code>aws-cdk-lib.aws_iam.IPrincipal</code> | The principal this Lambda Function is running as. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.property.isBoundToVpc">isBoundToVpc</a></code> | <code>boolean</code> | Whether or not this Lambda function was bound to a VPC. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.property.latestVersion">latestVersion</a></code> | <code>aws-cdk-lib.aws_lambda.IVersion</code> | The `$LATEST` version of this function. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.property.permissionsNode">permissionsNode</a></code> | <code>constructs.Node</code> | The construct node where permissions are attached. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.property.resourceArnsForGrantInvoke">resourceArnsForGrantInvoke</a></code> | <code>string[]</code> | The ARN(s) to put into the resource field of the generated IAM policy for grantInvoke(). |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.property.role">role</a></code> | <code>aws-cdk-lib.aws_iam.IRole</code> | Execution role associated with this function. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.property.currentVersion">currentVersion</a></code> | <code>aws-cdk-lib.aws_lambda.Version</code> | Returns a `lambda.Version` which represents the current version of this Lambda function. A new version will be created every time the function's configuration changes. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.property.logGroup">logGroup</a></code> | <code>aws-cdk-lib.aws_logs.ILogGroup</code> | The LogGroup where the Lambda function's logs are made available. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.property.runtime">runtime</a></code> | <code>aws-cdk-lib.aws_lambda.Runtime</code> | The runtime configured for this lambda. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.property.deadLetterQueue">deadLetterQueue</a></code> | <code>aws-cdk-lib.aws_sqs.IQueue</code> | The DLQ (as queue) associated with this Lambda Function (this is an optional attribute). |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.property.deadLetterTopic">deadLetterTopic</a></code> | <code>aws-cdk-lib.aws_sns.ITopic</code> | The DLQ (as topic) associated with this Lambda Function (this is an optional attribute). |
+| <code><a href="#cdk-lambda-llrt.LlrtFunction.property.timeout">timeout</a></code> | <code>aws-cdk-lib.Duration</code> | The timeout configured for this lambda. |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="cdk-llrt-function.LlrtFunction.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="cdk-lambda-llrt.LlrtFunction.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -776,7 +776,7 @@ The tree node.
 
 ---
 
-##### `env`<sup>Required</sup> <a name="env" id="cdk-llrt-function.LlrtFunction.property.env"></a>
+##### `env`<sup>Required</sup> <a name="env" id="cdk-lambda-llrt.LlrtFunction.property.env"></a>
 
 ```typescript
 public readonly env: ResourceEnvironment;
@@ -795,7 +795,7 @@ that might be different than the stack they were imported into.
 
 ---
 
-##### `stack`<sup>Required</sup> <a name="stack" id="cdk-llrt-function.LlrtFunction.property.stack"></a>
+##### `stack`<sup>Required</sup> <a name="stack" id="cdk-lambda-llrt.LlrtFunction.property.stack"></a>
 
 ```typescript
 public readonly stack: Stack;
@@ -807,7 +807,7 @@ The stack in which this resource is defined.
 
 ---
 
-##### `architecture`<sup>Required</sup> <a name="architecture" id="cdk-llrt-function.LlrtFunction.property.architecture"></a>
+##### `architecture`<sup>Required</sup> <a name="architecture" id="cdk-lambda-llrt.LlrtFunction.property.architecture"></a>
 
 ```typescript
 public readonly architecture: Architecture;
@@ -819,7 +819,7 @@ The architecture of this Lambda Function (this is an optional attribute and defa
 
 ---
 
-##### `connections`<sup>Required</sup> <a name="connections" id="cdk-llrt-function.LlrtFunction.property.connections"></a>
+##### `connections`<sup>Required</sup> <a name="connections" id="cdk-lambda-llrt.LlrtFunction.property.connections"></a>
 
 ```typescript
 public readonly connections: Connections;
@@ -833,7 +833,7 @@ Will fail if not a VPC-enabled Lambda Function
 
 ---
 
-##### `functionArn`<sup>Required</sup> <a name="functionArn" id="cdk-llrt-function.LlrtFunction.property.functionArn"></a>
+##### `functionArn`<sup>Required</sup> <a name="functionArn" id="cdk-lambda-llrt.LlrtFunction.property.functionArn"></a>
 
 ```typescript
 public readonly functionArn: string;
@@ -845,7 +845,7 @@ ARN of this function.
 
 ---
 
-##### `functionName`<sup>Required</sup> <a name="functionName" id="cdk-llrt-function.LlrtFunction.property.functionName"></a>
+##### `functionName`<sup>Required</sup> <a name="functionName" id="cdk-lambda-llrt.LlrtFunction.property.functionName"></a>
 
 ```typescript
 public readonly functionName: string;
@@ -857,7 +857,7 @@ Name of this function.
 
 ---
 
-##### `grantPrincipal`<sup>Required</sup> <a name="grantPrincipal" id="cdk-llrt-function.LlrtFunction.property.grantPrincipal"></a>
+##### `grantPrincipal`<sup>Required</sup> <a name="grantPrincipal" id="cdk-lambda-llrt.LlrtFunction.property.grantPrincipal"></a>
 
 ```typescript
 public readonly grantPrincipal: IPrincipal;
@@ -869,7 +869,7 @@ The principal this Lambda Function is running as.
 
 ---
 
-##### `isBoundToVpc`<sup>Required</sup> <a name="isBoundToVpc" id="cdk-llrt-function.LlrtFunction.property.isBoundToVpc"></a>
+##### `isBoundToVpc`<sup>Required</sup> <a name="isBoundToVpc" id="cdk-lambda-llrt.LlrtFunction.property.isBoundToVpc"></a>
 
 ```typescript
 public readonly isBoundToVpc: boolean;
@@ -883,7 +883,7 @@ If this is is `false`, trying to access the `connections` object will fail.
 
 ---
 
-##### `latestVersion`<sup>Required</sup> <a name="latestVersion" id="cdk-llrt-function.LlrtFunction.property.latestVersion"></a>
+##### `latestVersion`<sup>Required</sup> <a name="latestVersion" id="cdk-lambda-llrt.LlrtFunction.property.latestVersion"></a>
 
 ```typescript
 public readonly latestVersion: IVersion;
@@ -902,7 +902,7 @@ function configuration, use `lambdaFunction.currentVersion` instead.
 
 ---
 
-##### `permissionsNode`<sup>Required</sup> <a name="permissionsNode" id="cdk-llrt-function.LlrtFunction.property.permissionsNode"></a>
+##### `permissionsNode`<sup>Required</sup> <a name="permissionsNode" id="cdk-lambda-llrt.LlrtFunction.property.permissionsNode"></a>
 
 ```typescript
 public readonly permissionsNode: Node;
@@ -914,7 +914,7 @@ The construct node where permissions are attached.
 
 ---
 
-##### `resourceArnsForGrantInvoke`<sup>Required</sup> <a name="resourceArnsForGrantInvoke" id="cdk-llrt-function.LlrtFunction.property.resourceArnsForGrantInvoke"></a>
+##### `resourceArnsForGrantInvoke`<sup>Required</sup> <a name="resourceArnsForGrantInvoke" id="cdk-lambda-llrt.LlrtFunction.property.resourceArnsForGrantInvoke"></a>
 
 ```typescript
 public readonly resourceArnsForGrantInvoke: string[];
@@ -926,7 +926,7 @@ The ARN(s) to put into the resource field of the generated IAM policy for grantI
 
 ---
 
-##### `role`<sup>Optional</sup> <a name="role" id="cdk-llrt-function.LlrtFunction.property.role"></a>
+##### `role`<sup>Optional</sup> <a name="role" id="cdk-lambda-llrt.LlrtFunction.property.role"></a>
 
 ```typescript
 public readonly role: IRole;
@@ -938,7 +938,7 @@ Execution role associated with this function.
 
 ---
 
-##### `currentVersion`<sup>Required</sup> <a name="currentVersion" id="cdk-llrt-function.LlrtFunction.property.currentVersion"></a>
+##### `currentVersion`<sup>Required</sup> <a name="currentVersion" id="cdk-lambda-llrt.LlrtFunction.property.currentVersion"></a>
 
 ```typescript
 public readonly currentVersion: Version;
@@ -953,7 +953,7 @@ prop when initializing the `lambda.Function`.
 
 ---
 
-##### `logGroup`<sup>Required</sup> <a name="logGroup" id="cdk-llrt-function.LlrtFunction.property.logGroup"></a>
+##### `logGroup`<sup>Required</sup> <a name="logGroup" id="cdk-lambda-llrt.LlrtFunction.property.logGroup"></a>
 
 ```typescript
 public readonly logGroup: ILogGroup;
@@ -972,7 +972,7 @@ to never expire even if it was configured with a different value.
 
 ---
 
-##### `runtime`<sup>Required</sup> <a name="runtime" id="cdk-llrt-function.LlrtFunction.property.runtime"></a>
+##### `runtime`<sup>Required</sup> <a name="runtime" id="cdk-lambda-llrt.LlrtFunction.property.runtime"></a>
 
 ```typescript
 public readonly runtime: Runtime;
@@ -984,7 +984,7 @@ The runtime configured for this lambda.
 
 ---
 
-##### `deadLetterQueue`<sup>Optional</sup> <a name="deadLetterQueue" id="cdk-llrt-function.LlrtFunction.property.deadLetterQueue"></a>
+##### `deadLetterQueue`<sup>Optional</sup> <a name="deadLetterQueue" id="cdk-lambda-llrt.LlrtFunction.property.deadLetterQueue"></a>
 
 ```typescript
 public readonly deadLetterQueue: IQueue;
@@ -996,7 +996,7 @@ The DLQ (as queue) associated with this Lambda Function (this is an optional att
 
 ---
 
-##### `deadLetterTopic`<sup>Optional</sup> <a name="deadLetterTopic" id="cdk-llrt-function.LlrtFunction.property.deadLetterTopic"></a>
+##### `deadLetterTopic`<sup>Optional</sup> <a name="deadLetterTopic" id="cdk-lambda-llrt.LlrtFunction.property.deadLetterTopic"></a>
 
 ```typescript
 public readonly deadLetterTopic: ITopic;
@@ -1008,7 +1008,7 @@ The DLQ (as topic) associated with this Lambda Function (this is an optional att
 
 ---
 
-##### `timeout`<sup>Optional</sup> <a name="timeout" id="cdk-llrt-function.LlrtFunction.property.timeout"></a>
+##### `timeout`<sup>Optional</sup> <a name="timeout" id="cdk-lambda-llrt.LlrtFunction.property.timeout"></a>
 
 ```typescript
 public readonly timeout: Duration;
@@ -1023,12 +1023,12 @@ The timeout configured for this lambda.
 
 ## Structs <a name="Structs" id="Structs"></a>
 
-### LlrtFunctionProps <a name="LlrtFunctionProps" id="cdk-llrt-function.LlrtFunctionProps"></a>
+### LlrtFunctionProps <a name="LlrtFunctionProps" id="cdk-lambda-llrt.LlrtFunctionProps"></a>
 
-#### Initializer <a name="Initializer" id="cdk-llrt-function.LlrtFunctionProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="cdk-lambda-llrt.LlrtFunctionProps.Initializer"></a>
 
 ```typescript
-import { LlrtFunctionProps } from 'cdk-llrt-function'
+import { LlrtFunctionProps } from 'cdk-lambda-llrt'
 
 const llrtFunctionProps: LlrtFunctionProps = { ... }
 ```
@@ -1037,53 +1037,53 @@ const llrtFunctionProps: LlrtFunctionProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#cdk-llrt-function.LlrtFunctionProps.property.maxEventAge">maxEventAge</a></code> | <code>aws-cdk-lib.Duration</code> | The maximum age of a request that Lambda sends to a function for processing. |
-| <code><a href="#cdk-llrt-function.LlrtFunctionProps.property.onFailure">onFailure</a></code> | <code>aws-cdk-lib.aws_lambda.IDestination</code> | The destination for failed invocations. |
-| <code><a href="#cdk-llrt-function.LlrtFunctionProps.property.onSuccess">onSuccess</a></code> | <code>aws-cdk-lib.aws_lambda.IDestination</code> | The destination for successful invocations. |
-| <code><a href="#cdk-llrt-function.LlrtFunctionProps.property.retryAttempts">retryAttempts</a></code> | <code>number</code> | The maximum number of times to retry when the function returns an error. |
-| <code><a href="#cdk-llrt-function.LlrtFunctionProps.property.allowAllOutbound">allowAllOutbound</a></code> | <code>boolean</code> | Whether to allow the Lambda to send all network traffic. |
-| <code><a href="#cdk-llrt-function.LlrtFunctionProps.property.allowPublicSubnet">allowPublicSubnet</a></code> | <code>boolean</code> | Lambda Functions in a public subnet can NOT access the internet. |
-| <code><a href="#cdk-llrt-function.LlrtFunctionProps.property.architecture">architecture</a></code> | <code>aws-cdk-lib.aws_lambda.Architecture</code> | The system architectures compatible with this lambda function. |
-| <code><a href="#cdk-llrt-function.LlrtFunctionProps.property.codeSigningConfig">codeSigningConfig</a></code> | <code>aws-cdk-lib.aws_lambda.ICodeSigningConfig</code> | Code signing config associated with this function. |
-| <code><a href="#cdk-llrt-function.LlrtFunctionProps.property.currentVersionOptions">currentVersionOptions</a></code> | <code>aws-cdk-lib.aws_lambda.VersionOptions</code> | Options for the `lambda.Version` resource automatically created by the `fn.currentVersion` method. |
-| <code><a href="#cdk-llrt-function.LlrtFunctionProps.property.deadLetterQueue">deadLetterQueue</a></code> | <code>aws-cdk-lib.aws_sqs.IQueue</code> | The SQS queue to use if DLQ is enabled. |
-| <code><a href="#cdk-llrt-function.LlrtFunctionProps.property.deadLetterQueueEnabled">deadLetterQueueEnabled</a></code> | <code>boolean</code> | Enabled DLQ. |
-| <code><a href="#cdk-llrt-function.LlrtFunctionProps.property.deadLetterTopic">deadLetterTopic</a></code> | <code>aws-cdk-lib.aws_sns.ITopic</code> | The SNS topic to use as a DLQ. |
-| <code><a href="#cdk-llrt-function.LlrtFunctionProps.property.description">description</a></code> | <code>string</code> | A description of the function. |
-| <code><a href="#cdk-llrt-function.LlrtFunctionProps.property.environment">environment</a></code> | <code>{[ key: string ]: string}</code> | Key-value pairs that Lambda caches and makes available for your Lambda functions. |
-| <code><a href="#cdk-llrt-function.LlrtFunctionProps.property.environmentEncryption">environmentEncryption</a></code> | <code>aws-cdk-lib.aws_kms.IKey</code> | The AWS KMS key that's used to encrypt your function's environment variables. |
-| <code><a href="#cdk-llrt-function.LlrtFunctionProps.property.ephemeralStorageSize">ephemeralStorageSize</a></code> | <code>aws-cdk-lib.Size</code> | The size of the function’s /tmp directory in MiB. |
-| <code><a href="#cdk-llrt-function.LlrtFunctionProps.property.events">events</a></code> | <code>aws-cdk-lib.aws_lambda.IEventSource[]</code> | Event sources for this function. |
-| <code><a href="#cdk-llrt-function.LlrtFunctionProps.property.filesystem">filesystem</a></code> | <code>aws-cdk-lib.aws_lambda.FileSystem</code> | The filesystem configuration for the lambda function. |
-| <code><a href="#cdk-llrt-function.LlrtFunctionProps.property.functionName">functionName</a></code> | <code>string</code> | A name for the function. |
-| <code><a href="#cdk-llrt-function.LlrtFunctionProps.property.initialPolicy">initialPolicy</a></code> | <code>aws-cdk-lib.aws_iam.PolicyStatement[]</code> | Initial policy statements to add to the created Lambda Role. |
-| <code><a href="#cdk-llrt-function.LlrtFunctionProps.property.insightsVersion">insightsVersion</a></code> | <code>aws-cdk-lib.aws_lambda.LambdaInsightsVersion</code> | Specify the version of CloudWatch Lambda insights to use for monitoring. |
-| <code><a href="#cdk-llrt-function.LlrtFunctionProps.property.layers">layers</a></code> | <code>aws-cdk-lib.aws_lambda.ILayerVersion[]</code> | A list of layers to add to the function's execution environment. |
-| <code><a href="#cdk-llrt-function.LlrtFunctionProps.property.logRetention">logRetention</a></code> | <code>aws-cdk-lib.aws_logs.RetentionDays</code> | The number of days log events are kept in CloudWatch Logs. |
-| <code><a href="#cdk-llrt-function.LlrtFunctionProps.property.logRetentionRetryOptions">logRetentionRetryOptions</a></code> | <code>aws-cdk-lib.aws_lambda.LogRetentionRetryOptions</code> | When log retention is specified, a custom resource attempts to create the CloudWatch log group. |
-| <code><a href="#cdk-llrt-function.LlrtFunctionProps.property.logRetentionRole">logRetentionRole</a></code> | <code>aws-cdk-lib.aws_iam.IRole</code> | The IAM role for the Lambda function associated with the custom resource that sets the retention policy. |
-| <code><a href="#cdk-llrt-function.LlrtFunctionProps.property.memorySize">memorySize</a></code> | <code>number</code> | The amount of memory, in MB, that is allocated to your Lambda function. |
-| <code><a href="#cdk-llrt-function.LlrtFunctionProps.property.profiling">profiling</a></code> | <code>boolean</code> | Enable profiling. |
-| <code><a href="#cdk-llrt-function.LlrtFunctionProps.property.profilingGroup">profilingGroup</a></code> | <code>aws-cdk-lib.aws_codeguruprofiler.IProfilingGroup</code> | Profiling Group. |
-| <code><a href="#cdk-llrt-function.LlrtFunctionProps.property.reservedConcurrentExecutions">reservedConcurrentExecutions</a></code> | <code>number</code> | The maximum of concurrent executions you want to reserve for the function. |
-| <code><a href="#cdk-llrt-function.LlrtFunctionProps.property.role">role</a></code> | <code>aws-cdk-lib.aws_iam.IRole</code> | Lambda execution role. |
-| <code><a href="#cdk-llrt-function.LlrtFunctionProps.property.securityGroups">securityGroups</a></code> | <code>aws-cdk-lib.aws_ec2.ISecurityGroup[]</code> | The list of security groups to associate with the Lambda's network interfaces. |
-| <code><a href="#cdk-llrt-function.LlrtFunctionProps.property.timeout">timeout</a></code> | <code>aws-cdk-lib.Duration</code> | The function execution time (in seconds) after which Lambda terminates the function. |
-| <code><a href="#cdk-llrt-function.LlrtFunctionProps.property.tracing">tracing</a></code> | <code>aws-cdk-lib.aws_lambda.Tracing</code> | Enable AWS X-Ray Tracing for Lambda Function. |
-| <code><a href="#cdk-llrt-function.LlrtFunctionProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.IVpc</code> | VPC network to place Lambda network interfaces. |
-| <code><a href="#cdk-llrt-function.LlrtFunctionProps.property.vpcSubnets">vpcSubnets</a></code> | <code>aws-cdk-lib.aws_ec2.SubnetSelection</code> | Where to place the network interfaces within the VPC. |
-| <code><a href="#cdk-llrt-function.LlrtFunctionProps.property.awsSdkConnectionReuse">awsSdkConnectionReuse</a></code> | <code>boolean</code> | Whether to automatically reuse TCP connections when working with the AWS SDK for JavaScript. |
-| <code><a href="#cdk-llrt-function.LlrtFunctionProps.property.bundling">bundling</a></code> | <code>aws-cdk-lib.aws_lambda_nodejs.BundlingOptions</code> | Bundling options. |
-| <code><a href="#cdk-llrt-function.LlrtFunctionProps.property.depsLockFilePath">depsLockFilePath</a></code> | <code>string</code> | The path to the dependencies lock file (`yarn.lock` or `package-lock.json`). |
-| <code><a href="#cdk-llrt-function.LlrtFunctionProps.property.entry">entry</a></code> | <code>string</code> | Path to the entry file (JavaScript or TypeScript). |
-| <code><a href="#cdk-llrt-function.LlrtFunctionProps.property.handler">handler</a></code> | <code>string</code> | The name of the exported handler in the entry file. |
-| <code><a href="#cdk-llrt-function.LlrtFunctionProps.property.projectRoot">projectRoot</a></code> | <code>string</code> | The path to the directory containing project config files (`package.json` or `tsconfig.json`). |
-| <code><a href="#cdk-llrt-function.LlrtFunctionProps.property.runtime">runtime</a></code> | <code>aws-cdk-lib.aws_lambda.Runtime</code> | The runtime environment. |
-| <code><a href="#cdk-llrt-function.LlrtFunctionProps.property.llrtVersion">llrtVersion</a></code> | <code>string</code> | The verson of LLRT. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.maxEventAge">maxEventAge</a></code> | <code>aws-cdk-lib.Duration</code> | The maximum age of a request that Lambda sends to a function for processing. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.onFailure">onFailure</a></code> | <code>aws-cdk-lib.aws_lambda.IDestination</code> | The destination for failed invocations. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.onSuccess">onSuccess</a></code> | <code>aws-cdk-lib.aws_lambda.IDestination</code> | The destination for successful invocations. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.retryAttempts">retryAttempts</a></code> | <code>number</code> | The maximum number of times to retry when the function returns an error. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.allowAllOutbound">allowAllOutbound</a></code> | <code>boolean</code> | Whether to allow the Lambda to send all network traffic. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.allowPublicSubnet">allowPublicSubnet</a></code> | <code>boolean</code> | Lambda Functions in a public subnet can NOT access the internet. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.architecture">architecture</a></code> | <code>aws-cdk-lib.aws_lambda.Architecture</code> | The system architectures compatible with this lambda function. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.codeSigningConfig">codeSigningConfig</a></code> | <code>aws-cdk-lib.aws_lambda.ICodeSigningConfig</code> | Code signing config associated with this function. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.currentVersionOptions">currentVersionOptions</a></code> | <code>aws-cdk-lib.aws_lambda.VersionOptions</code> | Options for the `lambda.Version` resource automatically created by the `fn.currentVersion` method. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.deadLetterQueue">deadLetterQueue</a></code> | <code>aws-cdk-lib.aws_sqs.IQueue</code> | The SQS queue to use if DLQ is enabled. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.deadLetterQueueEnabled">deadLetterQueueEnabled</a></code> | <code>boolean</code> | Enabled DLQ. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.deadLetterTopic">deadLetterTopic</a></code> | <code>aws-cdk-lib.aws_sns.ITopic</code> | The SNS topic to use as a DLQ. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.description">description</a></code> | <code>string</code> | A description of the function. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.environment">environment</a></code> | <code>{[ key: string ]: string}</code> | Key-value pairs that Lambda caches and makes available for your Lambda functions. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.environmentEncryption">environmentEncryption</a></code> | <code>aws-cdk-lib.aws_kms.IKey</code> | The AWS KMS key that's used to encrypt your function's environment variables. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.ephemeralStorageSize">ephemeralStorageSize</a></code> | <code>aws-cdk-lib.Size</code> | The size of the function’s /tmp directory in MiB. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.events">events</a></code> | <code>aws-cdk-lib.aws_lambda.IEventSource[]</code> | Event sources for this function. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.filesystem">filesystem</a></code> | <code>aws-cdk-lib.aws_lambda.FileSystem</code> | The filesystem configuration for the lambda function. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.functionName">functionName</a></code> | <code>string</code> | A name for the function. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.initialPolicy">initialPolicy</a></code> | <code>aws-cdk-lib.aws_iam.PolicyStatement[]</code> | Initial policy statements to add to the created Lambda Role. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.insightsVersion">insightsVersion</a></code> | <code>aws-cdk-lib.aws_lambda.LambdaInsightsVersion</code> | Specify the version of CloudWatch Lambda insights to use for monitoring. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.layers">layers</a></code> | <code>aws-cdk-lib.aws_lambda.ILayerVersion[]</code> | A list of layers to add to the function's execution environment. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.logRetention">logRetention</a></code> | <code>aws-cdk-lib.aws_logs.RetentionDays</code> | The number of days log events are kept in CloudWatch Logs. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.logRetentionRetryOptions">logRetentionRetryOptions</a></code> | <code>aws-cdk-lib.aws_lambda.LogRetentionRetryOptions</code> | When log retention is specified, a custom resource attempts to create the CloudWatch log group. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.logRetentionRole">logRetentionRole</a></code> | <code>aws-cdk-lib.aws_iam.IRole</code> | The IAM role for the Lambda function associated with the custom resource that sets the retention policy. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.memorySize">memorySize</a></code> | <code>number</code> | The amount of memory, in MB, that is allocated to your Lambda function. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.profiling">profiling</a></code> | <code>boolean</code> | Enable profiling. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.profilingGroup">profilingGroup</a></code> | <code>aws-cdk-lib.aws_codeguruprofiler.IProfilingGroup</code> | Profiling Group. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.reservedConcurrentExecutions">reservedConcurrentExecutions</a></code> | <code>number</code> | The maximum of concurrent executions you want to reserve for the function. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.role">role</a></code> | <code>aws-cdk-lib.aws_iam.IRole</code> | Lambda execution role. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.securityGroups">securityGroups</a></code> | <code>aws-cdk-lib.aws_ec2.ISecurityGroup[]</code> | The list of security groups to associate with the Lambda's network interfaces. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.timeout">timeout</a></code> | <code>aws-cdk-lib.Duration</code> | The function execution time (in seconds) after which Lambda terminates the function. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.tracing">tracing</a></code> | <code>aws-cdk-lib.aws_lambda.Tracing</code> | Enable AWS X-Ray Tracing for Lambda Function. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.IVpc</code> | VPC network to place Lambda network interfaces. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.vpcSubnets">vpcSubnets</a></code> | <code>aws-cdk-lib.aws_ec2.SubnetSelection</code> | Where to place the network interfaces within the VPC. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.awsSdkConnectionReuse">awsSdkConnectionReuse</a></code> | <code>boolean</code> | Whether to automatically reuse TCP connections when working with the AWS SDK for JavaScript. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.bundling">bundling</a></code> | <code>aws-cdk-lib.aws_lambda_nodejs.BundlingOptions</code> | Bundling options. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.depsLockFilePath">depsLockFilePath</a></code> | <code>string</code> | The path to the dependencies lock file (`yarn.lock` or `package-lock.json`). |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.entry">entry</a></code> | <code>string</code> | Path to the entry file (JavaScript or TypeScript). |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.handler">handler</a></code> | <code>string</code> | The name of the exported handler in the entry file. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.projectRoot">projectRoot</a></code> | <code>string</code> | The path to the directory containing project config files (`package.json` or `tsconfig.json`). |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.runtime">runtime</a></code> | <code>aws-cdk-lib.aws_lambda.Runtime</code> | The runtime environment. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.llrtVersion">llrtVersion</a></code> | <code>string</code> | The verson of LLRT. |
 
 ---
 
-##### `maxEventAge`<sup>Optional</sup> <a name="maxEventAge" id="cdk-llrt-function.LlrtFunctionProps.property.maxEventAge"></a>
+##### `maxEventAge`<sup>Optional</sup> <a name="maxEventAge" id="cdk-lambda-llrt.LlrtFunctionProps.property.maxEventAge"></a>
 
 ```typescript
 public readonly maxEventAge: Duration;
@@ -1099,7 +1099,7 @@ Maximum: 6 hours
 
 ---
 
-##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-llrt-function.LlrtFunctionProps.property.onFailure"></a>
+##### `onFailure`<sup>Optional</sup> <a name="onFailure" id="cdk-lambda-llrt.LlrtFunctionProps.property.onFailure"></a>
 
 ```typescript
 public readonly onFailure: IDestination;
@@ -1112,7 +1112,7 @@ The destination for failed invocations.
 
 ---
 
-##### `onSuccess`<sup>Optional</sup> <a name="onSuccess" id="cdk-llrt-function.LlrtFunctionProps.property.onSuccess"></a>
+##### `onSuccess`<sup>Optional</sup> <a name="onSuccess" id="cdk-lambda-llrt.LlrtFunctionProps.property.onSuccess"></a>
 
 ```typescript
 public readonly onSuccess: IDestination;
@@ -1125,7 +1125,7 @@ The destination for successful invocations.
 
 ---
 
-##### `retryAttempts`<sup>Optional</sup> <a name="retryAttempts" id="cdk-llrt-function.LlrtFunctionProps.property.retryAttempts"></a>
+##### `retryAttempts`<sup>Optional</sup> <a name="retryAttempts" id="cdk-lambda-llrt.LlrtFunctionProps.property.retryAttempts"></a>
 
 ```typescript
 public readonly retryAttempts: number;
@@ -1141,7 +1141,7 @@ Maximum: 2
 
 ---
 
-##### `allowAllOutbound`<sup>Optional</sup> <a name="allowAllOutbound" id="cdk-llrt-function.LlrtFunctionProps.property.allowAllOutbound"></a>
+##### `allowAllOutbound`<sup>Optional</sup> <a name="allowAllOutbound" id="cdk-lambda-llrt.LlrtFunctionProps.property.allowAllOutbound"></a>
 
 ```typescript
 public readonly allowAllOutbound: boolean;
@@ -1157,7 +1157,7 @@ Lambda to connect to network targets.
 
 ---
 
-##### `allowPublicSubnet`<sup>Optional</sup> <a name="allowPublicSubnet" id="cdk-llrt-function.LlrtFunctionProps.property.allowPublicSubnet"></a>
+##### `allowPublicSubnet`<sup>Optional</sup> <a name="allowPublicSubnet" id="cdk-lambda-llrt.LlrtFunctionProps.property.allowPublicSubnet"></a>
 
 ```typescript
 public readonly allowPublicSubnet: boolean;
@@ -1174,7 +1174,7 @@ Use this property to acknowledge this limitation and still place the function in
 
 ---
 
-##### `architecture`<sup>Optional</sup> <a name="architecture" id="cdk-llrt-function.LlrtFunctionProps.property.architecture"></a>
+##### `architecture`<sup>Optional</sup> <a name="architecture" id="cdk-lambda-llrt.LlrtFunctionProps.property.architecture"></a>
 
 ```typescript
 public readonly architecture: Architecture;
@@ -1187,7 +1187,7 @@ The system architectures compatible with this lambda function.
 
 ---
 
-##### `codeSigningConfig`<sup>Optional</sup> <a name="codeSigningConfig" id="cdk-llrt-function.LlrtFunctionProps.property.codeSigningConfig"></a>
+##### `codeSigningConfig`<sup>Optional</sup> <a name="codeSigningConfig" id="cdk-lambda-llrt.LlrtFunctionProps.property.codeSigningConfig"></a>
 
 ```typescript
 public readonly codeSigningConfig: ICodeSigningConfig;
@@ -1200,7 +1200,7 @@ Code signing config associated with this function.
 
 ---
 
-##### `currentVersionOptions`<sup>Optional</sup> <a name="currentVersionOptions" id="cdk-llrt-function.LlrtFunctionProps.property.currentVersionOptions"></a>
+##### `currentVersionOptions`<sup>Optional</sup> <a name="currentVersionOptions" id="cdk-lambda-llrt.LlrtFunctionProps.property.currentVersionOptions"></a>
 
 ```typescript
 public readonly currentVersionOptions: VersionOptions;
@@ -1213,7 +1213,7 @@ Options for the `lambda.Version` resource automatically created by the `fn.curre
 
 ---
 
-##### `deadLetterQueue`<sup>Optional</sup> <a name="deadLetterQueue" id="cdk-llrt-function.LlrtFunctionProps.property.deadLetterQueue"></a>
+##### `deadLetterQueue`<sup>Optional</sup> <a name="deadLetterQueue" id="cdk-lambda-llrt.LlrtFunctionProps.property.deadLetterQueue"></a>
 
 ```typescript
 public readonly deadLetterQueue: IQueue;
@@ -1228,7 +1228,7 @@ If SNS topic is desired, specify `deadLetterTopic` property instead.
 
 ---
 
-##### `deadLetterQueueEnabled`<sup>Optional</sup> <a name="deadLetterQueueEnabled" id="cdk-llrt-function.LlrtFunctionProps.property.deadLetterQueueEnabled"></a>
+##### `deadLetterQueueEnabled`<sup>Optional</sup> <a name="deadLetterQueueEnabled" id="cdk-lambda-llrt.LlrtFunctionProps.property.deadLetterQueueEnabled"></a>
 
 ```typescript
 public readonly deadLetterQueueEnabled: boolean;
@@ -1244,7 +1244,7 @@ an SQS queue with default options will be defined for your Function.
 
 ---
 
-##### `deadLetterTopic`<sup>Optional</sup> <a name="deadLetterTopic" id="cdk-llrt-function.LlrtFunctionProps.property.deadLetterTopic"></a>
+##### `deadLetterTopic`<sup>Optional</sup> <a name="deadLetterTopic" id="cdk-lambda-llrt.LlrtFunctionProps.property.deadLetterTopic"></a>
 
 ```typescript
 public readonly deadLetterTopic: ITopic;
@@ -1260,7 +1260,7 @@ rather than an SNS topic. Using an SNS topic as a DLQ requires this property to 
 
 ---
 
-##### `description`<sup>Optional</sup> <a name="description" id="cdk-llrt-function.LlrtFunctionProps.property.description"></a>
+##### `description`<sup>Optional</sup> <a name="description" id="cdk-lambda-llrt.LlrtFunctionProps.property.description"></a>
 
 ```typescript
 public readonly description: string;
@@ -1273,7 +1273,7 @@ A description of the function.
 
 ---
 
-##### `environment`<sup>Optional</sup> <a name="environment" id="cdk-llrt-function.LlrtFunctionProps.property.environment"></a>
+##### `environment`<sup>Optional</sup> <a name="environment" id="cdk-lambda-llrt.LlrtFunctionProps.property.environment"></a>
 
 ```typescript
 public readonly environment: {[ key: string ]: string};
@@ -1290,7 +1290,7 @@ Lambda function source code.
 
 ---
 
-##### `environmentEncryption`<sup>Optional</sup> <a name="environmentEncryption" id="cdk-llrt-function.LlrtFunctionProps.property.environmentEncryption"></a>
+##### `environmentEncryption`<sup>Optional</sup> <a name="environmentEncryption" id="cdk-lambda-llrt.LlrtFunctionProps.property.environmentEncryption"></a>
 
 ```typescript
 public readonly environmentEncryption: IKey;
@@ -1303,7 +1303,7 @@ The AWS KMS key that's used to encrypt your function's environment variables.
 
 ---
 
-##### `ephemeralStorageSize`<sup>Optional</sup> <a name="ephemeralStorageSize" id="cdk-llrt-function.LlrtFunctionProps.property.ephemeralStorageSize"></a>
+##### `ephemeralStorageSize`<sup>Optional</sup> <a name="ephemeralStorageSize" id="cdk-lambda-llrt.LlrtFunctionProps.property.ephemeralStorageSize"></a>
 
 ```typescript
 public readonly ephemeralStorageSize: Size;
@@ -1316,7 +1316,7 @@ The size of the function’s /tmp directory in MiB.
 
 ---
 
-##### `events`<sup>Optional</sup> <a name="events" id="cdk-llrt-function.LlrtFunctionProps.property.events"></a>
+##### `events`<sup>Optional</sup> <a name="events" id="cdk-lambda-llrt.LlrtFunctionProps.property.events"></a>
 
 ```typescript
 public readonly events: IEventSource[];
@@ -1331,7 +1331,7 @@ You can also add event sources using `addEventSource`.
 
 ---
 
-##### `filesystem`<sup>Optional</sup> <a name="filesystem" id="cdk-llrt-function.LlrtFunctionProps.property.filesystem"></a>
+##### `filesystem`<sup>Optional</sup> <a name="filesystem" id="cdk-lambda-llrt.LlrtFunctionProps.property.filesystem"></a>
 
 ```typescript
 public readonly filesystem: FileSystem;
@@ -1344,7 +1344,7 @@ The filesystem configuration for the lambda function.
 
 ---
 
-##### `functionName`<sup>Optional</sup> <a name="functionName" id="cdk-llrt-function.LlrtFunctionProps.property.functionName"></a>
+##### `functionName`<sup>Optional</sup> <a name="functionName" id="cdk-lambda-llrt.LlrtFunctionProps.property.functionName"></a>
 
 ```typescript
 public readonly functionName: string;
@@ -1357,7 +1357,7 @@ A name for the function.
 
 ---
 
-##### `initialPolicy`<sup>Optional</sup> <a name="initialPolicy" id="cdk-llrt-function.LlrtFunctionProps.property.initialPolicy"></a>
+##### `initialPolicy`<sup>Optional</sup> <a name="initialPolicy" id="cdk-lambda-llrt.LlrtFunctionProps.property.initialPolicy"></a>
 
 ```typescript
 public readonly initialPolicy: PolicyStatement[];
@@ -1372,7 +1372,7 @@ You can call `addToRolePolicy` to the created lambda to add statements post crea
 
 ---
 
-##### `insightsVersion`<sup>Optional</sup> <a name="insightsVersion" id="cdk-llrt-function.LlrtFunctionProps.property.insightsVersion"></a>
+##### `insightsVersion`<sup>Optional</sup> <a name="insightsVersion" id="cdk-lambda-llrt.LlrtFunctionProps.property.insightsVersion"></a>
 
 ```typescript
 public readonly insightsVersion: LambdaInsightsVersion;
@@ -1387,7 +1387,7 @@ Specify the version of CloudWatch Lambda insights to use for monitoring.
 
 ---
 
-##### `layers`<sup>Optional</sup> <a name="layers" id="cdk-llrt-function.LlrtFunctionProps.property.layers"></a>
+##### `layers`<sup>Optional</sup> <a name="layers" id="cdk-lambda-llrt.LlrtFunctionProps.property.layers"></a>
 
 ```typescript
 public readonly layers: ILayerVersion[];
@@ -1404,7 +1404,7 @@ that can be used by multiple functions.
 
 ---
 
-##### `logRetention`<sup>Optional</sup> <a name="logRetention" id="cdk-llrt-function.LlrtFunctionProps.property.logRetention"></a>
+##### `logRetention`<sup>Optional</sup> <a name="logRetention" id="cdk-lambda-llrt.LlrtFunctionProps.property.logRetention"></a>
 
 ```typescript
 public readonly logRetention: RetentionDays;
@@ -1421,7 +1421,7 @@ remove the retention policy, set the value to `INFINITE`.
 
 ---
 
-##### `logRetentionRetryOptions`<sup>Optional</sup> <a name="logRetentionRetryOptions" id="cdk-llrt-function.LlrtFunctionProps.property.logRetentionRetryOptions"></a>
+##### `logRetentionRetryOptions`<sup>Optional</sup> <a name="logRetentionRetryOptions" id="cdk-lambda-llrt.LlrtFunctionProps.property.logRetentionRetryOptions"></a>
 
 ```typescript
 public readonly logRetentionRetryOptions: LogRetentionRetryOptions;
@@ -1436,7 +1436,7 @@ These options control the retry policy when interacting with CloudWatch APIs.
 
 ---
 
-##### `logRetentionRole`<sup>Optional</sup> <a name="logRetentionRole" id="cdk-llrt-function.LlrtFunctionProps.property.logRetentionRole"></a>
+##### `logRetentionRole`<sup>Optional</sup> <a name="logRetentionRole" id="cdk-lambda-llrt.LlrtFunctionProps.property.logRetentionRole"></a>
 
 ```typescript
 public readonly logRetentionRole: IRole;
@@ -1449,7 +1449,7 @@ The IAM role for the Lambda function associated with the custom resource that se
 
 ---
 
-##### `memorySize`<sup>Optional</sup> <a name="memorySize" id="cdk-llrt-function.LlrtFunctionProps.property.memorySize"></a>
+##### `memorySize`<sup>Optional</sup> <a name="memorySize" id="cdk-lambda-llrt.LlrtFunctionProps.property.memorySize"></a>
 
 ```typescript
 public readonly memorySize: number;
@@ -1466,7 +1466,7 @@ Developer Guide.
 
 ---
 
-##### `profiling`<sup>Optional</sup> <a name="profiling" id="cdk-llrt-function.LlrtFunctionProps.property.profiling"></a>
+##### `profiling`<sup>Optional</sup> <a name="profiling" id="cdk-lambda-llrt.LlrtFunctionProps.property.profiling"></a>
 
 ```typescript
 public readonly profiling: boolean;
@@ -1481,7 +1481,7 @@ Enable profiling.
 
 ---
 
-##### `profilingGroup`<sup>Optional</sup> <a name="profilingGroup" id="cdk-llrt-function.LlrtFunctionProps.property.profilingGroup"></a>
+##### `profilingGroup`<sup>Optional</sup> <a name="profilingGroup" id="cdk-lambda-llrt.LlrtFunctionProps.property.profilingGroup"></a>
 
 ```typescript
 public readonly profilingGroup: IProfilingGroup;
@@ -1496,7 +1496,7 @@ Profiling Group.
 
 ---
 
-##### `reservedConcurrentExecutions`<sup>Optional</sup> <a name="reservedConcurrentExecutions" id="cdk-llrt-function.LlrtFunctionProps.property.reservedConcurrentExecutions"></a>
+##### `reservedConcurrentExecutions`<sup>Optional</sup> <a name="reservedConcurrentExecutions" id="cdk-lambda-llrt.LlrtFunctionProps.property.reservedConcurrentExecutions"></a>
 
 ```typescript
 public readonly reservedConcurrentExecutions: number;
@@ -1511,7 +1511,7 @@ The maximum of concurrent executions you want to reserve for the function.
 
 ---
 
-##### `role`<sup>Optional</sup> <a name="role" id="cdk-llrt-function.LlrtFunctionProps.property.role"></a>
+##### `role`<sup>Optional</sup> <a name="role" id="cdk-lambda-llrt.LlrtFunctionProps.property.role"></a>
 
 ```typescript
 public readonly role: IRole;
@@ -1534,7 +1534,7 @@ The relevant managed policies are "service-role/AWSLambdaBasicExecutionRole" and
 
 ---
 
-##### `securityGroups`<sup>Optional</sup> <a name="securityGroups" id="cdk-llrt-function.LlrtFunctionProps.property.securityGroups"></a>
+##### `securityGroups`<sup>Optional</sup> <a name="securityGroups" id="cdk-lambda-llrt.LlrtFunctionProps.property.securityGroups"></a>
 
 ```typescript
 public readonly securityGroups: ISecurityGroup[];
@@ -1549,7 +1549,7 @@ Only used if 'vpc' is supplied.
 
 ---
 
-##### `timeout`<sup>Optional</sup> <a name="timeout" id="cdk-llrt-function.LlrtFunctionProps.property.timeout"></a>
+##### `timeout`<sup>Optional</sup> <a name="timeout" id="cdk-lambda-llrt.LlrtFunctionProps.property.timeout"></a>
 
 ```typescript
 public readonly timeout: Duration;
@@ -1565,7 +1565,7 @@ based on the function's expected execution time.
 
 ---
 
-##### `tracing`<sup>Optional</sup> <a name="tracing" id="cdk-llrt-function.LlrtFunctionProps.property.tracing"></a>
+##### `tracing`<sup>Optional</sup> <a name="tracing" id="cdk-lambda-llrt.LlrtFunctionProps.property.tracing"></a>
 
 ```typescript
 public readonly tracing: Tracing;
@@ -1578,7 +1578,7 @@ Enable AWS X-Ray Tracing for Lambda Function.
 
 ---
 
-##### `vpc`<sup>Optional</sup> <a name="vpc" id="cdk-llrt-function.LlrtFunctionProps.property.vpc"></a>
+##### `vpc`<sup>Optional</sup> <a name="vpc" id="cdk-lambda-llrt.LlrtFunctionProps.property.vpc"></a>
 
 ```typescript
 public readonly vpc: IVpc;
@@ -1594,7 +1594,7 @@ This is required when `vpcSubnets` is specified.
 
 ---
 
-##### `vpcSubnets`<sup>Optional</sup> <a name="vpcSubnets" id="cdk-llrt-function.LlrtFunctionProps.property.vpcSubnets"></a>
+##### `vpcSubnets`<sup>Optional</sup> <a name="vpcSubnets" id="cdk-lambda-llrt.LlrtFunctionProps.property.vpcSubnets"></a>
 
 ```typescript
 public readonly vpcSubnets: SubnetSelection;
@@ -1613,7 +1613,7 @@ public subnets is not allowed (unless `allowPublicSubnet` is set to `true`).
 
 ---
 
-##### `awsSdkConnectionReuse`<sup>Optional</sup> <a name="awsSdkConnectionReuse" id="cdk-llrt-function.LlrtFunctionProps.property.awsSdkConnectionReuse"></a>
+##### `awsSdkConnectionReuse`<sup>Optional</sup> <a name="awsSdkConnectionReuse" id="cdk-lambda-llrt.LlrtFunctionProps.property.awsSdkConnectionReuse"></a>
 
 ```typescript
 public readonly awsSdkConnectionReuse: boolean;
@@ -1631,7 +1631,7 @@ to `1`.
 
 ---
 
-##### `bundling`<sup>Optional</sup> <a name="bundling" id="cdk-llrt-function.LlrtFunctionProps.property.bundling"></a>
+##### `bundling`<sup>Optional</sup> <a name="bundling" id="cdk-lambda-llrt.LlrtFunctionProps.property.bundling"></a>
 
 ```typescript
 public readonly bundling: BundlingOptions;
@@ -1644,7 +1644,7 @@ Bundling options.
 
 ---
 
-##### `depsLockFilePath`<sup>Optional</sup> <a name="depsLockFilePath" id="cdk-llrt-function.LlrtFunctionProps.property.depsLockFilePath"></a>
+##### `depsLockFilePath`<sup>Optional</sup> <a name="depsLockFilePath" id="cdk-lambda-llrt.LlrtFunctionProps.property.depsLockFilePath"></a>
 
 ```typescript
 public readonly depsLockFilePath: string;
@@ -1663,7 +1663,7 @@ installer (`npm` or `yarn`) along with this lock file.
 
 ---
 
-##### `entry`<sup>Optional</sup> <a name="entry" id="cdk-llrt-function.LlrtFunctionProps.property.entry"></a>
+##### `entry`<sup>Optional</sup> <a name="entry" id="cdk-lambda-llrt.LlrtFunctionProps.property.entry"></a>
 
 ```typescript
 public readonly entry: string;
@@ -1676,7 +1676,7 @@ Path to the entry file (JavaScript or TypeScript).
 
 ---
 
-##### `handler`<sup>Optional</sup> <a name="handler" id="cdk-llrt-function.LlrtFunctionProps.property.handler"></a>
+##### `handler`<sup>Optional</sup> <a name="handler" id="cdk-lambda-llrt.LlrtFunctionProps.property.handler"></a>
 
 ```typescript
 public readonly handler: string;
@@ -1689,7 +1689,7 @@ The name of the exported handler in the entry file.
 
 ---
 
-##### `projectRoot`<sup>Optional</sup> <a name="projectRoot" id="cdk-llrt-function.LlrtFunctionProps.property.projectRoot"></a>
+##### `projectRoot`<sup>Optional</sup> <a name="projectRoot" id="cdk-lambda-llrt.LlrtFunctionProps.property.projectRoot"></a>
 
 ```typescript
 public readonly projectRoot: string;
@@ -1702,7 +1702,7 @@ The path to the directory containing project config files (`package.json` or `ts
 
 ---
 
-##### `runtime`<sup>Optional</sup> <a name="runtime" id="cdk-llrt-function.LlrtFunctionProps.property.runtime"></a>
+##### `runtime`<sup>Optional</sup> <a name="runtime" id="cdk-lambda-llrt.LlrtFunctionProps.property.runtime"></a>
 
 ```typescript
 public readonly runtime: Runtime;
@@ -1718,7 +1718,7 @@ supported.
 
 ---
 
-##### `llrtVersion`<sup>Optional</sup> <a name="llrtVersion" id="cdk-llrt-function.LlrtFunctionProps.property.llrtVersion"></a>
+##### `llrtVersion`<sup>Optional</sup> <a name="llrtVersion" id="cdk-lambda-llrt.LlrtFunctionProps.property.llrtVersion"></a>
 
 ```typescript
 public readonly llrtVersion: string;

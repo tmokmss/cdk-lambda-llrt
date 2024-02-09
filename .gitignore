@@ -33,6 +33,7 @@ jspm_packages/
 *.js
 *.d.ts
 !test/.*.snapshot/**/*
+.tmp
 /test-reports/
 junit.xml
 /coverage/
