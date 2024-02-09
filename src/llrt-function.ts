@@ -70,6 +70,6 @@ export class LlrtFunction extends NodejsFunction {
       },
     });
 
-    (this.node.defaultChild as CfnResource).addPropertyOverride('Runtime', 'provided.al2');
+    (this.node.defaultChild as CfnResource).addPropertyOverride('Runtime', 'provided.al2023');
   }
 }

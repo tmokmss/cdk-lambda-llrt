@@ -105,7 +105,7 @@
      }
     },
     "Handler": "index.handler",
-    "Runtime": "provided.al2"
+    "Runtime": "provided.al2023"
    },
    "DependsOn": [
     "HandlerServiceRoleDefaultPolicyCBD0CC91",
