@@ -9,7 +9,7 @@ Install it via npm:
 npm install cdk-lambda-llrt
 ```
 
-Then you can just specify an entry point for the function.
+Then you can use `LlrtFunction` construct. Just set an entry point for the function.
 
 ```ts
 import { LlrtFunction } from 'cdk-lambda-llrt';
@@ -25,3 +25,6 @@ If you are already using `NodejsFunction` construct, you should be able to just 
 > LLRT is currently experimental and not fully compatible with Node.js. You should expect some trial and errors to use LLRT with your existing code.
 
 If you want to upgrade the LLRT version, remove the `.tmp` directory, which contains the cache of LLRT binary fetched from GitHub (only applicable when you set `llrtVersion` to `latest` (default)).
+
+## Examples
+See [example](./example/README.md) for examples to use `LlrtFunction` construct.
