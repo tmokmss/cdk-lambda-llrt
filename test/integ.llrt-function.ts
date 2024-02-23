@@ -11,7 +11,8 @@ class TestStack extends Stack {
     super(scope, id, props);
 
     const handler = new LlrtFunction(this, 'Handler', {
-      entry: '../example/lambda/index.ts',
+      entry: '../example/lambda/s3.ts',
+      llrtVersion: 'v0.1.9-beta',
     });
     handler.addToRolePolicy(
       new PolicyStatement({

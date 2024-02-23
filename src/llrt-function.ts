@@ -21,6 +21,7 @@ export class LlrtFunction extends NodejsFunction {
         ? `https://github.com/awslabs/llrt/releases/latest/download/llrt-lambda-${arch}.zip`
         : `https://github.com/awslabs/llrt/releases/download/${version}/llrt-lambda-${arch}.zip`;
 
+    const cacheDir = `.tmp/llrt/${version}/${arch}`;
     super(scope, id, {
       ...props,
       bundling: {
@@ -31,14 +32,14 @@ export class LlrtFunction extends NodejsFunction {
           beforeBundling: (_i, _o) => [],
           afterBundling: (i, o) => [
             // Download llrt binary from GitHub release and cache it
-            `if [ ! -e ${i}/.tmp/${arch}/bootstrap ]; then
-              mkdir -p ${i}/.tmp/${arch}
-              cd ${i}/.tmp/${arch}
+            `if [ ! -e ${i}/${cacheDir}/bootstrap ]; then
+              mkdir -p ${i}/${cacheDir}
+              cd ${i}/${cacheDir}
               curl -L -o llrt_temp.zip ${binaryUrl}
               unzip llrt_temp.zip
               rm -rf llrt_temp.zip
              fi`,
-            `cp ${i}/.tmp/${arch}/bootstrap ${o}/`,
+            `cp ${i}/${cacheDir}/bootstrap ${o}/`,
           ],
           beforeInstall: (_i, _o) => [],
         },

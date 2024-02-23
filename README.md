@@ -23,3 +23,5 @@ If you are already using `NodejsFunction` construct, you should be able to just 
 
 > [!WARNING]
 > LLRT is currently experimental and not fully compatible with Node.js. You should expect some trial and errors to use LLRT with your existing code.
+
+If you want to upgrade the LLRT version, remove the `.tmp` directory, which contains the cache of LLRT binary fetched from GitHub (only applicable when you set `llrtVersion` to `latest` (default)).
