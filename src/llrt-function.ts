@@ -23,6 +23,7 @@ export class LlrtFunction extends NodejsFunction {
 
     const cacheDir = `.tmp/llrt/${version}/${arch}`;
     super(scope, id, {
+      awsSdkConnectionReuse: false,
       ...props,
       bundling: {
         target: 'es2020',
