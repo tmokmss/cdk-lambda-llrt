@@ -26,5 +26,20 @@ If you are already using `NodejsFunction` construct, you should be able to just 
 
 If you want to upgrade the LLRT version, remove the `.tmp` directory, which contains the cache of LLRT binary fetched from GitHub (only applicable when you set `llrtVersion` to `latest` (default)).
 
+### Setting platform=browser
+
+In some cases, it can make your code run on LLRT by setting platform of the bundled code to `browser`. You can configure it by the following code:
+
+```ts
+import { LlrtFunction } from 'cdk-lambda-llrt';
+
+const handler = new LlrtFunction(this, 'Handler', {
+    entry: 'lambda/index.ts',
+    bundling: {
+        esbuildArgs: { '--platform': 'browser' },
+    }
+});
+```
+
 ## Examples
 See [example](./example/README.md) for examples to use `LlrtFunction` construct.
