@@ -19,7 +19,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
     compilerOptions: {},
     exclude: ['example', 'test/.*.snapshot'],
   },
-  devDeps: ['@aws-cdk/integ-runner@2.38.0', '@aws-cdk/integ-tests-alpha@2.38.0-alpha.0'],
+  devDeps: ['@aws-cdk/integ-runner@2.38.0', '@aws-cdk/integ-tests-alpha@2.38.0-alpha.0', 'esbuild'],
 });
 
 project.addPackageIgnore('.tmp');
