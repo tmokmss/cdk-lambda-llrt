@@ -20,13 +20,29 @@ class LlrtFunctionTestStack extends Stack {
       );
     }
 
+    {
+      const handler = new LlrtFunction(this, 'EcsHandler', {
+        entry: '../example/lambda/ecs.ts',
+        bundling: {
+          esbuildArgs: { '--platform': 'browser' },
+          minify: false,
+        },
+      });
+      handler.addToRolePolicy(
+        new PolicyStatement({
+          actions: ['ecs:ListClusters'],
+          resources: ['*'],
+        })
+      );
+    }
+
     const api = new RestApi(this, 'Api');
 
     {
       const handler = new LlrtFunction(this, 'Hono', {
         entry: '../example/lambda/hono.ts',
       });
-      
+
       api.root.addMethod('GET', new LambdaIntegration(handler));
       const resource = api.root.addResource('hono');
       resource.addMethod('GET', new LambdaIntegration(handler));
@@ -36,7 +52,7 @@ class LlrtFunctionTestStack extends Stack {
       const handler = new LlrtFunction(this, 'Ssr', {
         entry: '../example/lambda/ssr.tsx',
       });
-      
+
       const resource = api.root.addResource('ssr');
       resource.addMethod('GET', new LambdaIntegration(handler));
     }
