@@ -68,6 +68,7 @@ export class LlrtFunction extends NodejsFunction {
           '@aws-sdk/s3-request-presigner',
           '@aws-sdk/util-dynamodb',
           '@smithy',
+          'uuid',
         ],
         ...props.bundling,
       },
