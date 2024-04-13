@@ -24,8 +24,8 @@ class LlrtFunctionTestStack extends Stack {
       const handler = new LlrtFunction(this, 'EcsHandler', {
         entry: '../example/lambda/ecs.ts',
         bundling: {
+          // bundle for browser platform when using aws sdk not bundled in LLRT.
           esbuildArgs: { '--platform': 'browser' },
-          minify: false,
         },
       });
       handler.addToRolePolicy(
