@@ -28,7 +28,7 @@ If you want to upgrade the LLRT version, remove the `.tmp` directory, which cont
 
 ### Setting platform=browser
 
-In some cases, it can make your code run on LLRT by setting platform of the bundled code to `browser`. You can configure it by the following code:
+In some cases, your code may run successfully on LLRT by setting bundle target platform to `browser` (e.g. when using AWS SDK packages that are not bundled in LLRT or packages that can run using Web APIs.) You can configure it by the following code:
 
 ```ts
 import { LlrtFunction } from 'cdk-lambda-llrt';
