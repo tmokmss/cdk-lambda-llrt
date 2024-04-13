@@ -9,6 +9,7 @@
     "esbuild": "^0.20.0"
   },
   "dependencies": {
+    "@aws-sdk/client-ecs": "^3.542.0",
     "@aws-sdk/client-s3": "^3.509.0",
     "hono": "^3.12.12"
   }
