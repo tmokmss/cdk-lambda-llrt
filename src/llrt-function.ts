@@ -1,7 +1,8 @@
 import { CfnResource } from 'aws-cdk-lib';
-import { Architecture } from 'aws-cdk-lib/aws-lambda';
+import { Architecture, Runtime, RuntimeFamily } from 'aws-cdk-lib/aws-lambda';
 import { NodejsFunction, NodejsFunctionProps, OutputFormat } from 'aws-cdk-lib/aws-lambda-nodejs';
 import { Construct } from 'constructs';
+import { posix } from 'path';
 
 export interface LlrtFunctionProps extends NodejsFunctionProps {
   /**
@@ -23,7 +24,10 @@ export class LlrtFunction extends NodejsFunction {
 
     const cacheDir = `.tmp/llrt/${version}/${arch}`;
     super(scope, id, {
+      // set this to remove an unnecessary environment variable.
       awsSdkConnectionReuse: false,
+      // set this to remove a warning about runtime. we use al2023 runtime anyway.
+      runtime: new Runtime('nodejs20.x', RuntimeFamily.NODEJS),
       ...props,
       bundling: {
         target: 'es2020',
@@ -33,17 +37,19 @@ export class LlrtFunction extends NodejsFunction {
           beforeBundling: (_i, _o) => [],
           afterBundling: (i, o) => [
             // Download llrt binary from GitHub release and cache it
-            `if [ ! -e ${i}/${cacheDir}/bootstrap ]; then
-              mkdir -p ${i}/${cacheDir}
-              cd ${i}/${cacheDir}
+            `if [ ! -e ${posix.join(i, cacheDir, 'bootstrap')} ]; then
+              mkdir -p ${posix.join(i, cacheDir)}
+              cd ${posix.join(i, cacheDir)}
               curl -L -o llrt_temp.zip ${binaryUrl}
               unzip llrt_temp.zip
               rm -rf llrt_temp.zip
              fi`,
-            `cp ${i}/${cacheDir}/bootstrap ${o}/`,
+            `cp ${posix.join(i, cacheDir, 'bootstrap')} ${o}`,
           ],
           beforeInstall: (_i, _o) => [],
         },
+        // set this because local bundling will not work on Windows
+        forceDockerBundling: process.platform == 'win32' ? true : undefined,
         // Dependencies bundled in the runtime
         // https://github.com/awslabs/llrt?tab=readme-ov-file#using-aws-sdk-v3-with-llrt
         externalModules: [

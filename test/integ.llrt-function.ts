@@ -1,6 +1,7 @@
 import { IntegTest } from '@aws-cdk/integ-tests-alpha';
 import { Stack, StackProps, App } from 'aws-cdk-lib';
 import { PolicyStatement } from 'aws-cdk-lib/aws-iam';
+import { Architecture } from 'aws-cdk-lib/aws-lambda';
 import { Construct } from 'constructs';
 import { LlrtFunction } from '../src/llrt-function';
 
@@ -20,6 +21,12 @@ class TestStack extends Stack {
         resources: ['*'],
       }),
     );
+
+    new LlrtFunction(this, 'ArmHandler', {
+      entry: '../example/lambda/s3.ts',
+      architecture: Architecture.ARM_64,
+      llrtVersion: 'v0.1.9-beta',
+    });
   }
 }
 

@@ -27,6 +27,18 @@
               "s3KeyParameter": "AssetParametersa9dfae58cfbbde294851a4c7c1be5c9a51d391e56c0f89a47059ebf572270a67S3VersionKeyE44872CB",
               "artifactHashParameter": "AssetParametersa9dfae58cfbbde294851a4c7c1be5c9a51d391e56c0f89a47059ebf572270a67ArtifactHashE37AF42F"
             }
+          },
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.ae84126e8a9b6d1c3747b012550b99c68bcc1436f31d984985e687525e8d3cb1",
+              "id": "ae84126e8a9b6d1c3747b012550b99c68bcc1436f31d984985e687525e8d3cb1",
+              "packaging": "zip",
+              "sourceHash": "ae84126e8a9b6d1c3747b012550b99c68bcc1436f31d984985e687525e8d3cb1",
+              "s3BucketParameter": "AssetParametersae84126e8a9b6d1c3747b012550b99c68bcc1436f31d984985e687525e8d3cb1S3BucketE3B05D82",
+              "s3KeyParameter": "AssetParametersae84126e8a9b6d1c3747b012550b99c68bcc1436f31d984985e687525e8d3cb1S3VersionKey734C08B9",
+              "artifactHashParameter": "AssetParametersae84126e8a9b6d1c3747b012550b99c68bcc1436f31d984985e687525e8d3cb1ArtifactHash59DF556C"
+            }
           }
         ],
         "/LlrtFunctionIntegTest/Handler/ServiceRole/Resource": [
@@ -63,6 +75,36 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "AssetParametersa9dfae58cfbbde294851a4c7c1be5c9a51d391e56c0f89a47059ebf572270a67ArtifactHashE37AF42F"
+          }
+        ],
+        "/LlrtFunctionIntegTest/AssetParameters/ae84126e8a9b6d1c3747b012550b99c68bcc1436f31d984985e687525e8d3cb1/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersae84126e8a9b6d1c3747b012550b99c68bcc1436f31d984985e687525e8d3cb1S3BucketE3B05D82"
+          }
+        ],
+        "/LlrtFunctionIntegTest/AssetParameters/ae84126e8a9b6d1c3747b012550b99c68bcc1436f31d984985e687525e8d3cb1/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersae84126e8a9b6d1c3747b012550b99c68bcc1436f31d984985e687525e8d3cb1S3VersionKey734C08B9"
+          }
+        ],
+        "/LlrtFunctionIntegTest/AssetParameters/ae84126e8a9b6d1c3747b012550b99c68bcc1436f31d984985e687525e8d3cb1/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersae84126e8a9b6d1c3747b012550b99c68bcc1436f31d984985e687525e8d3cb1ArtifactHash59DF556C"
+          }
+        ],
+        "/LlrtFunctionIntegTest/ArmHandler/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ArmHandlerServiceRole413AC94A"
+          }
+        ],
+        "/LlrtFunctionIntegTest/ArmHandler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ArmHandler7C85DE11"
           }
         ]
       },

@@ -41,5 +41,19 @@ const handler = new LlrtFunction(this, 'Handler', {
 });
 ```
 
+### Docker bundling
+In some environments, LlrtFunction's bundling steps will fail because the underlying `NodejsFunction` [sometimes runs the commands](https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_lambda_nodejs-readme.html#local-bundling) on your host machine, and your environment does not support these commands or syntax. To avoid this error, you can force docker bundling for these commands not to depend on your execution environment.
+
+```ts
+new LlrtFunction(this, 'Handler', {
+    entry: 'handler.ts',
+    bundling: {
+        forceDockerBundling: true,  // Add this!
+    },
+});
+```
+
+Note that we enable this flag automatically on Windows platform.
+
 ## Examples
 See [example](./example/README.md) for examples to use `LlrtFunction` construct.
