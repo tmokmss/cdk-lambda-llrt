@@ -1,3 +1,4 @@
+import * as path from 'path';
 import { CfnResource } from 'aws-cdk-lib';
 import { Architecture } from 'aws-cdk-lib/aws-lambda';
 import { NodejsFunction, NodejsFunctionProps, OutputFormat } from 'aws-cdk-lib/aws-lambda-nodejs';
@@ -21,7 +22,9 @@ export class LlrtFunction extends NodejsFunction {
         ? `https://github.com/awslabs/llrt/releases/latest/download/llrt-lambda-${arch}.zip`
         : `https://github.com/awslabs/llrt/releases/download/${version}/llrt-lambda-${arch}.zip`;
 
+    const afterBuildPath = path.join(__dirname, 'after-bundling.ts');
     const cacheDir = `.tmp/llrt/${version}/${arch}`;
+
     super(scope, id, {
       awsSdkConnectionReuse: false,
       ...props,
@@ -31,16 +34,8 @@ export class LlrtFunction extends NodejsFunction {
         minify: true,
         commandHooks: {
           beforeBundling: (_i, _o) => [],
-          afterBundling: (i, o) => [
-            // Download llrt binary from GitHub release and cache it
-            `if [ ! -e ${i}/${cacheDir}/bootstrap ]; then
-              mkdir -p ${i}/${cacheDir}
-              cd ${i}/${cacheDir}
-              curl -L -o llrt_temp.zip ${binaryUrl}
-              unzip llrt_temp.zip
-              rm -rf llrt_temp.zip
-             fi`,
-            `cp ${i}/${cacheDir}/bootstrap ${o}/`,
+          afterBundling: (inputDir, outputDir) => [
+            `ts-node ${afterBuildPath} ${path.resolve(inputDir, cacheDir)} ${outputDir} ${binaryUrl}`
           ],
           beforeInstall: (_i, _o) => [],
         },

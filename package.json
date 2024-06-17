@@ -39,6 +39,7 @@
     "@aws-cdk/integ-tests-alpha": "2.38.0-alpha.0",
     "@types/jest": "^29.5.12",
     "@types/node": "^18",
+    "@types/unzipper": "^0.10.9",
     "@typescript-eslint/eslint-plugin": "^6",
     "@typescript-eslint/parser": "^6",
     "aws-cdk-lib": "2.38.0",
@@ -58,7 +59,8 @@
     "standard-version": "^9",
     "ts-jest": "^29.1.2",
     "ts-node": "^10.9.2",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "unzipper": "^0.12.1"
   },
   "peerDependencies": {
     "aws-cdk-lib": "^2.38.0",
