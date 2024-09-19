@@ -56,20 +56,20 @@ new LlrtFunction(this, 'Handler', {
 
 Note that we enable this flag automatically on Windows platform.
 
-## Bundle Types
+### LLRT Binary Types
 
-LLRT publishes several binaries with different sets of bundled SDKs:
+LLRT [publishes](https://github.com/awslabs/llrt/releases) several types of binaries with different sets of bundled SDKs:
 
-- `LlrtBundleType.FULL_SDK`: Includes all AWS SDKs
-- `LlrtBundleType.NO_SDK`: No AWS SDKs included
-- `LlrtBundleType.STANDARD`: Standard bundle (default)
+- `LlrtBinaryType.FULL_SDK`: Includes all AWS SDKs
+- `LlrtBinaryType.NO_SDK`: No AWS SDKs included
+- `LlrtBinaryType.STANDARD`: Standard bundle (default)
 
-You can specify the bundle type when creating a new LlrtFunction:
+You can specify the binary type when creating a new `LlrtFunction`:
 
 ```ts
 const handler = new LlrtFunction(this, 'Handler', {
     entry: 'lambda/index.ts',
-    bundleType: LlrtBundleType.FULL_SDK,
+    binaryType: LlrtBinaryType.FULL_SDK,
 });
 ```
 
