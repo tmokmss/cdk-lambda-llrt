@@ -62,9 +62,6 @@ class TestStack extends Stack {
         entry: '../example/lambda/s3.ts',
         llrtBinaryType: LlrtBinaryType.NO_SDK,
         llrtVersion: 'v0.2.2-beta',
-        bundling: {
-          nodeModules: ['@aws-sdk/client-s3'],
-        },
       });
       handler.addToRolePolicy(
         new PolicyStatement({

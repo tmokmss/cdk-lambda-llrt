@@ -1,3 +1,4 @@
+import { join } from 'path';
 import { awscdk } from 'projen';
 const project = new awscdk.AwsCdkConstructLibrary({
   author: 'tmokmss',
@@ -34,6 +35,8 @@ const project = new awscdk.AwsCdkConstructLibrary({
 });
 
 project.addPackageIgnore('.tmp');
+// required to run integ tests
+project.projectBuild.testTask.exec('npm install', { cwd: join('example', 'lambda') });
 project.projectBuild.testTask.exec('yarn tsc -p tsconfig.dev.json && yarn integ-runner');
 
 project.synth();

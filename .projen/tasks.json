@@ -229,6 +229,10 @@
           "spawn": "eslint"
         },
         {
+          "exec": "npm install",
+          "cwd": "example/lambda"
+        },
+        {
           "exec": "yarn tsc -p tsconfig.dev.json && yarn integ-runner"
         }
       ]
