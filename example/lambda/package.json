@@ -6,7 +6,7 @@
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.133",
-    "esbuild": "^0.20.0"
+    "esbuild": "^0.21.2"
   },
   "dependencies": {
     "@aws-sdk/client-ecs": "^3.542.0",

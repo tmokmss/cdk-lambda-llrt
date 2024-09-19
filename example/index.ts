@@ -1,6 +1,6 @@
 import { Stack, StackProps, App } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
-import { LlrtFunction } from '../src/';
+import { LlrtBinaryType, LlrtFunction } from '../src/';
 import { PolicyStatement } from 'aws-cdk-lib/aws-iam';
 import { LambdaIntegration, RestApi } from 'aws-cdk-lib/aws-apigateway';
 
@@ -36,11 +36,25 @@ class LlrtFunctionTestStack extends Stack {
       );
     }
 
+    {
+      const handler = new LlrtFunction(this, 'EcsHandlerFullSdk', {
+        entry: '../example/lambda/ecs.ts',
+        llrtBinaryType: LlrtBinaryType.FULL_SDK,
+      });
+      handler.addToRolePolicy(
+        new PolicyStatement({
+          actions: ['ecs:ListClusters'],
+          resources: ['*'],
+        })
+      );
+    }
+
     const api = new RestApi(this, 'Api');
 
     {
       const handler = new LlrtFunction(this, 'Hono', {
         entry: '../example/lambda/hono.ts',
+        llrtBinaryType: LlrtBinaryType.NO_SDK,
       });
 
       api.root.addMethod('GET', new LambdaIntegration(handler));

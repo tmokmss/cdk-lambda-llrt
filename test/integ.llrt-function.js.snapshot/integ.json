@@ -1,0 +1,13 @@
+{
+  "version": "36.3.0",
+  "testCases": {
+    "LlrtFunctionIntegTest/DefaultTest": {
+      "stacks": [
+        "LlrtFunctionIntegTestTarget"
+      ],
+      "diffAssets": true,
+      "assertionStack": "LlrtFunctionIntegTest/DefaultTest/DeployAssert",
+      "assertionStackName": "LlrtFunctionIntegTestDefaultTestDeployAssertF3D2B976"
+    }
+  }
+}
