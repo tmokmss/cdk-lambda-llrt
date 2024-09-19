@@ -12,10 +12,11 @@ npm install cdk-lambda-llrt
 Then you can use `LlrtFunction` construct. Just set an entry point for the function.
 
 ```ts
-import { LlrtFunction } from 'cdk-lambda-llrt';
+import { LlrtFunction, LlrtBundleType } from 'cdk-lambda-llrt';
 
 const handler = new LlrtFunction(this, 'Handler', {
     entry: 'lambda/index.ts',
+    bundleType: LlrtBundleType.FULL_SDK, // Optional: Choose between FULL_SDK, NO_SDK, or STANDARD (default)
 });
 ```
 
@@ -28,10 +29,10 @@ If you want to upgrade the LLRT version, remove the `.tmp` directory, which cont
 
 ### Setting platform=browser
 
-In some cases, your code may run successfully on LLRT by setting bundle target platform to `browser` (e.g. when using AWS SDK packages that are not bundled in LLRT or packages that can run using Web APIs.) You can configure it by the following code:
+In some cases, your code may run successfully on LLRT by setting bundle target platform to `browser`. You can configure it by the following code:
 
 ```ts
-import { LlrtFunction } from 'cdk-lambda-llrt';
+import { LlrtFunction, LlrtBundleType } from 'cdk-lambda-llrt';
 
 const handler = new LlrtFunction(this, 'Handler', {
     entry: 'lambda/index.ts',
@@ -54,6 +55,23 @@ new LlrtFunction(this, 'Handler', {
 ```
 
 Note that we enable this flag automatically on Windows platform.
+
+## Bundle Types
+
+LLRT publishes several binaries with different sets of bundled SDKs:
+
+- `LlrtBundleType.FULL_SDK`: Includes all AWS SDKs
+- `LlrtBundleType.NO_SDK`: No AWS SDKs included
+- `LlrtBundleType.STANDARD`: Standard bundle (default)
+
+You can specify the bundle type when creating a new LlrtFunction:
+
+```ts
+const handler = new LlrtFunction(this, 'Handler', {
+    entry: 'lambda/index.ts',
+    bundleType: LlrtBundleType.FULL_SDK,
+});
+```
 
 ## Examples
 See [example](./example/README.md) for examples to use `LlrtFunction` construct.
