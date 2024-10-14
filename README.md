@@ -16,7 +16,7 @@ import { LlrtFunction, LlrtBinaryType } from 'cdk-lambda-llrt';
 
 const handler = new LlrtFunction(this, 'Handler', {
     entry: 'lambda/index.ts',
-    binaryType: LlrtBinaryType.FULL_SDK, // Optional: Choose between FULL_SDK, NO_SDK, or STANDARD (default)
+    llrtBinaryType: LlrtBinaryType.FULL_SDK, // Optional: Choose between FULL_SDK, NO_SDK, or STANDARD (default)
 });
 ```
 
@@ -69,7 +69,7 @@ You can specify the binary type when creating a new `LlrtFunction`:
 ```ts
 const handler = new LlrtFunction(this, 'Handler', {
     entry: 'lambda/index.ts',
-    binaryType: LlrtBinaryType.FULL_SDK,
+    llrtBinaryType: LlrtBinaryType.FULL_SDK,
 });
 ```
 
