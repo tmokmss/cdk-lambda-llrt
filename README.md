@@ -12,11 +12,10 @@ npm install cdk-lambda-llrt
 Then you can use `LlrtFunction` construct. Just set an entry point for the function.
 
 ```ts
-import { LlrtFunction, LlrtBinaryType } from 'cdk-lambda-llrt';
+import { LlrtFunction } from 'cdk-lambda-llrt';
 
 const handler = new LlrtFunction(this, 'Handler', {
     entry: 'lambda/index.ts',
-    llrtBinaryType: LlrtBinaryType.FULL_SDK, // Optional: Choose between FULL_SDK, NO_SDK, or STANDARD (default)
 });
 ```
 
