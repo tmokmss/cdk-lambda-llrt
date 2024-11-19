@@ -38,6 +38,13 @@ export interface LlrtFunctionProps extends NodejsFunctionProps {
    * @default LlrtBinaryType.STANDARD
    */
   readonly llrtBinaryType?: LlrtBinaryType;
+
+  /**
+   * A custom directory to find the LLRT "bootstrap" binary in.
+   *
+   * @default - The LLRT binary is downloaded from GitHub and cached in the .tmp directory.
+   */
+  readonly llrtCustomBinaryDirectory?: string;
 }
 
 export class LlrtFunction extends NodejsFunction {
@@ -106,7 +113,7 @@ export class LlrtFunction extends NodejsFunction {
       version == 'latest'
         ? `https://github.com/awslabs/llrt/releases/latest/download/${binaryName}.zip`
         : `https://github.com/awslabs/llrt/releases/download/${version}/${binaryName}.zip`;
-    const cacheDir = `.tmp/llrt/${version}/${arch}/${binaryType}`;
+    const cacheDir = props.llrtCustomBinaryDirectory || `.tmp/llrt/${version}/${arch}/${binaryType}`;
 
     super(scope, id, {
       // set this to remove an unnecessary environment variable.
@@ -123,6 +130,10 @@ export class LlrtFunction extends NodejsFunction {
           afterBundling: (i, o) => [
             // Download llrt binary from GitHub release and cache it
             `if [ ! -e ${posix.join(i, cacheDir, 'bootstrap')} ]; then
+              if [ -n "${props.llrtCustomBinaryDirectory}" ]; then
+                echo "Error: Could not find bootstrap binary in ${props.llrtCustomBinaryDirectory}"
+                exit 1
+              fi
               mkdir -p ${posix.join(i, cacheDir)}
               cd ${posix.join(i, cacheDir)}
               curl -L -o llrt_temp.zip ${binaryUrl}

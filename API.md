@@ -1196,6 +1196,7 @@ const llrtFunctionProps: LlrtFunctionProps = { ... }
 | <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.projectRoot">projectRoot</a></code> | <code>string</code> | The path to the directory containing project config files (`package.json` or `tsconfig.json`). |
 | <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.runtime">runtime</a></code> | <code>aws-cdk-lib.aws_lambda.Runtime</code> | The runtime environment. |
 | <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.llrtBinaryType">llrtBinaryType</a></code> | <code><a href="#cdk-lambda-llrt.LlrtBinaryType">LlrtBinaryType</a></code> | The type of LLRT bundle to use. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.llrtCustomBinaryDirectory">llrtCustomBinaryDirectory</a></code> | <code>string</code> | A custom directory to find the LLRT "bootstrap" binary in. |
 | <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.llrtVersion">llrtVersion</a></code> | <code>string</code> | The version of LLRT. |
 
 ---
@@ -2114,6 +2115,19 @@ public readonly llrtBinaryType: LlrtBinaryType;
 - *Default:* LlrtBinaryType.STANDARD
 
 The type of LLRT bundle to use.
+
+---
+
+##### `llrtCustomBinaryDirectory`<sup>Optional</sup> <a name="llrtCustomBinaryDirectory" id="cdk-lambda-llrt.LlrtFunctionProps.property.llrtCustomBinaryDirectory"></a>
+
+```typescript
+public readonly llrtCustomBinaryDirectory: string;
+```
+
+- *Type:* string
+- *Default:* The LLRT binary is downloaded from GitHub and cached in the .tmp directory.
+
+A custom directory to find the LLRT "bootstrap" binary in.
 
 ---
 

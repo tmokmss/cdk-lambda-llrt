@@ -72,5 +72,17 @@ const handler = new LlrtFunction(this, 'Handler', {
 });
 ```
 
+### LLRT Custom Directory
+
+By default, AWS CDK LLRT downloads the LLRT "bootstrap" binary from LLRT's GitHub releases and caches this in the `.tmp` directory.
+If you have your own bootstrap binary you want to use, you can specify the relative directory this is located in with the `llrtCustomBinaryDirectory` property.
+
+```ts
+const handler = new LlrtFunction(this, 'Handler', {
+    entry: 'lambda/index.ts',
+    llrtCustomBinaryDirectory: `.llrt`, // AWS CDK LLRT will look for a "bootstrap" binary in the relative .llrt directory and will error if not found.
+});
+```
+
 ## Examples
 See [example](./example/README.md) for examples to use `LlrtFunction` construct.
