@@ -80,7 +80,7 @@ If you have your own bootstrap binary you want to use, you can specify the relat
 ```ts
 const handler = new LlrtFunction(this, 'Handler', {
     entry: 'lambda/index.ts',
-    llrtCustomBinaryDirectory: `.llrt`, // AWS CDK LLRT will look for a "bootstrap" binary in the relative .llrt directory and will error if not found.
+    llrtCustomBinaryDirectory: '.llrt', // AWS CDK LLRT will look for a "bootstrap" binary in the relative .llrt directory and will error if not found.
 });
 ```
 
