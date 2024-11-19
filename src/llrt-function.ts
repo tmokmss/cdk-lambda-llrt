@@ -40,7 +40,7 @@ export interface LlrtFunctionProps extends NodejsFunctionProps {
   readonly llrtBinaryType?: LlrtBinaryType;
 
   /**
-   * A custom directory to find the LLRT "bootstrap" binary in.
+   * A custom relative directory to find the LLRT "bootstrap" binary in.
    *
    * @default - The LLRT binary is downloaded from GitHub and cached in the .tmp directory.
    */
