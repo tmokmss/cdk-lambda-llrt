@@ -40,11 +40,11 @@ export interface LlrtFunctionProps extends NodejsFunctionProps {
   readonly llrtBinaryType?: LlrtBinaryType;
 
   /**
-   * A custom relative directory to find the LLRT "bootstrap" binary in.
+   * A custom relative path to use as a local LLRT bootstrap binary.
    *
-   * @default - The LLRT binary is downloaded from GitHub and cached in the .tmp directory.
+   * @default - If this option is not provided, the LLRT binary is downloaded from GitHub and cached in the .tmp directory.
    */
-  readonly llrtCustomBinaryDirectory?: string;
+  readonly llrtBinaryPath?: string;
 }
 
 export class LlrtFunction extends NodejsFunction {
@@ -113,7 +113,7 @@ export class LlrtFunction extends NodejsFunction {
       version == 'latest'
         ? `https://github.com/awslabs/llrt/releases/latest/download/${binaryName}.zip`
         : `https://github.com/awslabs/llrt/releases/download/${version}/${binaryName}.zip`;
-    const cacheDir = props.llrtCustomBinaryDirectory || `.tmp/llrt/${version}/${arch}/${binaryType}`;
+    const cacheDir = `.tmp/llrt/${version}/${arch}/${binaryType}`;
 
     super(scope, id, {
       // set this to remove an unnecessary environment variable.
@@ -127,13 +127,9 @@ export class LlrtFunction extends NodejsFunction {
         minify: true,
         commandHooks: {
           beforeBundling: (_i, _o) => [],
-          afterBundling: (i, o) => [
+          afterBundling: (i, o) => !props.llrtBinaryPath ? [
             // Download llrt binary from GitHub release and cache it
             `if [ ! -e ${posix.join(i, cacheDir, 'bootstrap')} ]; then
-              if [ -n "${props.llrtCustomBinaryDirectory}" ]; then
-                echo "Error: Could not find bootstrap binary in ${props.llrtCustomBinaryDirectory}"
-                exit 1
-              fi
               mkdir -p ${posix.join(i, cacheDir)}
               cd ${posix.join(i, cacheDir)}
               curl -L -o llrt_temp.zip ${binaryUrl}
@@ -141,7 +137,7 @@ export class LlrtFunction extends NodejsFunction {
               rm -rf llrt_temp.zip
              fi`,
             `cp ${posix.join(i, cacheDir, 'bootstrap')} ${o}`,
-          ],
+          ] : [`cp ${posix.join(i, props.llrtBinaryPath)} ${o}`],
           beforeInstall: (_i, _o) => [],
         },
         // set this because local bundling will not work on Windows
