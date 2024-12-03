@@ -2116,6 +2116,8 @@ public readonly llrtBinaryPath: string;
 
 A custom relative path to use as a local LLRT bootstrap binary.
 
+This path must be specified relative to the function's `projectRoot` directory.
+
 ---
 
 ##### `llrtBinaryType`<sup>Optional</sup> <a name="llrtBinaryType" id="cdk-lambda-llrt.LlrtFunctionProps.property.llrtBinaryType"></a>

@@ -41,6 +41,7 @@ export interface LlrtFunctionProps extends NodejsFunctionProps {
 
   /**
    * A custom relative path to use as a local LLRT bootstrap binary.
+   * This path must be specified relative to the function's `projectRoot` directory.
    *
    * @default - If this option is not provided, the LLRT binary is downloaded from GitHub and cached in the .tmp directory.
    */
