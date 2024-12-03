@@ -27,7 +27,7 @@
      }
     },
     "flattenResponse": "false",
-    "salt": "1726720104603"
+    "salt": "1733200134878"
    },
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
@@ -232,6 +232,46 @@
            ]
           }
          ]
+        },
+        {
+         "Action": [
+          "lambda:Invoke"
+         ],
+         "Effect": "Allow",
+         "Resource": [
+          "*"
+         ]
+        },
+        {
+         "Action": [
+          "lambda:InvokeFunction"
+         ],
+         "Effect": "Allow",
+         "Resource": [
+          {
+           "Fn::Join": [
+            "",
+            [
+             "arn:",
+             {
+              "Ref": "AWS::Partition"
+             },
+             ":lambda:",
+             {
+              "Ref": "AWS::Region"
+             },
+             ":",
+             {
+              "Ref": "AWS::AccountId"
+             },
+             ":function:",
+             {
+              "Fn::ImportValue": "LlrtFunctionIntegTestTarget:ExportsOutputRefCustomBinaryHandler641A933E54DF1A2A"
+             }
+            ]
+           ]
+          }
+         ]
         }
        ]
       }
@@ -294,7 +334,7 @@
      }
     },
     "flattenResponse": "false",
-    "salt": "1726720104605"
+    "salt": "1733200134880"
    },
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
@@ -341,7 +381,7 @@
      }
     },
     "flattenResponse": "false",
-    "salt": "1726720104605"
+    "salt": "1733200134880"
    },
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
@@ -388,7 +428,7 @@
      }
     },
     "flattenResponse": "false",
-    "salt": "1726720104606"
+    "salt": "1733200134880"
    },
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
@@ -399,6 +439,53 @@
     "Action": "lambda:InvokeFunction",
     "FunctionName": {
      "Fn::ImportValue": "LlrtFunctionIntegTestTarget:ExportsOutputRefNoSdkBinaryHandler3ED82436DB24739A"
+    },
+    "Principal": {
+     "Fn::GetAtt": [
+      "SingletonFunction1488541a7b23466481b69b4408076b81Role37ABCE73",
+      "Arn"
+     ]
+    }
+   }
+  },
+  "LambdaInvoke69a3388d6e311c7b828bebf747d408cc": {
+   "Type": "Custom::DeployAssert@SdkCallLambdainvoke",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "SingletonFunction1488541a7b23466481b69b4408076b81HandlerCD40AE9F",
+      "Arn"
+     ]
+    },
+    "service": "Lambda",
+    "api": "invoke",
+    "expected": "{\"$ObjectLike\":{\"StatusCode\":200}}",
+    "parameters": {
+     "FunctionName": {
+      "Fn::Join": [
+       "",
+       [
+        "\"",
+        {
+         "Fn::ImportValue": "LlrtFunctionIntegTestTarget:ExportsOutputRefCustomBinaryHandler641A933E54DF1A2A"
+        },
+        "\""
+       ]
+      ]
+     }
+    },
+    "flattenResponse": "false",
+    "salt": "1733200134881"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "LambdaInvoke69a3388d6e311c7b828bebf747d408ccInvoke0D894BB7": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::ImportValue": "LlrtFunctionIntegTestTarget:ExportsOutputRefCustomBinaryHandler641A933E54DF1A2A"
     },
     "Principal": {
      "Fn::GetAtt": [
@@ -438,6 +525,14 @@
    "Value": {
     "Fn::GetAtt": [
      "LambdaInvokebff0124bbd4116de1f88fc631eeb9a9c",
+     "assertion"
+    ]
+   }
+  },
+  "AssertionResultsLambdaInvoke69a3388d6e311c7b828bebf747d408cc": {
+   "Value": {
+    "Fn::GetAtt": [
+     "LambdaInvoke69a3388d6e311c7b828bebf747d408cc",
      "assertion"
     ]
    }
