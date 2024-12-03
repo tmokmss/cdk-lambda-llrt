@@ -137,7 +137,7 @@ export class LlrtFunction extends NodejsFunction {
               rm -rf llrt_temp.zip
              fi`,
             `cp ${posix.join(i, cacheDir, 'bootstrap')} ${o}`,
-          ] : [`cp ${posix.join(i, props.llrtBinaryPath)} ${o}`],
+          ] : [`cp ${posix.join(i, props.llrtBinaryPath)} ${posix.join(o, 'bootstrap')}`],
           beforeInstall: (_i, _o) => [],
         },
         // set this because local bundling will not work on Windows
