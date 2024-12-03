@@ -1195,6 +1195,7 @@ const llrtFunctionProps: LlrtFunctionProps = { ... }
 | <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.handler">handler</a></code> | <code>string</code> | The name of the exported handler in the entry file. |
 | <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.projectRoot">projectRoot</a></code> | <code>string</code> | The path to the directory containing project config files (`package.json` or `tsconfig.json`). |
 | <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.runtime">runtime</a></code> | <code>aws-cdk-lib.aws_lambda.Runtime</code> | The runtime environment. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.llrtBinaryPath">llrtBinaryPath</a></code> | <code>string</code> | A custom relative path to use as a local LLRT bootstrap binary. |
 | <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.llrtBinaryType">llrtBinaryType</a></code> | <code><a href="#cdk-lambda-llrt.LlrtBinaryType">LlrtBinaryType</a></code> | The type of LLRT bundle to use. |
 | <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.llrtVersion">llrtVersion</a></code> | <code>string</code> | The version of LLRT. |
 
@@ -2101,6 +2102,21 @@ The runtime environment.
 
 Only runtimes of the Node.js family are
 supported.
+
+---
+
+##### `llrtBinaryPath`<sup>Optional</sup> <a name="llrtBinaryPath" id="cdk-lambda-llrt.LlrtFunctionProps.property.llrtBinaryPath"></a>
+
+```typescript
+public readonly llrtBinaryPath: string;
+```
+
+- *Type:* string
+- *Default:* If this option is not provided, the LLRT binary is downloaded from GitHub and cached in the .tmp directory.
+
+A custom relative path to use as a local LLRT bootstrap binary.
+
+This path must be specified relative to the function's `projectRoot` directory.
 
 ---
 

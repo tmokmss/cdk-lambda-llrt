@@ -18,7 +18,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/9add6ab78d5c1101f63804cdba3cad29a43f71a538ae26b5b811d24a70e64c40.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/852e9de58b27372c5ca02bd2565917febdce238ff4e376d0c4adf2d1730fe421.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -106,6 +106,24 @@
             "data": "NoSdkBinaryHandler3ED82436"
           }
         ],
+        "/LlrtFunctionIntegTestTarget/CustomBinaryHandler/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomBinaryHandlerServiceRoleCF90F487"
+          }
+        ],
+        "/LlrtFunctionIntegTestTarget/CustomBinaryHandler/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomBinaryHandlerServiceRoleDefaultPolicyED2FBAA6"
+          }
+        ],
+        "/LlrtFunctionIntegTestTarget/CustomBinaryHandler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomBinaryHandler641A933E"
+          }
+        ],
         "/LlrtFunctionIntegTestTarget/Exports/Output{\"Ref\":\"Handler886CB40B\"}": [
           {
             "type": "aws:cdk:logicalId",
@@ -128,6 +146,12 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "ExportsOutputRefNoSdkBinaryHandler3ED82436DB24739A"
+          }
+        ],
+        "/LlrtFunctionIntegTestTarget/Exports/Output{\"Ref\":\"CustomBinaryHandler641A933E\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefCustomBinaryHandler641A933E54DF1A2A"
           }
         ],
         "/LlrtFunctionIntegTestTarget/BootstrapVersion": [
@@ -162,7 +186,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/a7ba3bcc8a48abb579313659170f3dc82d1f52813d7d6ff6e1ef571e2076d892.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/bd3a698f8b7be9a74788d7a570d27e6c9dafdc37e931e5101b648aeccae676b5.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -267,6 +291,24 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "AssertionResultsLambdaInvokebff0124bbd4116de1f88fc631eeb9a9c"
+          }
+        ],
+        "/LlrtFunctionIntegTest/DefaultTest/DeployAssert/LambdaInvoke69a3388d6e311c7b828bebf747d408cc/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaInvoke69a3388d6e311c7b828bebf747d408cc"
+          }
+        ],
+        "/LlrtFunctionIntegTest/DefaultTest/DeployAssert/LambdaInvoke69a3388d6e311c7b828bebf747d408cc/Invoke": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaInvoke69a3388d6e311c7b828bebf747d408ccInvoke0D894BB7"
+          }
+        ],
+        "/LlrtFunctionIntegTest/DefaultTest/DeployAssert/LambdaInvoke69a3388d6e311c7b828bebf747d408cc/AssertionResults": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssertionResultsLambdaInvoke69a3388d6e311c7b828bebf747d408cc"
           }
         ],
         "/LlrtFunctionIntegTest/DefaultTest/DeployAssert/BootstrapVersion": [

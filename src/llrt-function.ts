@@ -38,6 +38,14 @@ export interface LlrtFunctionProps extends NodejsFunctionProps {
    * @default LlrtBinaryType.STANDARD
    */
   readonly llrtBinaryType?: LlrtBinaryType;
+
+  /**
+   * A custom relative path to use as a local LLRT bootstrap binary.
+   * This path must be specified relative to the function's `projectRoot` directory.
+   *
+   * @default - If this option is not provided, the LLRT binary is downloaded from GitHub and cached in the .tmp directory.
+   */
+  readonly llrtBinaryPath?: string;
 }
 
 export class LlrtFunction extends NodejsFunction {
@@ -120,7 +128,7 @@ export class LlrtFunction extends NodejsFunction {
         minify: true,
         commandHooks: {
           beforeBundling: (_i, _o) => [],
-          afterBundling: (i, o) => [
+          afterBundling: (i, o) => !props.llrtBinaryPath ? [
             // Download llrt binary from GitHub release and cache it
             `if [ ! -e ${posix.join(i, cacheDir, 'bootstrap')} ]; then
               mkdir -p ${posix.join(i, cacheDir)}
@@ -130,7 +138,7 @@ export class LlrtFunction extends NodejsFunction {
               rm -rf llrt_temp.zip
              fi`,
             `cp ${posix.join(i, cacheDir, 'bootstrap')} ${o}`,
-          ],
+          ] : [`cp ${posix.join(i, props.llrtBinaryPath)} ${posix.join(o, 'bootstrap')}`],
           beforeInstall: (_i, _o) => [],
         },
         // set this because local bundling will not work on Windows

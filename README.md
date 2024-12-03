@@ -72,5 +72,17 @@ const handler = new LlrtFunction(this, 'Handler', {
 });
 ```
 
+### LLRT Binary Path
+
+By default, CDK Lambda LLRT downloads the LLRT bootstrap binary from LLRT's GitHub releases and caches this in the `.tmp` directory.
+If you have your own bootstrap binary you want to use, you can specify the relative path from the function's `projectRoot` directory with the `llrtBinaryPath` property.
+
+```ts
+const handler = new LlrtFunction(this, 'Handler', {
+    entry: 'lambda/index.ts',
+    llrtBinaryPath: '.llrt/bootstrap'
+});
+```
+
 ## Examples
 See [example](./example/README.md) for examples to use `LlrtFunction` construct.

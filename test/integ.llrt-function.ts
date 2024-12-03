@@ -71,6 +71,22 @@ class TestStack extends Stack {
       );
       this.handlers.push(handler);
     }
+
+    {
+      const handler = new LlrtFunction(this, 'CustomBinaryHandler', {
+        entry: '../example/lambda/s3.ts',
+        llrtBinaryType: LlrtBinaryType.NO_SDK,
+        llrtBinaryPath: '.llrt/llrt-x64-no-sdk-bootstrap',
+        depsLockFilePath: '../example/lambda/package-lock.json',
+      });
+      handler.addToRolePolicy(
+        new PolicyStatement({
+          actions: ['s3:ListAllMyBuckets'],
+          resources: ['*'],
+        }),
+      );
+      this.handlers.push(handler);
+    }
   }
 }
 
