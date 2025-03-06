@@ -80,6 +80,19 @@ class LlrtFunctionTestStack extends Stack {
     {
       const handler = new LlrtFunction(this, 'Ssr', {
         entry: '../example/lambda/ssr.tsx',
+        bundling: {
+          commandHooks: {
+            beforeBundling: (_i, _o) => {
+              return ['echo beforeBundling'];
+            },
+            afterBundling: (_i, _o) => {
+              return ['echo afterBundling'];
+            },
+            beforeInstall: (_i, _o) => {
+              return ['echo beforeInstall'];
+            },
+          },
+        },
       });
 
       const resource = api.root.addResource('ssr');
