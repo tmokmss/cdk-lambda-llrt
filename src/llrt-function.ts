@@ -1,7 +1,7 @@
 import { posix } from 'path';
 import { CfnResource } from 'aws-cdk-lib';
 import { Architecture, Runtime, RuntimeFamily } from 'aws-cdk-lib/aws-lambda';
-import { NodejsFunction, NodejsFunctionProps, OutputFormat } from 'aws-cdk-lib/aws-lambda-nodejs';
+import { ICommandHooks, NodejsFunction, NodejsFunctionProps, OutputFormat } from 'aws-cdk-lib/aws-lambda-nodejs';
 import { Construct } from 'constructs';
 
 /**
@@ -116,6 +116,20 @@ export class LlrtFunction extends NodejsFunction {
         : `https://github.com/awslabs/llrt/releases/download/${version}/${binaryName}.zip`;
     const cacheDir = `.tmp/llrt/${version}/${arch}/${binaryType}`;
 
+    const { commandHooks: originalCommandHooks, ...otherBundlingProps } = props.bundling ?? {};
+    const afterBundlingCommandHook: ICommandHooks['afterBundling'] = (i, o) => !props.llrtBinaryPath ? [
+      // Download llrt binary from GitHub release and cache it
+      `if [ ! -e ${posix.join(i, cacheDir, 'bootstrap')} ]; then
+        mkdir -p ${posix.join(i, cacheDir)}
+        cd ${posix.join(i, cacheDir)}
+        curl -L -o llrt_temp.zip ${binaryUrl}
+        unzip llrt_temp.zip
+        rm -rf llrt_temp.zip
+        cd -
+       fi`,
+      `cp ${posix.join(i, cacheDir, 'bootstrap')} ${o}`,
+    ] : [`cp ${posix.join(i, props.llrtBinaryPath)} ${posix.join(o, 'bootstrap')}`];
+
     super(scope, id, {
       // set this to remove an unnecessary environment variable.
       awsSdkConnectionReuse: false,
@@ -127,26 +141,16 @@ export class LlrtFunction extends NodejsFunction {
         format: OutputFormat.ESM,
         minify: true,
         commandHooks: {
-          beforeBundling: (_i, _o) => [],
-          afterBundling: (i, o) => !props.llrtBinaryPath ? [
-            // Download llrt binary from GitHub release and cache it
-            `if [ ! -e ${posix.join(i, cacheDir, 'bootstrap')} ]; then
-              mkdir -p ${posix.join(i, cacheDir)}
-              cd ${posix.join(i, cacheDir)}
-              curl -L -o llrt_temp.zip ${binaryUrl}
-              unzip llrt_temp.zip
-              rm -rf llrt_temp.zip
-             fi`,
-            `cp ${posix.join(i, cacheDir, 'bootstrap')} ${o}`,
-          ] : [`cp ${posix.join(i, props.llrtBinaryPath)} ${posix.join(o, 'bootstrap')}`],
-          beforeInstall: (_i, _o) => [],
+          beforeBundling: (i, o) => [...(originalCommandHooks?.beforeBundling(i, o) ?? [])],
+          afterBundling: (i, o) => [...afterBundlingCommandHook(i, o), ...(originalCommandHooks?.afterBundling(i, o) ?? [])],
+          beforeInstall: (i, o) => [...(originalCommandHooks?.beforeInstall(i, o) ?? [])],
         },
         // set this because local bundling will not work on Windows
         forceDockerBundling: process.platform == 'win32' ? true : undefined,
         // Dependencies bundled in the runtime
         // https://github.com/awslabs/llrt?tab=readme-ov-file#using-aws-sdk-v3-with-llrt
         externalModules,
-        ...props.bundling,
+        ...otherBundlingProps,
       },
     });
 

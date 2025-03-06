@@ -17,6 +17,19 @@ class TestStack extends Stack {
       const handler = new LlrtFunction(this, 'Handler', {
         entry: '../example/lambda/s3.ts',
         llrtVersion: 'v0.2.2-beta',
+        bundling: {
+          commandHooks: {
+            beforeBundling: (_i, _o) => {
+              return ['echo beforeBundling'];
+            },
+            afterBundling: (_i, _o) => {
+              return ['echo afterBundling'];
+            },
+            beforeInstall: (_i, _o) => {
+              return ['echo beforeInstall'];
+            },
+          },
+        },
       });
       handler.addToRolePolicy(
         new PolicyStatement({
