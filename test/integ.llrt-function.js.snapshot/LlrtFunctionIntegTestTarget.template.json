@@ -75,6 +75,25 @@
     "HandlerServiceRoleFCDC14AE"
    ]
   },
+  "HandlerLogGroup50A7B41D": {
+   "Type": "AWS::Logs::LogGroup",
+   "Properties": {
+    "LogGroupName": {
+     "Fn::Join": [
+      "",
+      [
+       "/aws/lambda/",
+       {
+        "Ref": "Handler886CB40B"
+       }
+      ]
+     ]
+    },
+    "RetentionInDays": 731
+   },
+   "UpdateReplacePolicy": "Retain",
+   "DeletionPolicy": "Retain"
+  },
   "ArmHandlerServiceRole413AC94A": {
    "Type": "AWS::IAM::Role",
    "Properties": {
@@ -153,6 +172,25 @@
     "ArmHandlerServiceRole413AC94A"
    ]
   },
+  "ArmHandlerLogGroup6F7911CB": {
+   "Type": "AWS::Logs::LogGroup",
+   "Properties": {
+    "LogGroupName": {
+     "Fn::Join": [
+      "",
+      [
+       "/aws/lambda/",
+       {
+        "Ref": "ArmHandler7C85DE11"
+       }
+      ]
+     ]
+    },
+    "RetentionInDays": 731
+   },
+   "UpdateReplacePolicy": "Retain",
+   "DeletionPolicy": "Retain"
+  },
   "FullBinaryHandlerServiceRole27DAC75C": {
    "Type": "AWS::IAM::Role",
    "Properties": {
@@ -228,6 +266,25 @@
     "FullBinaryHandlerServiceRole27DAC75C"
    ]
   },
+  "FullBinaryHandlerLogGroupE7FDA749": {
+   "Type": "AWS::Logs::LogGroup",
+   "Properties": {
+    "LogGroupName": {
+     "Fn::Join": [
+      "",
+      [
+       "/aws/lambda/",
+       {
+        "Ref": "FullBinaryHandler1600ED15"
+       }
+      ]
+     ]
+    },
+    "RetentionInDays": 731
+   },
+   "UpdateReplacePolicy": "Retain",
+   "DeletionPolicy": "Retain"
+  },
   "NoSdkBinaryHandlerServiceRole8CABE201": {
    "Type": "AWS::IAM::Role",
    "Properties": {
@@ -287,7 +344,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "b30dc86bf68ac6edce8bfe3f4a1c24c672dbd5ead67163db43756e529aa913f4.zip"
+     "S3Key": "2c91bb8cca67d923aaf45645a9b893320a3af82f20d0b0264bcc743dd5a641c9.zip"
     },
     "Handler": "index.handler",
     "Role": {
@@ -302,6 +359,25 @@
     "NoSdkBinaryHandlerServiceRoleDefaultPolicyDC9BBD8B",
     "NoSdkBinaryHandlerServiceRole8CABE201"
    ]
+  },
+  "NoSdkBinaryHandlerLogGroup34E3B61F": {
+   "Type": "AWS::Logs::LogGroup",
+   "Properties": {
+    "LogGroupName": {
+     "Fn::Join": [
+      "",
+      [
+       "/aws/lambda/",
+       {
+        "Ref": "NoSdkBinaryHandler3ED82436"
+       }
+      ]
+     ]
+    },
+    "RetentionInDays": 731
+   },
+   "UpdateReplacePolicy": "Retain",
+   "DeletionPolicy": "Retain"
   },
   "CustomBinaryHandlerServiceRoleCF90F487": {
    "Type": "AWS::IAM::Role",
@@ -377,6 +453,25 @@
     "CustomBinaryHandlerServiceRoleDefaultPolicyED2FBAA6",
     "CustomBinaryHandlerServiceRoleCF90F487"
    ]
+  },
+  "CustomBinaryHandlerLogGroupE89296DF": {
+   "Type": "AWS::Logs::LogGroup",
+   "Properties": {
+    "LogGroupName": {
+     "Fn::Join": [
+      "",
+      [
+       "/aws/lambda/",
+       {
+        "Ref": "CustomBinaryHandler641A933E"
+       }
+      ]
+     ]
+    },
+    "RetentionInDays": 731
+   },
+   "UpdateReplacePolicy": "Retain",
+   "DeletionPolicy": "Retain"
   }
  },
  "Outputs": {
