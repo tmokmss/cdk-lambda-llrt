@@ -5,7 +5,11 @@ import { Architecture } from 'aws-cdk-lib/aws-lambda';
 import { Construct } from 'constructs';
 import { LlrtBinaryType, LlrtFunction } from '../src/llrt-function';
 
-const app = new App();
+const app = new App({
+  context: {
+    '@aws-cdk/aws-lambda:useCdkManagedLogGroup': false,
+  },
+});
 
 class TestStack extends Stack {
   public handlers: LlrtFunction[] = [];

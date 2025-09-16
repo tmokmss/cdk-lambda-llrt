@@ -1,12 +1,14 @@
 import { join } from 'path';
 import { awscdk } from 'projen';
+import { NodePackageManager } from 'projen/lib/javascript';
+
 const project = new awscdk.AwsCdkConstructLibrary({
   author: 'tmokmss',
   authorAddress: 'tomookam@live.jp',
   // we don't strictly guarantee it works in older CDK (integ-runner runs on newer CDK), but hopefully it should.
   cdkVersion: '2.38.0',
   defaultReleaseBranch: 'main',
-  jsiiVersion: '~5.4.0',
+  jsiiVersion: '~5.8.0',
   name: 'cdk-lambda-llrt',
   projenrcTs: true,
   repositoryUrl: 'https://github.com/tmokmss/cdk-lambda-llrt.git',
@@ -18,6 +20,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   npmIgnoreOptions: {
     ignorePatterns: ['/example/lambda/node_modules', '/example/lambda/.llrt'],
   },
+  packageManager: NodePackageManager.NPM,
   gitignore: ['*.js', '*.d.ts', '!test/.*.snapshot/**/*', '.tmp'],
   keywords: ['aws', 'cdk', 'lambda', 'aws-cdk'],
   tsconfigDev: {
@@ -40,6 +43,6 @@ const project = new awscdk.AwsCdkConstructLibrary({
 project.addPackageIgnore('.tmp');
 // required to run integ tests
 project.projectBuild.testTask.exec('npm install', { cwd: join('example', 'lambda') });
-project.projectBuild.testTask.exec('yarn tsc -p tsconfig.dev.json && yarn integ-runner');
+project.projectBuild.testTask.exec('npx tsc -p tsconfig.dev.json && npx integ-runner');
 
 project.synth();
