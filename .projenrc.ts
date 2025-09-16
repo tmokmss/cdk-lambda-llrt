@@ -20,6 +20,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   npmIgnoreOptions: {
     ignorePatterns: ['/example/lambda/node_modules', '/example/lambda/.llrt'],
   },
+  npmTrustedPublishing: true,
   packageManager: NodePackageManager.NPM,
   gitignore: ['*.js', '*.d.ts', '!test/.*.snapshot/**/*', '.tmp'],
   keywords: ['aws', 'cdk', 'lambda', 'aws-cdk'],
