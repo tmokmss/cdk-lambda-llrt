@@ -22,7 +22,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v5
         with:
-          node-version: lts/*
+          node-version: "24"
       - name: Install dependencies
         run: npm install
       - name: build
@@ -96,7 +96,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v5
         with:
-          node-version: lts/*
+          node-version: "24"
       - name: Download build artifacts
         uses: actions/download-artifact@v5
         with:

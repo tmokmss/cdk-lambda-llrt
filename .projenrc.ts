@@ -20,6 +20,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   npmIgnoreOptions: {
     ignorePatterns: ['/example/lambda/node_modules', '/example/lambda/.llrt'],
   },
+  workflowNodeVersion: '24',
   npmTrustedPublishing: true,
   packageManager: NodePackageManager.NPM,
   gitignore: ['*.js', '*.d.ts', '!test/.*.snapshot/**/*', '.tmp'],
