@@ -1230,6 +1230,7 @@ const llrtFunctionProps: LlrtFunctionProps = { ... }
 | <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.runtime">runtime</a></code> | <code>aws-cdk-lib.aws_lambda.Runtime</code> | The runtime environment. |
 | <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.llrtBinaryPath">llrtBinaryPath</a></code> | <code>string</code> | A custom relative path to use as a local LLRT bootstrap binary. |
 | <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.llrtBinaryType">llrtBinaryType</a></code> | <code><a href="#cdk-lambda-llrt.LlrtBinaryType">LlrtBinaryType</a></code> | The type of LLRT bundle to use. |
+| <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.llrtLayer">llrtLayer</a></code> | <code>boolean</code> | If `true` then the LLRT runtime will be built in a layer that can be shared amongst other `LLrtFunction`s that utilise the same `LlrtBinaryType`. |
 | <code><a href="#cdk-lambda-llrt.LlrtFunctionProps.property.llrtVersion">llrtVersion</a></code> | <code>string</code> | The version of LLRT. |
 
 ---
@@ -2185,6 +2186,19 @@ public readonly llrtBinaryType: LlrtBinaryType;
 - *Default:* LlrtBinaryType.STANDARD
 
 The type of LLRT bundle to use.
+
+---
+
+##### `llrtLayer`<sup>Optional</sup> <a name="llrtLayer" id="cdk-lambda-llrt.LlrtFunctionProps.property.llrtLayer"></a>
+
+```typescript
+public readonly llrtLayer: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+If `true` then the LLRT runtime will be built in a layer that can be shared amongst other `LLrtFunction`s that utilise the same `LlrtBinaryType`.
 
 ---
 

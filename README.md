@@ -84,5 +84,17 @@ const handler = new LlrtFunction(this, 'Handler', {
 });
 ```
 
+### LLRT Layer
+
+By default, CDK Lambda LLRT bundles the LLRT bootstrap binary directly in your lambda function.
+If you want to package the binary in a separate layer that can be shared amongst functions then set `llrtLayer` to `true`.
+
+```ts
+const handler = new LlrtFunction(this, 'Handler', {
+    entry: 'lambda/index.ts',
+    llrtLayer: true
+});
+```
+
 ## Examples
 See [example](./example/README.md) for examples to use `LlrtFunction` construct.
