@@ -1,9 +1,8 @@
 import { posix } from 'path';
-import { CfnResource } from 'aws-cdk-lib';
+import { CfnResource, Stack } from 'aws-cdk-lib';
 import { Architecture, Code, ILayerVersion, LayerVersion, Runtime, RuntimeFamily } from 'aws-cdk-lib/aws-lambda';
 import { ICommandHooks, NodejsFunction, NodejsFunctionProps, OutputFormat } from 'aws-cdk-lib/aws-lambda-nodejs';
 import { Construct } from 'constructs';
-import { execSync } from 'child_process';
 
 /**
  * The type of LLRT binary to use.
@@ -50,22 +49,11 @@ export interface LlrtFunctionProps extends NodejsFunctionProps {
 
   /**
    * If `true` then the LLRT runtime will be built in a layer that can be shared amongst
-   * other `LLrtFunction`s that utilise the same `LlrtBinaryType`.
+   * other `LLrtFunction`s that utilise the same `LlrtBinaryType` (this property will be ignored if `llrtBinaryPath` is set).
    * 
    * @default - false
    */
-  readonly llrtLayer?: boolean;
-}
-
-const pathLayers: { [binaryPath: string]: ILayerVersion[]} = {};
-
-const buildLayer = (scope: Construct, binaryPath: string): ILayerVersion[] => {
-  if (!pathLayers[binaryPath]) {
-    pathLayers[binaryPath] = [new LayerVersion(scope, `llrt-layer${Object.keys(pathLayers).length}`, {
-      code: Code.fromAsset(posix.dirname(binaryPath)),
-    })];
-  }
-  return pathLayers[binaryPath];
+  readonly useLambdaLayer?: boolean;
 }
 
 export class LlrtFunction extends NodejsFunction {
@@ -134,30 +122,26 @@ export class LlrtFunction extends NodejsFunction {
       version == 'latest'
         ? `https://github.com/awslabs/llrt/releases/latest/download/${binaryName}.zip`
         : `https://github.com/awslabs/llrt/releases/download/${version}/${binaryName}.zip`;
-    const cacheDir = posix.join(__dirname, `/../.tmp/llrt/${version}/${arch}/${binaryType}`);
+    const cacheDir = `.tmp/llrt/${version}/${arch}/${binaryType}`;
 
-    if (!props.llrtBinaryPath) {
-      execSync(`if [ ! -e ${posix.join(cacheDir, 'bootstrap')} ]; then
-        mkdir -p ${cacheDir}
-        cd ${cacheDir}
+    const { commandHooks: originalCommandHooks, ...otherBundlingProps } = props.bundling ?? {};
+    const afterBundlingCommandHook: ICommandHooks['afterBundling'] = (i, o) => props.llrtBinaryPath ? [`cp ${posix.join(i, props.llrtBinaryPath)} ${posix.join(o, 'bootstrap')}`] :
+     props.useLambdaLayer ? [] : [
+      // Download llrt binary from GitHub release and cache it
+      `if [ ! -e ${posix.join(i, cacheDir, 'bootstrap')} ]; then
+        mkdir -p ${posix.join(i, cacheDir)}
+        cd ${posix.join(i, cacheDir)}
         curl -L -o llrt_temp.zip ${binaryUrl}
         unzip llrt_temp.zip
         rm -rf llrt_temp.zip
         cd -
-      fi`);
-    }
-
-    const binaryPath = !props.llrtBinaryPath ? posix.join(cacheDir, 'bootstrap') : props.llrtBinaryPath;
-
-    const { commandHooks: originalCommandHooks, ...otherBundlingProps } = props.bundling ?? {};
-    const afterBundlingCommandHook: ICommandHooks['afterBundling'] = (_i, o) => props.llrtLayer ? [] : [`cp ${binaryPath} ${posix.join(o, 'bootstrap')}`];
-
-    const layers = props.llrtLayer ? buildLayer(scope, binaryPath) : [];
+       fi`,
+      `cp ${posix.join(i, cacheDir, 'bootstrap')} ${o}`,
+    ];
 
     super(scope, id, {
       // set this to remove an unnecessary environment variable.
       awsSdkConnectionReuse: false,
-      layers,
       // set this to remove a warning about runtime. we use al2023 runtime anyway.
       runtime: new Runtime('nodejs20.x', RuntimeFamily.NODEJS),
       ...props,
@@ -179,6 +163,29 @@ export class LlrtFunction extends NodejsFunction {
       },
     });
 
+    if (props.useLambdaLayer && !props.llrtBinaryPath) {
+      this.ensureLayer(binaryUrl, binaryName, version);
+    }
+
     (this.node.defaultChild as CfnResource).addPropertyOverride('Runtime', 'provided.al2023');
+  }
+
+  private ensureLayer(binaryUrl: string, binaryName: string, version: string) {
+    const id = `${binaryName.replace("lambda", "layer")}-${version}`;
+    
+    let layer = Stack.of(this).node.tryFindChild(id);
+
+    if (!layer) {
+      layer = new LayerVersion(this, id, {
+        code: Code.fromDockerBuild(__dirname, {
+          buildArgs: {
+            URL: binaryUrl,
+          },
+        }),
+        layerVersionName: id,
+      });
+    }
+
+    this.addLayers(layer as ILayerVersion);
   }
 }

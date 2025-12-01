@@ -108,8 +108,8 @@ class TestStack extends Stack {
     {
       const handler = new LlrtFunction(this, 'LayerHandler', {
         entry: '../example/lambda/s3.ts',
-        llrtLayer: true,
         depsLockFilePath: '../example/lambda/package-lock.json',
+        useLambdaLayer: true,
       });
       handler.addToRolePolicy(
         new PolicyStatement({

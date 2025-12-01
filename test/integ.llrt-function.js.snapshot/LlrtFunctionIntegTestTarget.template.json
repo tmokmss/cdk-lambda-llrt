@@ -473,17 +473,6 @@
    "UpdateReplacePolicy": "Retain",
    "DeletionPolicy": "Retain"
   },
-  "llrtlayer0597794AC": {
-   "Type": "AWS::Lambda::LayerVersion",
-   "Properties": {
-    "Content": {
-     "S3Bucket": {
-      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
-     },
-     "S3Key": "9a3fcb668160409d2849f5a3c82a6e8bed06831e6b89970752ad53e82fdd565f.zip"
-    }
-   }
-  },
   "LayerHandlerServiceRoleCB6A82DD": {
    "Type": "AWS::IAM::Role",
    "Properties": {
@@ -548,7 +537,7 @@
     "Handler": "index.handler",
     "Layers": [
      {
-      "Ref": "llrtlayer0597794AC"
+      "Ref": "LayerHandlerllrtlayerx64latestF5B4AD4A"
      }
     ],
     "Role": {
@@ -582,6 +571,18 @@
    },
    "UpdateReplacePolicy": "Retain",
    "DeletionPolicy": "Retain"
+  },
+  "LayerHandlerllrtlayerx64latestF5B4AD4A": {
+   "Type": "AWS::Lambda::LayerVersion",
+   "Properties": {
+    "Content": {
+     "S3Bucket": {
+      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+     },
+     "S3Key": "9a3fcb668160409d2849f5a3c82a6e8bed06831e6b89970752ad53e82fdd565f.zip"
+    },
+    "LayerName": "llrt-layer-x64-latest"
+   }
   }
  },
  "Outputs": {
