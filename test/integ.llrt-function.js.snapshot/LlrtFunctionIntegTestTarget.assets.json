@@ -86,7 +86,7 @@
       }
     },
     "9a3fcb668160409d2849f5a3c82a6e8bed06831e6b89970752ad53e82fdd565f": {
-      "displayName": "LayerHandler/llrt-layer-x64-latest/Code",
+      "displayName": "llrt-layer-x64-latest/Code",
       "source": {
         "path": "asset.9a3fcb668160409d2849f5a3c82a6e8bed06831e6b89970752ad53e82fdd565f",
         "packaging": "zip"
@@ -99,16 +99,16 @@
         }
       }
     },
-    "18752306f3e72fe3f50b027577e6b551111fa1ce70a47c683a24b531a48a1d00": {
+    "9e349bc73e1325260b58e47b99c77f5975c3b5d24ac1a6c7022674d8e6480907": {
       "displayName": "LlrtFunctionIntegTestTarget Template",
       "source": {
         "path": "LlrtFunctionIntegTestTarget.template.json",
         "packaging": "file"
       },
       "destinations": {
-        "current_account-current_region-b858ff16": {
+        "current_account-current_region-27e2f0e6": {
           "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
-          "objectKey": "18752306f3e72fe3f50b027577e6b551111fa1ce70a47c683a24b531a48a1d00.json",
+          "objectKey": "9e349bc73e1325260b58e47b99c77f5975c3b5d24ac1a6c7022674d8e6480907.json",
           "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
         }
       }

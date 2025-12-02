@@ -537,7 +537,7 @@
     "Handler": "index.handler",
     "Layers": [
      {
-      "Ref": "LayerHandlerllrtlayerx64latestF5B4AD4A"
+      "Ref": "llrtlayerx64latest9C10C861"
      }
     ],
     "Role": {
@@ -572,7 +572,7 @@
    "UpdateReplacePolicy": "Retain",
    "DeletionPolicy": "Retain"
   },
-  "LayerHandlerllrtlayerx64latestF5B4AD4A": {
+  "llrtlayerx64latest9C10C861": {
    "Type": "AWS::Lambda::LayerVersion",
    "Properties": {
     "Content": {

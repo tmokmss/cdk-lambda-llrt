@@ -176,7 +176,7 @@ export class LlrtFunction extends NodejsFunction {
     let layer = Stack.of(this).node.tryFindChild(id);
 
     if (!layer) {
-      layer = new LayerVersion(this, id, {
+      layer = new LayerVersion(Stack.of(this), id, {
         code: Code.fromDockerBuild(__dirname, {
           buildArgs: {
             URL: binaryUrl,

@@ -18,7 +18,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/18752306f3e72fe3f50b027577e6b551111fa1ce70a47c683a24b531a48a1d00.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/9e349bc73e1325260b58e47b99c77f5975c3b5d24ac1a6c7022674d8e6480907.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -908,7 +908,7 @@
             "data": "LayerHandlerLogGroupAEFCA328"
           }
         ],
-        "/LlrtFunctionIntegTestTarget/LayerHandler/llrt-layer-x64-latest": [
+        "/LlrtFunctionIntegTestTarget/llrt-layer-x64-latest": [
           {
             "type": "aws:cdk:analytics:construct",
             "data": {
@@ -917,10 +917,10 @@
             }
           }
         ],
-        "/LlrtFunctionIntegTestTarget/LayerHandler/llrt-layer-x64-latest/Resource": [
+        "/LlrtFunctionIntegTestTarget/llrt-layer-x64-latest/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "LayerHandlerllrtlayerx64latestF5B4AD4A"
+            "data": "llrtlayerx64latest9C10C861"
           }
         ],
         "/LlrtFunctionIntegTestTarget/Exports/Output{\"Ref\":\"Handler886CB40B\"}": [
@@ -971,10 +971,10 @@
             "data": "CheckBootstrapVersion"
           }
         ],
-        "llrtlayer0597794AC": [
+        "LayerHandlerllrtlayerx64latestF5B4AD4A": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "llrtlayer0597794AC",
+            "data": "LayerHandlerllrtlayerx64latestF5B4AD4A",
             "trace": [
               "!!DESTRUCTIVE_CHANGES: WILL_DESTROY"
             ]
@@ -1000,7 +1000,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c3efbe1bd50c1de9b00fba666b5e3529666fa1ce40e889a3d84204e96f1a29aa.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/6e5af5f24af64ce334af8614984e5d8039174176242993618ad45b072990f69b.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
