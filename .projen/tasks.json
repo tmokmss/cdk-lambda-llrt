@@ -193,7 +193,7 @@
           "spawn": "docgen"
         },
         {
-          "exec": "cp src/Dockerfile lib/Dockerfile"
+          "exec": "cp src/layer.Dockerfile lib/layer.Dockerfile"
         }
       ]
     },

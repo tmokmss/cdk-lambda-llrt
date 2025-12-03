@@ -99,16 +99,30 @@
         }
       }
     },
-    "9e349bc73e1325260b58e47b99c77f5975c3b5d24ac1a6c7022674d8e6480907": {
+    "52d6a9bf141495dafa8797c991df4839adf1e5780f14bfa263ff6a7c8312e4f8": {
+      "displayName": "llrt-layer-arm64-latest/Code",
+      "source": {
+        "path": "asset.52d6a9bf141495dafa8797c991df4839adf1e5780f14bfa263ff6a7c8312e4f8",
+        "packaging": "zip"
+      },
+      "destinations": {
+        "current_account-current_region-2a1898f7": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "52d6a9bf141495dafa8797c991df4839adf1e5780f14bfa263ff6a7c8312e4f8.zip",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    },
+    "8a89c38ae4a66b4ffedc3afd04a4fa563e7a69ea4840f03a68756a9367f366e8": {
       "displayName": "LlrtFunctionIntegTestTarget Template",
       "source": {
         "path": "LlrtFunctionIntegTestTarget.template.json",
         "packaging": "file"
       },
       "destinations": {
-        "current_account-current_region-27e2f0e6": {
+        "current_account-current_region-175984d9": {
           "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
-          "objectKey": "9e349bc73e1325260b58e47b99c77f5975c3b5d24ac1a6c7022674d8e6480907.json",
+          "objectKey": "8a89c38ae4a66b4ffedc3afd04a4fa563e7a69ea4840f03a68756a9367f366e8.json",
           "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
         }
       }

@@ -575,13 +575,131 @@
   "llrtlayerx64latest9C10C861": {
    "Type": "AWS::Lambda::LayerVersion",
    "Properties": {
+    "CompatibleArchitectures": [
+     "x86_64"
+    ],
     "Content": {
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
      "S3Key": "9a3fcb668160409d2849f5a3c82a6e8bed06831e6b89970752ad53e82fdd565f.zip"
+    }
+   }
+  },
+  "LayerArmHandlerServiceRole78659E75": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
     },
-    "LayerName": "llrt-layer-x64-latest"
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   }
+  },
+  "LayerArmHandlerServiceRoleDefaultPolicy4B1C6409": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "s3:ListAllMyBuckets",
+       "Effect": "Allow",
+       "Resource": "*"
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "LayerArmHandlerServiceRoleDefaultPolicy4B1C6409",
+    "Roles": [
+     {
+      "Ref": "LayerArmHandlerServiceRole78659E75"
+     }
+    ]
+   }
+  },
+  "LayerArmHandler9147865B": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Architectures": [
+     "arm64"
+    ],
+    "Code": {
+     "S3Bucket": {
+      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+     },
+     "S3Key": "531eb4a72df0dad25daeaccc31c78c676a5616a85798d42e05d8aaa5df5d3399.zip"
+    },
+    "Handler": "index.handler",
+    "Layers": [
+     {
+      "Ref": "llrtlayerarm64latest0E433E1F"
+     }
+    ],
+    "Role": {
+     "Fn::GetAtt": [
+      "LayerArmHandlerServiceRole78659E75",
+      "Arn"
+     ]
+    },
+    "Runtime": "provided.al2023"
+   },
+   "DependsOn": [
+    "LayerArmHandlerServiceRoleDefaultPolicy4B1C6409",
+    "LayerArmHandlerServiceRole78659E75"
+   ]
+  },
+  "LayerArmHandlerLogGroupB4C9642E": {
+   "Type": "AWS::Logs::LogGroup",
+   "Properties": {
+    "LogGroupName": {
+     "Fn::Join": [
+      "",
+      [
+       "/aws/lambda/",
+       {
+        "Ref": "LayerArmHandler9147865B"
+       }
+      ]
+     ]
+    },
+    "RetentionInDays": 731
+   },
+   "UpdateReplacePolicy": "Retain",
+   "DeletionPolicy": "Retain"
+  },
+  "llrtlayerarm64latest0E433E1F": {
+   "Type": "AWS::Lambda::LayerVersion",
+   "Properties": {
+    "CompatibleArchitectures": [
+     "arm64"
+    ],
+    "Content": {
+     "S3Bucket": {
+      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+     },
+     "S3Key": "52d6a9bf141495dafa8797c991df4839adf1e5780f14bfa263ff6a7c8312e4f8.zip"
+    }
    }
   }
  },
@@ -632,6 +750,14 @@
    },
    "Export": {
     "Name": "LlrtFunctionIntegTestTarget:ExportsOutputRefLayerHandler66021063E725CB82"
+   }
+  },
+  "ExportsOutputRefLayerArmHandler9147865BF5CAED2B": {
+   "Value": {
+    "Ref": "LayerArmHandler9147865B"
+   },
+   "Export": {
+    "Name": "LlrtFunctionIntegTestTarget:ExportsOutputRefLayerArmHandler9147865BF5CAED2B"
    }
   }
  },
