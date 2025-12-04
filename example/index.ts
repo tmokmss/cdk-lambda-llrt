@@ -98,6 +98,22 @@ class LlrtFunctionTestStack extends Stack {
       const resource = api.root.addResource('ssr');
       resource.addMethod('GET', new LambdaIntegration(handler));
     }
+
+    {
+      // multiple lambda functions using a shared layer
+      new Array(3).fill(0).map((_, i) => {
+        const handler = new LlrtFunction(this, `LayerHandler${i}`, {
+          entry: '../example/lambda/s3.ts',
+          useLambdaLayer: true,
+        });
+        handler.addToRolePolicy(
+          new PolicyStatement({
+            actions: ['s3:ListAllMyBuckets'],
+            resources: ['*'],
+          })
+        );
+      })
+    }
   }
 }
 
