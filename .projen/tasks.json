@@ -238,7 +238,7 @@
           "spawn": "eslint"
         },
         {
-          "exec": "npm install",
+          "exec": "npm ci",
           "cwd": "example/lambda"
         },
         {
