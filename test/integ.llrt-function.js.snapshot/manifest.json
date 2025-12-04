@@ -18,7 +18,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/05bb58bcc960462b09fcbf4131babbd603268ca596c6aa408003857ffa68a93e.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/8a89c38ae4a66b4ffedc3afd04a4fa563e7a69ea4840f03a68756a9367f366e8.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -758,6 +758,341 @@
             "data": "CustomBinaryHandlerLogGroupE89296DF"
           }
         ],
+        "/LlrtFunctionIntegTestTarget/LayerHandler": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": {
+              "awsSdkConnectionReuse": false,
+              "runtime": "*",
+              "entry": "*",
+              "depsLockFilePath": "*",
+              "bundling": {
+                "target": "*",
+                "format": "esm",
+                "minify": true,
+                "commandHooks": "*",
+                "forceDockerBundling": "*",
+                "externalModules": "*"
+              },
+              "code": "*",
+              "handler": "*"
+            }
+          },
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": {
+              "awsSdkConnectionReuse": false,
+              "runtime": "*",
+              "entry": "*",
+              "depsLockFilePath": "*",
+              "bundling": {
+                "target": "*",
+                "format": "esm",
+                "minify": true,
+                "commandHooks": "*",
+                "forceDockerBundling": "*",
+                "externalModules": "*"
+              }
+            }
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": {}
+          }
+        ],
+        "/LlrtFunctionIntegTestTarget/LayerHandler/ServiceRole": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": {
+              "assumedBy": {
+                "principalAccount": "*",
+                "assumeRoleAction": "*"
+              },
+              "managedPolicies": [
+                {
+                  "managedPolicyArn": "*"
+                }
+              ]
+            }
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": {
+              "addToPrincipalPolicy": [
+                {}
+              ]
+            }
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": {
+              "attachInlinePolicy": [
+                "*"
+              ]
+            }
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": {
+              "attachInlinePolicy": [
+                "*"
+              ]
+            }
+          }
+        ],
+        "/LlrtFunctionIntegTestTarget/LayerHandler/ServiceRole/ImportServiceRole": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": "*"
+          }
+        ],
+        "/LlrtFunctionIntegTestTarget/LayerHandler/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LayerHandlerServiceRoleCB6A82DD"
+          }
+        ],
+        "/LlrtFunctionIntegTestTarget/LayerHandler/ServiceRole/DefaultPolicy": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": "*"
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": {
+              "attachToRole": [
+                "*"
+              ]
+            }
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": {
+              "attachToRole": [
+                "*"
+              ]
+            }
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": {
+              "addStatements": [
+                {}
+              ]
+            }
+          }
+        ],
+        "/LlrtFunctionIntegTestTarget/LayerHandler/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LayerHandlerServiceRoleDefaultPolicy17846BDC"
+          }
+        ],
+        "/LlrtFunctionIntegTestTarget/LayerHandler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LayerHandler66021063"
+          }
+        ],
+        "/LlrtFunctionIntegTestTarget/LayerHandler/LogGroup": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": {
+              "logGroupName": "*"
+            }
+          }
+        ],
+        "/LlrtFunctionIntegTestTarget/LayerHandler/LogGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LayerHandlerLogGroupAEFCA328"
+          }
+        ],
+        "/LlrtFunctionIntegTestTarget/llrt-layer-x64-latest": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": {
+              "code": "*",
+              "compatibleArchitectures": "*"
+            }
+          }
+        ],
+        "/LlrtFunctionIntegTestTarget/llrt-layer-x64-latest/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "llrtlayerx64latest9C10C861",
+            "trace": [
+              "!!DESTRUCTIVE_CHANGES: WILL_REPLACE"
+            ]
+          }
+        ],
+        "/LlrtFunctionIntegTestTarget/LayerArmHandler": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": {
+              "awsSdkConnectionReuse": false,
+              "runtime": "*",
+              "architecture": "*",
+              "entry": "*",
+              "depsLockFilePath": "*",
+              "bundling": {
+                "target": "*",
+                "format": "esm",
+                "minify": true,
+                "commandHooks": "*",
+                "forceDockerBundling": "*",
+                "externalModules": "*"
+              },
+              "code": "*",
+              "handler": "*"
+            }
+          },
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": {
+              "awsSdkConnectionReuse": false,
+              "runtime": "*",
+              "architecture": "*",
+              "entry": "*",
+              "depsLockFilePath": "*",
+              "bundling": {
+                "target": "*",
+                "format": "esm",
+                "minify": true,
+                "commandHooks": "*",
+                "forceDockerBundling": "*",
+                "externalModules": "*"
+              }
+            }
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": {}
+          }
+        ],
+        "/LlrtFunctionIntegTestTarget/LayerArmHandler/ServiceRole": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": {
+              "assumedBy": {
+                "principalAccount": "*",
+                "assumeRoleAction": "*"
+              },
+              "managedPolicies": [
+                {
+                  "managedPolicyArn": "*"
+                }
+              ]
+            }
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": {
+              "addToPrincipalPolicy": [
+                {}
+              ]
+            }
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": {
+              "attachInlinePolicy": [
+                "*"
+              ]
+            }
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": {
+              "attachInlinePolicy": [
+                "*"
+              ]
+            }
+          }
+        ],
+        "/LlrtFunctionIntegTestTarget/LayerArmHandler/ServiceRole/ImportServiceRole": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": "*"
+          }
+        ],
+        "/LlrtFunctionIntegTestTarget/LayerArmHandler/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LayerArmHandlerServiceRole78659E75"
+          }
+        ],
+        "/LlrtFunctionIntegTestTarget/LayerArmHandler/ServiceRole/DefaultPolicy": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": "*"
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": {
+              "attachToRole": [
+                "*"
+              ]
+            }
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": {
+              "attachToRole": [
+                "*"
+              ]
+            }
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": {
+              "addStatements": [
+                {}
+              ]
+            }
+          }
+        ],
+        "/LlrtFunctionIntegTestTarget/LayerArmHandler/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LayerArmHandlerServiceRoleDefaultPolicy4B1C6409"
+          }
+        ],
+        "/LlrtFunctionIntegTestTarget/LayerArmHandler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LayerArmHandler9147865B"
+          }
+        ],
+        "/LlrtFunctionIntegTestTarget/LayerArmHandler/LogGroup": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": {
+              "logGroupName": "*"
+            }
+          }
+        ],
+        "/LlrtFunctionIntegTestTarget/LayerArmHandler/LogGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LayerArmHandlerLogGroupB4C9642E"
+          }
+        ],
+        "/LlrtFunctionIntegTestTarget/llrt-layer-arm64-latest": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": {
+              "code": "*",
+              "compatibleArchitectures": "*"
+            }
+          }
+        ],
+        "/LlrtFunctionIntegTestTarget/llrt-layer-arm64-latest/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "llrtlayerarm64latest0E433E1F"
+          }
+        ],
         "/LlrtFunctionIntegTestTarget/Exports/Output{\"Ref\":\"Handler886CB40B\"}": [
           {
             "type": "aws:cdk:logicalId",
@@ -786,6 +1121,18 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "ExportsOutputRefCustomBinaryHandler641A933E54DF1A2A"
+          }
+        ],
+        "/LlrtFunctionIntegTestTarget/Exports/Output{\"Ref\":\"LayerHandler66021063\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefLayerHandler66021063E725CB82"
+          }
+        ],
+        "/LlrtFunctionIntegTestTarget/Exports/Output{\"Ref\":\"LayerArmHandler9147865B\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefLayerArmHandler9147865BF5CAED2B"
           }
         ],
         "/LlrtFunctionIntegTestTarget/BootstrapVersion": [
@@ -820,7 +1167,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/286c6bf5a2eda8d84fa67fd1004371db925b13e33838d7fc46026ffaad295c90.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/5ab45ed51a21459ad67b9118a974fd3fbff643528f51f4fefc0ea1d472a8ec23.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -1013,6 +1360,70 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "AssertionResultsLambdaInvoke69a3388d6e311c7b828bebf747d408cc"
+          }
+        ],
+        "/LlrtFunctionIntegTest/DefaultTest/DeployAssert/LambdaInvoke805b2b3b09077c2b42bb6bec7de55543/Default": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": "*"
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": "*"
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": "*"
+          }
+        ],
+        "/LlrtFunctionIntegTest/DefaultTest/DeployAssert/LambdaInvoke805b2b3b09077c2b42bb6bec7de55543/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaInvoke805b2b3b09077c2b42bb6bec7de55543"
+          }
+        ],
+        "/LlrtFunctionIntegTest/DefaultTest/DeployAssert/LambdaInvoke805b2b3b09077c2b42bb6bec7de55543/Invoke": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaInvoke805b2b3b09077c2b42bb6bec7de55543Invoke51E422E0"
+          }
+        ],
+        "/LlrtFunctionIntegTest/DefaultTest/DeployAssert/LambdaInvoke805b2b3b09077c2b42bb6bec7de55543/AssertionResults": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssertionResultsLambdaInvoke805b2b3b09077c2b42bb6bec7de55543"
+          }
+        ],
+        "/LlrtFunctionIntegTest/DefaultTest/DeployAssert/LambdaInvoke622289161fa9b53fc725450a74439357/Default": [
+          {
+            "type": "aws:cdk:analytics:construct",
+            "data": "*"
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": "*"
+          },
+          {
+            "type": "aws:cdk:analytics:method",
+            "data": "*"
+          }
+        ],
+        "/LlrtFunctionIntegTest/DefaultTest/DeployAssert/LambdaInvoke622289161fa9b53fc725450a74439357/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaInvoke622289161fa9b53fc725450a74439357"
+          }
+        ],
+        "/LlrtFunctionIntegTest/DefaultTest/DeployAssert/LambdaInvoke622289161fa9b53fc725450a74439357/Invoke": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaInvoke622289161fa9b53fc725450a74439357InvokeC4A55C37"
+          }
+        ],
+        "/LlrtFunctionIntegTest/DefaultTest/DeployAssert/LambdaInvoke622289161fa9b53fc725450a74439357/AssertionResults": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssertionResultsLambdaInvoke622289161fa9b53fc725450a74439357"
           }
         ],
         "/LlrtFunctionIntegTest/DefaultTest/DeployAssert/BootstrapVersion": [

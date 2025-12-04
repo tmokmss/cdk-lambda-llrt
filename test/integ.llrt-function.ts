@@ -104,6 +104,37 @@ class TestStack extends Stack {
       );
       this.handlers.push(handler);
     }
+
+    {
+      const handler = new LlrtFunction(this, 'LayerHandler', {
+        entry: '../example/lambda/s3.ts',
+        depsLockFilePath: '../example/lambda/package-lock.json',
+        useLambdaLayer: true,
+      });
+      handler.addToRolePolicy(
+        new PolicyStatement({
+          actions: ['s3:ListAllMyBuckets'],
+          resources: ['*'],
+        }),
+      );
+      this.handlers.push(handler);
+    }
+
+    {
+      const handler = new LlrtFunction(this, 'LayerArmHandler', {
+        architecture: Architecture.ARM_64,
+        entry: '../example/lambda/s3.ts',
+        depsLockFilePath: '../example/lambda/package-lock.json',
+        useLambdaLayer: true,
+      });
+      handler.addToRolePolicy(
+        new PolicyStatement({
+          actions: ['s3:ListAllMyBuckets'],
+          resources: ['*'],
+        }),
+      );
+      this.handlers.push(handler);
+    }
   }
 }
 

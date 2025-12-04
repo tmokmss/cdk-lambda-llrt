@@ -191,6 +191,9 @@
       "steps": [
         {
           "spawn": "docgen"
+        },
+        {
+          "exec": "cp src/layer.Dockerfile lib/layer.Dockerfile"
         }
       ]
     },

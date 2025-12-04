@@ -24,7 +24,11 @@ If you are already using `NodejsFunction` construct, you should be able to just 
 > [!WARNING]
 > LLRT is currently experimental and not fully compatible with Node.js. You should expect some trial and errors to use LLRT with your existing code.
 
-If you want to upgrade the LLRT version, remove the `.tmp` directory, which contains the cache of LLRT binary fetched from GitHub (only applicable when you set `llrtVersion` to `latest` (default)).
+### LLRT version
+
+By default the latest version of LLRT is fetched from GitHub (unless you set `llrtVersion`). This LLRT binary is cached, in a `.tmp` directory or inside a docker image if you set `useLambdaLayer`.
+
+If you want to upgrade the LLRT version you will need to remove the `.tmp` directory or remove the docker images (the images can be identified during the cdk build e.g. `docker.io/library/cdk-926fb3006b78cf5a5efe8e6485491147c08a50b8ada8272a6761a8ddc85b2aec:latest` and can be removed using `docker image rm <image>`).
 
 ### Setting platform=browser
 
@@ -81,6 +85,18 @@ If you have your own bootstrap binary you want to use, you can specify the relat
 const handler = new LlrtFunction(this, 'Handler', {
     entry: 'lambda/index.ts',
     llrtBinaryPath: '.llrt/bootstrap'
+});
+```
+
+### LLRT Layer
+
+By default, CDK Lambda LLRT bundles the LLRT bootstrap binary directly in your lambda function.
+If you want to package the binary in a separate layer that can be shared amongst functions then set `llrtLayer` to `true`.
+
+```ts
+const handler = new LlrtFunction(this, 'Handler', {
+    entry: 'lambda/index.ts',
+    llrtLayer: true
 });
 ```
 

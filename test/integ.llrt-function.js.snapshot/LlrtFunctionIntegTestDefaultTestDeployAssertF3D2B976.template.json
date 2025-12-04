@@ -27,7 +27,7 @@
      }
     },
     "flattenResponse": "false",
-    "salt": "1758002050156"
+    "salt": "1764777304507"
    },
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
@@ -272,6 +272,86 @@
            ]
           }
          ]
+        },
+        {
+         "Action": [
+          "lambda:Invoke"
+         ],
+         "Effect": "Allow",
+         "Resource": [
+          "*"
+         ]
+        },
+        {
+         "Action": [
+          "lambda:InvokeFunction"
+         ],
+         "Effect": "Allow",
+         "Resource": [
+          {
+           "Fn::Join": [
+            "",
+            [
+             "arn:",
+             {
+              "Ref": "AWS::Partition"
+             },
+             ":lambda:",
+             {
+              "Ref": "AWS::Region"
+             },
+             ":",
+             {
+              "Ref": "AWS::AccountId"
+             },
+             ":function:",
+             {
+              "Fn::ImportValue": "LlrtFunctionIntegTestTarget:ExportsOutputRefLayerHandler66021063E725CB82"
+             }
+            ]
+           ]
+          }
+         ]
+        },
+        {
+         "Action": [
+          "lambda:Invoke"
+         ],
+         "Effect": "Allow",
+         "Resource": [
+          "*"
+         ]
+        },
+        {
+         "Action": [
+          "lambda:InvokeFunction"
+         ],
+         "Effect": "Allow",
+         "Resource": [
+          {
+           "Fn::Join": [
+            "",
+            [
+             "arn:",
+             {
+              "Ref": "AWS::Partition"
+             },
+             ":lambda:",
+             {
+              "Ref": "AWS::Region"
+             },
+             ":",
+             {
+              "Ref": "AWS::AccountId"
+             },
+             ":function:",
+             {
+              "Fn::ImportValue": "LlrtFunctionIntegTestTarget:ExportsOutputRefLayerArmHandler9147865BF5CAED2B"
+             }
+            ]
+           ]
+          }
+         ]
         }
        ]
       }
@@ -334,7 +414,7 @@
      }
     },
     "flattenResponse": "false",
-    "salt": "1758002050157"
+    "salt": "1764777304507"
    },
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
@@ -381,7 +461,7 @@
      }
     },
     "flattenResponse": "false",
-    "salt": "1758002050158"
+    "salt": "1764777304507"
    },
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
@@ -428,7 +508,7 @@
      }
     },
     "flattenResponse": "false",
-    "salt": "1758002050158"
+    "salt": "1764777304508"
    },
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
@@ -475,7 +555,7 @@
      }
     },
     "flattenResponse": "false",
-    "salt": "1758002050158"
+    "salt": "1764777304508"
    },
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
@@ -486,6 +566,100 @@
     "Action": "lambda:InvokeFunction",
     "FunctionName": {
      "Fn::ImportValue": "LlrtFunctionIntegTestTarget:ExportsOutputRefCustomBinaryHandler641A933E54DF1A2A"
+    },
+    "Principal": {
+     "Fn::GetAtt": [
+      "SingletonFunction1488541a7b23466481b69b4408076b81Role37ABCE73",
+      "Arn"
+     ]
+    }
+   }
+  },
+  "LambdaInvoke805b2b3b09077c2b42bb6bec7de55543": {
+   "Type": "Custom::DeployAssert@SdkCallLambdainvoke",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "SingletonFunction1488541a7b23466481b69b4408076b81HandlerCD40AE9F",
+      "Arn"
+     ]
+    },
+    "service": "Lambda",
+    "api": "invoke",
+    "expected": "{\"$ObjectLike\":{\"StatusCode\":200}}",
+    "parameters": {
+     "FunctionName": {
+      "Fn::Join": [
+       "",
+       [
+        "\"",
+        {
+         "Fn::ImportValue": "LlrtFunctionIntegTestTarget:ExportsOutputRefLayerHandler66021063E725CB82"
+        },
+        "\""
+       ]
+      ]
+     }
+    },
+    "flattenResponse": "false",
+    "salt": "1764777304508"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "LambdaInvoke805b2b3b09077c2b42bb6bec7de55543Invoke51E422E0": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::ImportValue": "LlrtFunctionIntegTestTarget:ExportsOutputRefLayerHandler66021063E725CB82"
+    },
+    "Principal": {
+     "Fn::GetAtt": [
+      "SingletonFunction1488541a7b23466481b69b4408076b81Role37ABCE73",
+      "Arn"
+     ]
+    }
+   }
+  },
+  "LambdaInvoke622289161fa9b53fc725450a74439357": {
+   "Type": "Custom::DeployAssert@SdkCallLambdainvoke",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "SingletonFunction1488541a7b23466481b69b4408076b81HandlerCD40AE9F",
+      "Arn"
+     ]
+    },
+    "service": "Lambda",
+    "api": "invoke",
+    "expected": "{\"$ObjectLike\":{\"StatusCode\":200}}",
+    "parameters": {
+     "FunctionName": {
+      "Fn::Join": [
+       "",
+       [
+        "\"",
+        {
+         "Fn::ImportValue": "LlrtFunctionIntegTestTarget:ExportsOutputRefLayerArmHandler9147865BF5CAED2B"
+        },
+        "\""
+       ]
+      ]
+     }
+    },
+    "flattenResponse": "false",
+    "salt": "1764777304508"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "LambdaInvoke622289161fa9b53fc725450a74439357InvokeC4A55C37": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::ImportValue": "LlrtFunctionIntegTestTarget:ExportsOutputRefLayerArmHandler9147865BF5CAED2B"
     },
     "Principal": {
      "Fn::GetAtt": [
@@ -533,6 +707,22 @@
    "Value": {
     "Fn::GetAtt": [
      "LambdaInvoke69a3388d6e311c7b828bebf747d408cc",
+     "assertion"
+    ]
+   }
+  },
+  "AssertionResultsLambdaInvoke805b2b3b09077c2b42bb6bec7de55543": {
+   "Value": {
+    "Fn::GetAtt": [
+     "LambdaInvoke805b2b3b09077c2b42bb6bec7de55543",
+     "assertion"
+    ]
+   }
+  },
+  "AssertionResultsLambdaInvoke622289161fa9b53fc725450a74439357": {
+   "Value": {
+    "Fn::GetAtt": [
+     "LambdaInvoke622289161fa9b53fc725450a74439357",
      "assertion"
     ]
    }

@@ -1,6 +1,6 @@
 import { posix } from 'path';
-import { CfnResource } from 'aws-cdk-lib';
-import { Architecture, Runtime, RuntimeFamily } from 'aws-cdk-lib/aws-lambda';
+import { CfnResource, Stack } from 'aws-cdk-lib';
+import { Architecture, Code, ILayerVersion, LayerVersion, Runtime, RuntimeFamily } from 'aws-cdk-lib/aws-lambda';
 import { ICommandHooks, NodejsFunction, NodejsFunctionProps, OutputFormat } from 'aws-cdk-lib/aws-lambda-nodejs';
 import { Construct } from 'constructs';
 
@@ -46,12 +46,26 @@ export interface LlrtFunctionProps extends NodejsFunctionProps {
    * @default - If this option is not provided, the LLRT binary is downloaded from GitHub and cached in the .tmp directory.
    */
   readonly llrtBinaryPath?: string;
+
+  /**
+   * If `true` then the LLRT runtime will be built in a layer that can be shared amongst
+   * other `LLrtFunction`s that utilize the same `llrtBinaryType`, `llrtVersion` and `architecture`.
+   * 
+   * This feature cannot be used with `llrtBinaryPath` and if both are set a ValidationError will be thrown.
+   * 
+   * @default - false
+   */
+  readonly useLambdaLayer?: boolean;
 }
 
 export class LlrtFunction extends NodejsFunction {
   constructor(scope: Construct, id: string, props: LlrtFunctionProps) {
+    if (props.useLambdaLayer && props.llrtBinaryPath) {
+      throw new Error("useLambdaLayer not supported with llrtBinaryPath");
+    }
+
     const version = props.llrtVersion ?? 'latest';
-    const arch = props.architecture == Architecture.ARM_64 ? 'arm64' : 'x64';
+    const arch = props.architecture?.name == Architecture.ARM_64.name ? 'arm64' : 'x64';
     const binaryType = props.llrtBinaryType ?? LlrtBinaryType.STANDARD;
 
     let binaryName: string;
@@ -117,18 +131,26 @@ export class LlrtFunction extends NodejsFunction {
     const cacheDir = `.tmp/llrt/${version}/${arch}/${binaryType}`;
 
     const { commandHooks: originalCommandHooks, ...otherBundlingProps } = props.bundling ?? {};
-    const afterBundlingCommandHook: ICommandHooks['afterBundling'] = (i, o) => !props.llrtBinaryPath ? [
+    const afterBundlingCommandHook: ICommandHooks['afterBundling'] = (i, o) => {
+      // If useLambdaLayer then we'll package the llrt binary with docker later
+      if (props.useLambdaLayer) return [];
+      // Copy llrt binary from llrtBinaryPath
+      if (props.llrtBinaryPath) return [
+        `cp ${posix.join(i, props.llrtBinaryPath)} ${posix.join(o, 'bootstrap')}`,
+      ];
       // Download llrt binary from GitHub release and cache it
-      `if [ ! -e ${posix.join(i, cacheDir, 'bootstrap')} ]; then
-        mkdir -p ${posix.join(i, cacheDir)}
-        cd ${posix.join(i, cacheDir)}
-        curl -L -o llrt_temp.zip ${binaryUrl}
-        unzip llrt_temp.zip
-        rm -rf llrt_temp.zip
-        cd -
-       fi`,
-      `cp ${posix.join(i, cacheDir, 'bootstrap')} ${o}`,
-    ] : [`cp ${posix.join(i, props.llrtBinaryPath)} ${posix.join(o, 'bootstrap')}`];
+      return [
+        `if [ ! -e ${posix.join(i, cacheDir, 'bootstrap')} ]; then
+          mkdir -p ${posix.join(i, cacheDir)}
+          cd ${posix.join(i, cacheDir)}
+          curl -L -o llrt_temp.zip ${binaryUrl}
+          unzip llrt_temp.zip
+          rm -rf llrt_temp.zip
+          cd -
+        fi`,
+        `cp ${posix.join(i, cacheDir, 'bootstrap')} ${o}`,
+      ];
+    }
 
     super(scope, id, {
       // set this to remove an unnecessary environment variable.
@@ -154,6 +176,32 @@ export class LlrtFunction extends NodejsFunction {
       },
     });
 
+    if (props.useLambdaLayer) {
+      this.ensureLayer(binaryUrl, binaryName, version);
+    }
+
     (this.node.defaultChild as CfnResource).addPropertyOverride('Runtime', 'provided.al2023');
+  }
+
+  private ensureLayer(binaryUrl: string, binaryName: string, version: string) {
+    const id = `${binaryName.replace("lambda", "layer")}-${version}`;
+    
+    let layer = Stack.of(this).node.tryFindChild(id) as ILayerVersion;
+
+    if (!layer) {
+      layer = new LayerVersion(Stack.of(this), id, {
+        code: Code.fromDockerBuild(__dirname, {
+          buildArgs: {
+            URL: binaryUrl,
+          },
+          file: "layer.Dockerfile",
+        }),
+        compatibleArchitectures: [
+          this.architecture,
+        ],
+      });
+    }
+
+    this.addLayers(layer);
   }
 }
