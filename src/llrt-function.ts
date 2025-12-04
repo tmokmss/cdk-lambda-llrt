@@ -1,5 +1,5 @@
 import { posix } from 'path';
-import { CfnResource, Stack, ValidationError } from 'aws-cdk-lib';
+import { CfnResource, Stack } from 'aws-cdk-lib';
 import { Architecture, Code, ILayerVersion, LayerVersion, Runtime, RuntimeFamily } from 'aws-cdk-lib/aws-lambda';
 import { ICommandHooks, NodejsFunction, NodejsFunctionProps, OutputFormat } from 'aws-cdk-lib/aws-lambda-nodejs';
 import { Construct } from 'constructs';
@@ -49,7 +49,7 @@ export interface LlrtFunctionProps extends NodejsFunctionProps {
 
   /**
    * If `true` then the LLRT runtime will be built in a layer that can be shared amongst
-   * other `LLrtFunction`s that utilise the same `llrtBinaryType`, `llrtVersion` and `architecture`.
+   * other `LLrtFunction`s that utilize the same `llrtBinaryType`, `llrtVersion` and `architecture`.
    * 
    * This feature cannot be used with `llrtBinaryPath` and if both are set a ValidationError will be thrown.
    * 
@@ -60,6 +60,10 @@ export interface LlrtFunctionProps extends NodejsFunctionProps {
 
 export class LlrtFunction extends NodejsFunction {
   constructor(scope: Construct, id: string, props: LlrtFunctionProps) {
+    if (props.useLambdaLayer && props.llrtBinaryPath) {
+      throw new Error("useLambdaLayer not supported with llrtBinaryPath");
+    }
+
     const version = props.llrtVersion ?? 'latest';
     const arch = props.architecture?.name == Architecture.ARM_64.name ? 'arm64' : 'x64';
     const binaryType = props.llrtBinaryType ?? LlrtBinaryType.STANDARD;
@@ -171,10 +175,6 @@ export class LlrtFunction extends NodejsFunction {
         ...otherBundlingProps,
       },
     });
-
-    if (props.useLambdaLayer && props.llrtBinaryPath) {
-      throw new ValidationError("useLambdaLayer not supported with llrtBinaryPath", this);
-    }
 
     if (props.useLambdaLayer) {
       this.ensureLayer(binaryUrl, binaryName, version);
