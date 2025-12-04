@@ -45,7 +45,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
 project.projectBuild.postCompileTask.exec('cp src/layer.Dockerfile lib/layer.Dockerfile');
 project.addPackageIgnore('.tmp');
 // required to run integ tests
-project.projectBuild.testTask.exec('npm install', { cwd: join('example', 'lambda') });
+project.projectBuild.testTask.exec('npm ci', { cwd: join('example', 'lambda') });
 project.projectBuild.testTask.exec('npx tsc -p tsconfig.dev.json && npx integ-runner');
 
 project.synth();
